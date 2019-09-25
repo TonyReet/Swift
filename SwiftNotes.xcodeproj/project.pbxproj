@@ -27,6 +27,12 @@
 		6A7E7EC02338C31F002DEB4A /* BasicViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7E7E8B2338C31F002DEB4A /* BasicViewControler.swift */; };
 		6A90B81C2339FBF7002B56C5 /* IconFontTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A90B81B2339FBF7002B56C5 /* IconFontTool.swift */; };
 		6A90B81D233A0548002B56C5 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A90B81A2339F561002B56C5 /* iconfont.ttf */; };
+		6A90B824233AFF51002B56C5 /* RequestConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A90B81F233AFF51002B56C5 /* RequestConst.swift */; };
+		6A90B825233AFF51002B56C5 /* Request+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A90B820233AFF51002B56C5 /* Request+Extension.swift */; };
+		6A90B826233AFF51002B56C5 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A90B821233AFF51002B56C5 /* Request.swift */; };
+		6A90B827233AFF51002B56C5 /* RequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A90B822233AFF51002B56C5 /* RequestRouter.swift */; };
+		6A90B828233AFF51002B56C5 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A90B823233AFF51002B56C5 /* RequestError.swift */; };
+		6A90B82A233B0048002B56C5 /* RequestJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A90B829233B0048002B56C5 /* RequestJson.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +78,12 @@
 		6A7E7E8B2338C31F002DEB4A /* BasicViewControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicViewControler.swift; sourceTree = "<group>"; };
 		6A90B81A2339F561002B56C5 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
 		6A90B81B2339FBF7002B56C5 /* IconFontTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconFontTool.swift; sourceTree = "<group>"; };
+		6A90B81F233AFF51002B56C5 /* RequestConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestConst.swift; sourceTree = "<group>"; };
+		6A90B820233AFF51002B56C5 /* Request+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+Extension.swift"; sourceTree = "<group>"; };
+		6A90B821233AFF51002B56C5 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		6A90B822233AFF51002B56C5 /* RequestRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestRouter.swift; sourceTree = "<group>"; };
+		6A90B823233AFF51002B56C5 /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		6A90B829233B0048002B56C5 /* RequestJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestJson.swift; sourceTree = "<group>"; };
 		BF3D82159F438FACF4906206 /* Pods-SwiftNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftNotes.debug.xcconfig"; path = "Target Support Files/Pods-SwiftNotes/Pods-SwiftNotes.debug.xcconfig"; sourceTree = "<group>"; };
 		DB7DBCEC5FA96B830E659FE0 /* Pods_SwiftNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E33EDA5DA2D461DBC2697D2B /* Pods-SwiftNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftNotes.release.xcconfig"; path = "Target Support Files/Pods-SwiftNotes/Pods-SwiftNotes.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +157,7 @@
 		6A7E7E332338C175002DEB4A /* SwiftNotes */ = {
 			isa = PBXGroup;
 			children = (
+				6A90B81E233AFF51002B56C5 /* Request */,
 				6A7E7E752338C31E002DEB4A /* Base */,
 				6A7E7E692338C31E002DEB4A /* Expand */,
 				6A7E7E872338C31F002DEB4A /* Module */,
@@ -319,6 +332,19 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6A90B81E233AFF51002B56C5 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				6A90B821233AFF51002B56C5 /* Request.swift */,
+				6A90B820233AFF51002B56C5 /* Request+Extension.swift */,
+				6A90B822233AFF51002B56C5 /* RequestRouter.swift */,
+				6A90B823233AFF51002B56C5 /* RequestError.swift */,
+				6A90B81F233AFF51002B56C5 /* RequestConst.swift */,
+				6A90B829233B0048002B56C5 /* RequestJson.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,13 +525,19 @@
 				6A7E7EAE2338C31F002DEB4A /* ConstBase.swift in Sources */,
 				6A7E7EB82338C31F002DEB4A /* BaseTabbarController.swift in Sources */,
 				6A90B81C2339FBF7002B56C5 /* IconFontTool.swift in Sources */,
+				6A90B825233AFF51002B56C5 /* Request+Extension.swift in Sources */,
 				6A7E7EAF2338C31F002DEB4A /* ConstColor.swift in Sources */,
 				6A7E7EAD2338C31F002DEB4A /* UIColor+Hex.swift in Sources */,
 				6A7E7EB92338C31F002DEB4A /* BaseViewController.swift in Sources */,
+				6A90B826233AFF51002B56C5 /* Request.swift in Sources */,
+				6A90B827233AFF51002B56C5 /* RequestRouter.swift in Sources */,
 				6A7E7EB52338C31F002DEB4A /* BasePrint.swift in Sources */,
 				6A7E7EBA2338C31F002DEB4A /* BaseNavigationController.swift in Sources */,
+				6A90B82A233B0048002B56C5 /* RequestJson.swift in Sources */,
 				6A7E7EAC2338C31F002DEB4A /* SystemTool.swift in Sources */,
+				6A90B824233AFF51002B56C5 /* RequestConst.swift in Sources */,
 				6A7E7E3D2338C175002DEB4A /* SwiftNotes.xcdatamodeld in Sources */,
+				6A90B828233AFF51002B56C5 /* RequestError.swift in Sources */,
 				6A7E7EC02338C31F002DEB4A /* BasicViewControler.swift in Sources */,
 				6A7E7EBD2338C31F002DEB4A /* AppDelegate.swift in Sources */,
 				6A7E7EBE2338C31F002DEB4A /* AppDelegate+Extension.swift in Sources */,

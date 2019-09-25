@@ -20,24 +20,20 @@ let ScreenHeight    = ScreenBounds.height
 /*
  *  iPhones
  */
-let iPhone4             = {
+let iPhone4Series              = {
     return ScreenHeight == 480 && ScreenWidth == 320
 }()
 
-let iPhone5             = {
+let iPhone5Series              = {
     return ScreenHeight == 568 && ScreenWidth == 320
 }()
 
-let iPhone6             = {
+let iPhone6Series              = {
     return ScreenHeight == 667 && ScreenWidth == 375
 }()
 
-let iPhone6P             = {
+let iPhonePlusSeries           = {
     return ScreenHeight == 736 && ScreenWidth == 414
-}()
-
-let iPhoneX             = {
-    return ScreenHeight == 812.0 && ScreenWidth == 375.0
 }()
 
 let isiPhoneXSeries = { () -> Bool in
@@ -63,10 +59,14 @@ let isiPhoneXSeries = { () -> Bool in
     return false
 }()
 
-/*
- *  paths
- */
-let documentsPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first!
+/// 获取沙盒Document路径
+let kDocumentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true).first!
+
+/// 获取沙盒Cache路径
+let kCachePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first
+
+/// 获取沙盒temp路径
+let kTempPath = NSTemporaryDirectory()
 
 /*
  *  threads
