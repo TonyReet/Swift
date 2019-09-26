@@ -13,7 +13,7 @@ extension Data {
         do {
             return try JSONDecoder().decode(modelType, from: self)
         } catch {
-            BasePrint.log(error.localizedDescription)
+            print(debug:error.localizedDescription)
             return  nil
         }
     }

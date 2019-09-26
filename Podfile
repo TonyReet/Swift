@@ -11,8 +11,19 @@ target 'SwiftNotes' do
   pod 'ESPullToRefresh','~> 2.9'    # refresh
   pod 'Cache','~> 5.2.0'    # cache
   pod 'PKHUD','~> 5.3.0'    # hud
-  
+
   # Rx
   pod 'RxSwift','~> 5.0.0'
   pod 'RxDataSources','~> 4.0.1'
+  
+  # Common Module
+  pod 'UtilCore'
+  pod 'NetWorkCore'
+  pod 'EmptyDataView'
+  
+  # encryption
+  pod 'CryptoSwift'
+  
+  #router
+  pod 'URLNavigator'
 end

@@ -18,7 +18,7 @@ extension UIFont {
 }
 
 extension UILabel {
-    public convenience init?(text: Iconfont, fontSize: CGFloat = UIFont.systemFontSize, imageSize: CGSize = CGSize.zero, imageColor: UIColor = UIColor.black) {
+    public convenience init?(text: String, fontSize: CGFloat = UIFont.systemFontSize) {
         guard let iconfont = UIFont.iconfont(ofSize: fontSize) else {
             self.init()
             return nil
@@ -26,28 +26,38 @@ extension UILabel {
 
         self.init()
         self.font = iconfont
+        self.text = text
     }
 }
 
 extension UIImage {
-    public convenience init?(text: Iconfont, fontSize: CGFloat = UIFont.systemFontSize, imageSize: CGSize = CGSize.zero, imageColor: UIColor = UIColor.black) {
+    public convenience init?(text: String, fontSize: CGFloat = UIFont.systemFontSize, imageSize: CGSize = CGSize.zero, imageColor: UIColor? = nil) {
         guard let iconfont = UIFont.iconfont(ofSize: fontSize) else {
             self.init()
             return nil
         }
-        
+
         var imageRect = CGRect(origin: CGPoint.zero, size: imageSize)
+        var mainScale:CGFloat = 2
         if __CGSizeEqualToSize(imageSize, CGSize.zero) {
-            imageRect = CGRect(origin: CGPoint.zero, size: text.rawValue.size(withAttributes: [NSAttributedString.Key.font: iconfont]))
+            imageRect = CGRect(origin: CGPoint.zero, size: text.size(withAttributes: [NSAttributedString.Key.font: iconfont]))
+            
+            mainScale = UIScreen.main.scale
         }
         
-        UIGraphicsBeginImageContextWithOptions(imageRect.size, false, UIScreen.main.scale)
+        UIGraphicsBeginImageContextWithOptions(imageRect.size, false, mainScale)
         defer {
             UIGraphicsEndImageContext()
         }
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = NSTextAlignment.center
-        text.rawValue.draw(in: imageRect, withAttributes: [NSAttributedString.Key.font : iconfont, NSAttributedString.Key.paragraphStyle: paragraphStyle, NSAttributedString.Key.foregroundColor: imageColor])
+
+        if let imageColor = imageColor {
+            text.draw(in: imageRect, withAttributes: [NSAttributedString.Key.font : iconfont, NSAttributedString.Key.paragraphStyle: paragraphStyle, NSAttributedString.Key.foregroundColor: imageColor])
+        }else{
+            text.draw(in: imageRect)
+        }
+
         guard let cgImage = UIGraphicsGetImageFromCurrentImageContext()?.cgImage else {
             self.init()
             return nil
@@ -61,4 +71,5 @@ public enum Iconfont: String {
     case homeSelect     = "\u{f3c5}"
     case folderNormal   = "\u{f3c7}"
     case folderSelect   = "\u{f3be}"
+    case image1         = "\u{e6ab}"
 }

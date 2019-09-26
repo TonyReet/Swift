@@ -33,6 +33,7 @@
 		6A90B827233AFF51002B56C5 /* RequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A90B822233AFF51002B56C5 /* RequestRouter.swift */; };
 		6A90B828233AFF51002B56C5 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A90B823233AFF51002B56C5 /* RequestError.swift */; };
 		6A90B82A233B0048002B56C5 /* RequestJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A90B829233B0048002B56C5 /* RequestJson.swift */; };
+		6A90B83B233C6263002B56C5 /* BasicConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A90B83A233C6262002B56C5 /* BasicConfig.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		6A90B822233AFF51002B56C5 /* RequestRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestRouter.swift; sourceTree = "<group>"; };
 		6A90B823233AFF51002B56C5 /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		6A90B829233B0048002B56C5 /* RequestJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestJson.swift; sourceTree = "<group>"; };
+		6A90B83A233C6262002B56C5 /* BasicConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BasicConfig.plist; sourceTree = "<group>"; };
 		BF3D82159F438FACF4906206 /* Pods-SwiftNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftNotes.debug.xcconfig"; path = "Target Support Files/Pods-SwiftNotes/Pods-SwiftNotes.debug.xcconfig"; sourceTree = "<group>"; };
 		DB7DBCEC5FA96B830E659FE0 /* Pods_SwiftNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E33EDA5DA2D461DBC2697D2B /* Pods-SwiftNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftNotes.release.xcconfig"; path = "Target Support Files/Pods-SwiftNotes/Pods-SwiftNotes.release.xcconfig"; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 		6A7E7E872338C31F002DEB4A /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				6A90B82C233C620A002B56C5 /* Media */,
 				6A7E7E882338C31F002DEB4A /* Basic */,
 			);
 			path = Module;
@@ -297,6 +300,7 @@
 		6A7E7E882338C31F002DEB4A /* Basic */ = {
 			isa = PBXGroup;
 			children = (
+				6A90B83A233C6262002B56C5 /* BasicConfig.plist */,
 				6A7E7E892338C31F002DEB4A /* ViewModel */,
 				6A7E7E8A2338C31F002DEB4A /* Controller */,
 				6A7E7E8C2338C31F002DEB4A /* Model */,
@@ -345,6 +349,46 @@
 				6A90B829233B0048002B56C5 /* RequestJson.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		6A90B82C233C620A002B56C5 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				6A90B82D233C620A002B56C5 /* ViewModel */,
+				6A90B82E233C620A002B56C5 /* Controller */,
+				6A90B82F233C620A002B56C5 /* Model */,
+				6A90B830233C620A002B56C5 /* View */,
+			);
+			name = Media;
+			path = SwiftNotes/Module/Media;
+			sourceTree = SOURCE_ROOT;
+		};
+		6A90B82D233C620A002B56C5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6A90B82E233C620A002B56C5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6A90B82F233C620A002B56C5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6A90B830233C620A002B56C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A90B81D233A0548002B56C5 /* iconfont.ttf in Resources */,
+				6A90B83B233C6263002B56C5 /* BasicConfig.plist in Resources */,
 				6A7E7EBB2338C31F002DEB4A /* Assets.xcassets in Resources */,
 				6A7E7EBC2338C31F002DEB4A /* LaunchScreen.storyboard in Resources */,
 			);

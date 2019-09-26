@@ -31,7 +31,7 @@ public enum RequestError: Error {
     
     ///  网络错误处理
     static func apiError(with error: NSError) -> RequestError {
-        BasePrint.log("错误信息是 \(error)")
+        print(debug:"错误信息是 \(error)")
         
         if error.domain == "Alamofire.AFError" {
             //处理自带的错误

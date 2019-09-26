@@ -156,7 +156,7 @@ extension Request {
         }
         
         //打印请求参数
-        BasePrint.log("请求参数:\(String(describing: paramters))")
+        print(debug:"请求参数:\(String(describing: paramters))")
         
         /// 配置headers
         let tmpHeader = configHeaders(headers: headers)
@@ -206,7 +206,7 @@ extension Request {
         
         _ = dismissMessageClosure?(inView)
 
-        //BasePrint.log("返回数据 \(String(describing: result.value))")
+        //print(debug:"返回数据 \(String(describing: result.value))")
         
         // 如果解析出来的不是json
         guard let json = result.value, let jsonDic = json as? Dictionary<String, Any> else {
@@ -236,7 +236,7 @@ extension Request {
         do {
             let responseModel = try JSONDecoder().decode(returnType, from: jsonDecodeData)
             
-            BasePrint.log("返回数据 \(responseModel)")
+            print(debug:"返回数据 \(responseModel)")
             
             complete?(responseModel)
             
@@ -251,7 +251,7 @@ extension Request {
     //统一的失败回调
     fileprivate func failtureHandle<T: Codable>(inView:UIView? = nil,error:RequestError? = nil,fail : FailtureClosure?,observer: AnyObserver<T>? = nil){
         
-        BasePrint.log("error:\(String(describing: error))")
+        print(debug:"error:\(String(describing: error))")
         
         _ = dismissMessageClosure?(inView)
         _ = dismissLoadingInViewClosure?()

@@ -59,7 +59,7 @@ class BaseTabbarController: UITabBarController {
                 return
             }
             
-            if let normalImgIconFont = Iconfont(rawValue: normalImg),let normalImage = UIImage.init(text:normalImgIconFont){
+            if let normalImage = UIImage.init(text:normalImg,imageSize:CGSize.init(width: 14, height: 14), imageColor:UIColor.black) {
                 viewController.tabBarItem.image = normalImage
             }
         }
@@ -70,7 +70,7 @@ class BaseTabbarController: UITabBarController {
                 return
             }
             
-            if let selectImgIconFont = Iconfont(rawValue: selectedImg),let selectedImage = UIImage.init(text:selectImgIconFont){
+            if let selectedImage = UIImage.init(text:selectedImg,imageSize:CGSize.init(width: 14, height: 14), imageColor:UIColor.black) {
                 viewController.tabBarItem.selectedImage = selectedImage
             }
         }

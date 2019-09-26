@@ -14,7 +14,7 @@ class BaseViewController: UIViewController ,UIGestureRecognizerDelegate{
         
         edgesForExtendedLayout = UIRectEdge()
     
-        view.backgroundColor = UIColor.randomColor()
+        view.backgroundColor = viewBackgroundColor
         
         initLeftBarItems(frame: CGRect(x: 0, y: 0, width: 60, height: 30), title:"返回", titleColor: navigationBarLeftBackColor, titleFontSize: 16)
     }
@@ -22,17 +22,17 @@ class BaseViewController: UIViewController ,UIGestureRecognizerDelegate{
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        BasePrint.log("离开的vc:" + NSStringFromClass(type(of: self)))
+        print(debug:"离开的vc:" + NSStringFromClass(type(of: self)))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        BasePrint.log("进入的vc:" + NSStringFromClass(type(of: self)))
+        print(debug:"进入的vc:" + NSStringFromClass(type(of: self)))
     }
     
     deinit{
-        BasePrint.log("\(self) is die")
+        print(debug:"\(self) is die")
     }
 }
 

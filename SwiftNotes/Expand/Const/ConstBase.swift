@@ -12,31 +12,92 @@ import Foundation
 /*
  *  screens
  */
-let ScreenBounds    = UIScreen.main.bounds
-let ScreenSize      = ScreenBounds.size
-let ScreenWidth     = ScreenBounds.width
-let ScreenHeight    = ScreenBounds.height
+let kScreenBounds    = UIScreen.main.bounds
+let kScreenSize      = kScreenBounds.size
+let kScreenWidth     = kScreenBounds.width
+let kScreenHeight    = kScreenBounds.height
+
+//APP版本号
+let kAppVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"]
+//当前系统版本号
+let kVersion = (UIDevice.current.systemVersion as NSString).floatValue
+
+// UserDefaults 操作
+let kUserDefaults = UserDefaults.standard
+func kUserDefaultsRead(_ KeyStr: String) -> Any? {
+    return kUserDefaults.value(forKey: KeyStr)
+}
+
+func kUserDefaultsWrite(_ obj: Any, _ KeyStr: String) {
+    kUserDefaults.set(obj, forKey: KeyStr)
+}
+
+
+//判断是否为iPhone
+let kDeviceIsiPhone = (UI_USER_INTERFACE_IDIOM() == .phone)
+//判断是否为iPad
+let kDeviceIsiPad = (UI_USER_INTERFACE_IDIOM() == .pad)
+
+func kScreenWidthRatio(_ width: CGFloat) -> CGFloat {
+    return width*kScreenWidth / 375.0
+}
+func kScreenHeightRatio(_ height: CGFloat) -> CGFloat {
+    return height*kScreenHeight / 667.0
+}
+
+//获取状态栏、标题栏、导航栏高度
+let kStatusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
+let kNavigationBarHeight: CGFloat =  iPhoneXSeries ? 88 : 44
+let KTabBarHeight: CGFloat = iPhoneXSeries ? 83 : 49
+
+// 注册通知
+func kNotifyAdd(observer: Any, selector: Selector, name: String) {
+    return NotificationCenter.default.addObserver(observer, selector: selector, name: Notification.Name(rawValue: name), object: nil)
+}
+// 发送通知
+func kNotifyPost(name: String, object: Any) {
+    return NotificationCenter.default.post(name: Notification.Name(rawValue: name), object: object)
+}
+// 移除通知
+func kNotifyRemove(observer: Any, name: String) {
+    return NotificationCenter.default.removeObserver(observer, name: Notification.Name(rawValue: name), object: nil)
+}
+
+//代码缩写
+let kApplication = UIApplication.shared
+let kAPPKeyWindow = kApplication.keyWindow
+let kAppDelegate = kApplication.delegate
+let kAppNotificationCenter = NotificationCenter.default
+let kAppRootViewController = kAppDelegate?.window??.rootViewController
+
+//字体 字号
+func kFontSize(_ a: CGFloat) -> UIFont {
+    return UIFont.systemFont(ofSize: a)
+}
+func kFontBoldSize(_ a: CGFloat) -> UIFont {
+    return UIFont.boldSystemFont(ofSize: a)
+}
 
 /*
  *  iPhones
  */
 let iPhone4Series              = {
-    return ScreenHeight == 480 && ScreenWidth == 320
+    return kScreenHeight == 480 && kScreenWidth == 320
 }()
 
 let iPhone5Series              = {
-    return ScreenHeight == 568 && ScreenWidth == 320
+    return kScreenHeight == 568 && kScreenWidth == 320
 }()
 
 let iPhone6Series              = {
-    return ScreenHeight == 667 && ScreenWidth == 375
+    return kScreenHeight == 667 && kScreenWidth == 375
 }()
 
 let iPhonePlusSeries           = {
-    return ScreenHeight == 736 && ScreenWidth == 414
+    return kScreenHeight == 736 && kScreenWidth == 414
 }()
 
-let isiPhoneXSeries = { () -> Bool in
+let iPhoneXSeries = { () -> Bool in
     
     if UIDevice.current.userInterfaceIdiom != UIUserInterfaceIdiom.phone {
         return false
@@ -114,3 +175,19 @@ func GCDAfterAsync(_ delay : Double, method:@escaping ()->()){
     }
 }
 
+//颜色
+func kRGBAColor(_ r: CGFloat,_ g: CGFloat,_ b: CGFloat,_ a: CGFloat) -> UIColor {
+    return UIColor.init(red: r, green: g, blue: b, alpha: a)
+}
+
+func kRGBColor(_ r: CGFloat,_ g: CGFloat,_ b: CGFloat) -> UIColor {
+    return UIColor.init(red: r, green: g, blue: b, alpha: 1.0)
+}
+
+func kHexColorA(_ HexString: String,_ a: CGFloat) ->UIColor {
+    return UIColor.init(hexString: HexString, transparency: a)
+}
+
+func kHexColor(_ HexString: String) ->UIColor {
+    return UIColor.init(hexString: HexString)
+}

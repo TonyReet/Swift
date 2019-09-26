@@ -28,7 +28,7 @@ extension RequestRouter {
     /// 返回拼接好的接口地址字符
     private func urlString() -> String {
         let requestRouterString = RequestRouter.baseUrl.appending(rawValue)
-        BasePrint.log("请求的url:\(requestRouterString)")
+        print(debug:"请求的url:\(requestRouterString)")
         
         return requestRouterString
     }
