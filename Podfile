@@ -15,12 +15,7 @@ target 'SwiftNotes' do
   # Rx
   pod 'RxSwift','~> 5.0.0'
   pod 'RxDataSources','~> 4.0.1'
-  
-  # Common Module
-  pod 'UtilCore'
-  pod 'NetWorkCore'
-  pod 'EmptyDataView'
-  
+
   # encryption
   pod 'CryptoSwift'
   

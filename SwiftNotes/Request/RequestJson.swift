@@ -9,7 +9,7 @@
 import Foundation
 
 extension Data {
-    func toModel<T:Codable>(modelType:T.Type) -> T? {
+    public func toModel<T:Codable>(modelType:T.Type) -> T? {
         do {
             return try JSONDecoder().decode(modelType, from: self)
         } catch {
@@ -17,7 +17,8 @@ extension Data {
             return  nil
         }
     }
-    func toDictionary() -> Dictionary<String,Any>? {
+    
+    public func toDictionary() -> Dictionary<String,Any>? {
         if let dic = try? JSONSerialization.jsonObject(with: self, options: .mutableContainers) {
             if let result = dic as? Dictionary<String,Any>{
                 return result
@@ -25,7 +26,7 @@ extension Data {
         }
         return nil
     }
-    func toArray() -> Array<Any>? {
+    public func toArray() -> Array<Any>? {
         if let arr = try? JSONSerialization.jsonObject(with: self, options: .mutableContainers) {
             if let result = arr as? Array<Any>{
                 return result
@@ -33,42 +34,80 @@ extension Data {
         }
         return nil
     }
-    func toString() -> String? {
+    public func toString() -> String? {
         return String.init(data: self, encoding: .utf8)
     }
     
 }
 
-extension Array {
-    
-    func toData() -> Data? {
-        if JSONSerialization.isValidJSONObject(self) {
-            if let data = try? JSONSerialization.data(withJSONObject: self, options: .prettyPrinted) {
-                return data
+extension Array : ToDataProtocol {
+    func toModel<T:Codable>(modelType:T.Type) -> [T]? {
+        if (!JSONSerialization.isValidJSONObject(self)) {
+            print(debug:"is not a valid json object")
+            return nil
+        }
+        
+        guard let toData = self.toData() else{
+            return nil
+        }
+        
+        var modelArray:[T] = []
+        for index in 0...self.count {
+            do {
+                let model = self[index]
+                let testData = try JSONDecoder().decode(modelType, from: model as! Data)
+                print(debug: testData)
+                modelArray.append(try JSONDecoder().decode(modelType, from: toData))
+            } catch {
+                print(debug:error.localizedDescription)
             }
         }
-        return nil
+
+        return modelArray
     }
 }
 
 
-extension Dictionary {
-    func toData() -> Data? {
-        if JSONSerialization.isValidJSONObject(self) {
-            if let data = try? JSONSerialization.data(withJSONObject: self, options: .prettyPrinted) {
-                return data
-            }
+extension Dictionary : ToDataProtocol {
+    func toModel<T:Codable>(modelType:T.Type) -> T? {
+        if (!JSONSerialization.isValidJSONObject(self)) {
+            print(debug:"is not a valid json object")
+            return nil
         }
-        return nil
+        
+        guard let toData = self.toData() else{
+            return nil
+        }
+        
+        do {
+            return try JSONDecoder().decode(modelType, from: toData)
+        } catch {
+            print(debug:error.localizedDescription)
+            return  nil
+        }
     }
 }
-
 
 extension String {
-    func toData() -> Data? {
+    public func toData() -> Data? {
         if (!JSONSerialization.isValidJSONObject(self)) {
             return nil
         }
         return self.data(using: .utf8)
+    }
+}
+
+protocol ToDataProtocol {
+    func toData() -> Data?
+}
+
+extension ToDataProtocol {
+    func toData() -> Data? {
+        if JSONSerialization.isValidJSONObject(self) {
+            if let data = try? JSONSerialization.data(withJSONObject: self, options: .prettyPrinted) {
+                return data
+            }
+        }
+        return nil
     }
 }
