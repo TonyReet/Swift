@@ -54,25 +54,15 @@ class BaseTabbarController: UITabBarController {
         viewController.title = title
         
         if let normalImg = normalImg {
-            if let normalImage = UIImage(named: normalImg) {
-                viewController.tabBarItem.image = normalImage.withRenderingMode(.alwaysOriginal)
-                return
-            }
+            let normalImage = UIImage.image(named: normalImg, imageSize: CGSize.init(width: 14, height: 14), imageColor: UIColor.black)
             
-            if let normalImage = UIImage.init(text:normalImg,imageSize:CGSize.init(width: 14, height: 14), imageColor:UIColor.black) {
-                viewController.tabBarItem.image = normalImage
-            }
+            viewController.tabBarItem.image = normalImage?.withRenderingMode(.alwaysOriginal)
         }
         
         if let selectedImg = selectedImg {
-            if let selectedImage = UIImage(named: selectedImg) {
-                viewController.tabBarItem.selectedImage = selectedImage.withRenderingMode(.alwaysOriginal)
-                return
-            }
+            let selectedImage = UIImage.image(named: selectedImg, imageSize: CGSize.init(width: 14, height: 14), imageColor: UIColor.black)
             
-            if let selectedImage = UIImage.init(text:selectedImg,imageSize:CGSize.init(width: 14, height: 14), imageColor:UIColor.black) {
-                viewController.tabBarItem.selectedImage = selectedImage
-            }
+            viewController.tabBarItem.selectedImage = selectedImage?.withRenderingMode(.alwaysOriginal)
         }
         
         addChild(navigationController)

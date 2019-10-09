@@ -31,17 +31,20 @@ class BasicViewControler: BaseViewController {
             return dataSource
         }
         
-        dataSource =  configArray.toModel(modelType:BasicHomeModel.self)
-    
+        guard let finalDataSource:[BasicHomeModel] =  configArray.toModel(modelType:BasicHomeModel.self) else {
+            return dataSource
+        }
 
-        return dataSource
+        return finalDataSource
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(debug: "测试数据:\(basicDataSource)")
-        
+        view.addSubview(basicTableView)
+        basicTableView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
     }
 }
 
@@ -49,18 +52,23 @@ class BasicViewControler: BaseViewController {
 extension  BasicViewControler: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.basicDataSource.count
+        return basicDataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let item = self.basicDataSource[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
 
+        if indexPath.row >= basicDataSource.count {return cell}
+        
+        let basicHomeModel = basicDataSource[indexPath.row]
+        cell.textLabel?.text = basicHomeModel.title
+        
+        guard let imgStr = basicHomeModel.imgStr else {
+            return cell
+        }
+        cell.imageView?.image = UIImage.image(named: imgStr, imageSize: CGSize.init(width: 14, height: 14),imageColor: UIColor.randomColor())
+        
         return cell
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
     }
 }
 

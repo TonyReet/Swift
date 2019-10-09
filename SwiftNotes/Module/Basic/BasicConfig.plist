@@ -4,11 +4,11 @@
 <array>
 	<dict>
 		<key>vcName</key>
-		<string>RechargeCenterViewController</string>
+		<string></string>
 		<key>title</key>
-		<string>充值中心</string>
+		<string>RxSwift使用</string>
 		<key>imgStr</key>
-		<string>rechargeCenter</string>
+		<string>0xe6ab</string>
 	</dict>
 </array>
 </plist>
