@@ -14,13 +14,12 @@ class BaseNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //避免受默认的半透明色影响，关闭
         navigationBar.isTranslucent      = false
         
-        navigationBar.tintColor        = navigationBarTintColor
-        navigationBar.barTintColor     = navigationBarBarTintColor
-        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:navigationBar.tintColor!]
-        view.backgroundColor = UIColor.white
+//        navigationBar.tintColor        = navigationBarTintColor
+//        navigationBar.barTintColor     = navigationBarBarTintColor
+//        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:navigationBar.tintColor!]
+//        view.backgroundColor = UIColor.white
         
         //隐藏底部的线
         getBottomLineView(navigationBar)?.isHidden = true
@@ -29,7 +28,6 @@ class BaseNavigationController: UINavigationController {
 
 //MARK:- Methods
 extension BaseNavigationController {
-    //底部线
     func getBottomLineView(_ view:UIView) -> UIImageView?{
         if view is UIImageView && view.bounds.size.height <= 1.0{
             

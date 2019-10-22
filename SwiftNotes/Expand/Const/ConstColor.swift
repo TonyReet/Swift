@@ -8,7 +8,7 @@
 
 import UIKit
 
-let mainColor                   = UIColor.white
+let mainThemeColor              = UIColor.systemPink
 
 let viewBackgroundColor         = UIColor.white
 
@@ -20,7 +20,8 @@ let navigationBarBarTintColor   = UIColor.white
 let navigationBarLeftBackColor  = UIColor.black
 
 /// tabbar
-let tabBarTintColor             = UIColor.black
+let tabBarTintColor             = mainThemeColor
 
-let tabBarBackgroundColor       = UIColor.white
+let tabBarNormalColor           = UIColor.systemGray
 
+let tabBarSelectColor           = mainThemeColor

@@ -14,7 +14,7 @@ class BaseViewController: UIViewController ,UIGestureRecognizerDelegate{
         
         edgesForExtendedLayout = UIRectEdge()
     
-        view.backgroundColor = viewBackgroundColor
+//        view.backgroundColor = viewBackgroundColor
         
         initLeftBarItems(frame: CGRect(x: 0, y: 0, width: 60, height: 30), title:"返回", titleColor: navigationBarLeftBackColor, titleFontSize: 16)
     }
@@ -22,13 +22,13 @@ class BaseViewController: UIViewController ,UIGestureRecognizerDelegate{
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        print(debug:"离开的vc:" + NSStringFromClass(type(of: self)))
+        print(debug:"leave vc:" + NSStringFromClass(type(of: self)))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        print(debug:"进入的vc:" + NSStringFromClass(type(of: self)))
+        print(debug:"enter vc:" + NSStringFromClass(type(of: self)))
     }
     
     deinit{
@@ -37,11 +37,10 @@ class BaseViewController: UIViewController ,UIGestureRecognizerDelegate{
 }
 
 
-//MARK:- 其他功能
+//MARK:- other function
 extension BaseViewController {
-    //返回键
+    //backButton
     func initLeftBarItems(frame:CGRect,title:String? = nil,titleColor:UIColor,titleFontSize:CGFloat,image:UIImage? = nil) {
-        //返回键
         let backBtn = UIButton(frame:frame)
         let barButtonItem = UIBarButtonItem(customView: backBtn)
         
@@ -53,7 +52,6 @@ extension BaseViewController {
         backBtn.setTitleColor(titleColor.withAlphaComponent(0.5), for: .highlighted)
         backBtn.addTarget(self, action: #selector(backAction), for: UIControl.Event.touchUpInside)
 
-        //间隙
         let  negativeSpacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         
         negativeSpacer.width = -10
@@ -65,7 +63,7 @@ extension BaseViewController {
         }
     }
     
-    //返回的处理事件
+    //backAction
     @objc func backAction(){
        let _ =  navigationController?.popViewController(animated: true)
     }

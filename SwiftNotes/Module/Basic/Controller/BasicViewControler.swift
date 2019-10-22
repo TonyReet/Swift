@@ -21,12 +21,12 @@ class BasicViewControler: BaseViewController {
     lazy var basicDataSource: [BasicHomeModel] = {
         var dataSource: [BasicHomeModel] = []
         
-        //获取路径
+        //get path
         guard let configPath = Bundle.main.path(forResource: "BasicConfig", ofType: "plist") else {
             return dataSource
         }
         
-        //获取数据
+        //get data
         guard let configArray = NSArray(contentsOfFile: configPath) as? Array<Any> else {
             return dataSource
         }
@@ -45,6 +45,28 @@ class BasicViewControler: BaseViewController {
         basicTableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        
+        addRightBarButtonItem()
+    }
+    
+    func addRightBarButtonItem(){
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Close Dark Mode", style: .done, target: self, action: #selector(changeDarkMode(_:)))
+
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.label
+    }
+    
+    @objc func changeDarkMode(_ buttonItem: UIBarButtonItem){
+        if buttonItem.title == "Close Dark Mode" {
+            
+            buttonItem.title = "Open Dark Mode"
+            
+            configDarkMode(UIUserInterfaceStyle.light)
+        }else{
+            buttonItem.title = "Close Dark Mode"
+            
+            configDarkMode(UIUserInterfaceStyle.dark)
+        }
     }
 }
 
@@ -57,7 +79,8 @@ extension  BasicViewControler: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
-
+        cell.selectionStyle = .none;
+        
         if indexPath.row >= basicDataSource.count {return cell}
         
         let basicHomeModel = basicDataSource[indexPath.row]
@@ -74,7 +97,6 @@ extension  BasicViewControler: UITableViewDataSource {
 
 // MARK: UITableViewDelegate
 extension  BasicViewControler: UITableViewDelegate {
-    /// 点击行事件
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
     }
@@ -84,3 +106,12 @@ extension  BasicViewControler: UITableViewDelegate {
     }
 }
 
+// MARK: DarkMode
+extension BasicViewControler {
+    @available(iOS 12.0, *)
+    func configDarkMode(_ style:UIUserInterfaceStyle){
+        if #available(iOS 13.0, *) {
+            UIApplication.shared.keyWindow?.rootViewController?.overrideUserInterfaceStyle = style
+        }
+    }
+}

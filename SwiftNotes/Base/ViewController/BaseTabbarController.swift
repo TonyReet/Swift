@@ -39,13 +39,8 @@ class BaseTabbarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //避免受默认的半透明色影响，关闭
         tabBar.isTranslucent = false
-        
-        // tabbar高亮颜色
-        tabBar.tintColor = tabBarTintColor
-        
-        tabBar.backgroundColor = tabBarBackgroundColor
+        tabBar.tintColor = tabBarSelectColor
     }
     
     func addChildVC(_ viewController:UIViewController,title:String,normalImg:String?,selectedImg:String?)  {
@@ -54,13 +49,13 @@ class BaseTabbarController: UITabBarController {
         viewController.title = title
         
         if let normalImg = normalImg {
-            let normalImage = UIImage.image(named: normalImg, imageSize: CGSize.init(width: 14, height: 14), imageColor: UIColor.black)
+            let normalImage = UIImage.image(named: normalImg, imageSize: CGSize.init(width: 14, height: 14), imageColor: tabBarNormalColor)
             
             viewController.tabBarItem.image = normalImage?.withRenderingMode(.alwaysOriginal)
         }
         
         if let selectedImg = selectedImg {
-            let selectedImage = UIImage.image(named: selectedImg, imageSize: CGSize.init(width: 14, height: 14), imageColor: UIColor.black)
+            let selectedImage = UIImage.image(named: selectedImg, imageSize: CGSize.init(width: 14, height: 14), imageColor: tabBarSelectColor)
             
             viewController.tabBarItem.selectedImage = selectedImage?.withRenderingMode(.alwaysOriginal)
         }
