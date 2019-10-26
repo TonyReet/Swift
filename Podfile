@@ -1,7 +1,10 @@
 # Uncomment the next line to define a global platform for your project
 
-platform :ios, '10.0'
+platform :ios, '13.0'
 use_frameworks!
+
+#remove warning
+inhibit_all_warnings!
 
 target 'SwiftNotes' do
   pod 'Alamofire','~> 4.8.2'    # network

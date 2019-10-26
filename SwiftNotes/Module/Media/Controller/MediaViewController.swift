@@ -1,14 +1,14 @@
 //
-//  BasicViewControler.swift
+//  MediaViewController.swift
 //  SwiftNotes
 //
-//  Created by TonyReet on 2019/9/2.
+//  Created by TonyReet on 2019/10/24.
 //  Copyright © 2019 TonyReet. All rights reserved.
 //
 
 import UIKit
 
-class BasicViewControler: BaseViewController {
+class MediaViewController: BaseViewController {
     lazy var basicTableView: UITableView   = {
         let tableView = UITableView()
         tableView.delegate = self;
@@ -22,7 +22,7 @@ class BasicViewControler: BaseViewController {
         var dataSource: [BasicHomeModel] = []
         
         //get path
-        guard let configPath = Bundle.main.path(forResource: "BasicConfig", ofType: "plist") else {
+        guard let configPath = Bundle.main.path(forResource: "MediaConfig", ofType: "plist") else {
             return dataSource
         }
         
@@ -45,52 +45,11 @@ class BasicViewControler: BaseViewController {
         basicTableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        
-        addRightBarButtonItem()
-        
-        registerNotification()
-        
-        changeRightBarButtonItem(nil)
-    }
-    
-    func addRightBarButtonItem(){
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Close Dark Mode", style: .done, target: self, action: #selector(changeDarkMode(_:)))
-
-        navigationItem.rightBarButtonItem?.tintColor = UIColor.label
-    }
-    
-    @objc func changeDarkMode(_ buttonItem: UIBarButtonItem){
-        if buttonItem.title == "Close Dark Mode" {
-            
-            buttonItem.title = "Open Dark Mode"
-            
-            configDarkMode(UIUserInterfaceStyle.light)
-        }else{
-            buttonItem.title = "Close Dark Mode"
-            
-            configDarkMode(UIUserInterfaceStyle.dark)
-        }
-    }
-    
-    func registerNotification(){
-        // app启动或者app从后台进入前台都会调用这个方法
-        NotificationCenter.default.addObserver(self, selector: #selector(changeRightBarButtonItem), name: Notification.Name.NSExtensionHostDidBecomeActive, object: nil)
-    }
-    
-    @objc func changeRightBarButtonItem(_ notification:Notification?){
-        let isDark = self.traitCollection.userInterfaceStyle == .dark
-        navigationItem.rightBarButtonItem?.title = isDark == true ? "Close Dark Mode":"Open Dark Mode"
-        guard  let rightBarButtonItem = navigationItem.rightBarButtonItem else {
-            return
-        }
-        
-        changeDarkMode(rightBarButtonItem)
     }
 }
 
 // MARK: UITableViewDataSource
-extension  BasicViewControler: UITableViewDataSource {
+extension  MediaViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return basicDataSource.count
@@ -115,20 +74,12 @@ extension  BasicViewControler: UITableViewDataSource {
 }
 
 // MARK: UITableViewDelegate
-extension  BasicViewControler: UITableViewDelegate {
+extension  MediaViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
-    }
-}
-
-// MARK: DarkMode
-extension BasicViewControler {
-    func configDarkMode(_ style:UIUserInterfaceStyle){
-        let keyWindow = UIApplication.shared.windows.first
-        keyWindow?.rootViewController?.overrideUserInterfaceStyle = style
     }
 }

@@ -16,7 +16,7 @@ extension AppDelegate {
         
         itemArray.append(BaseTabbarItemModel.init(name: "基础", imgNormalName: Iconfont.homeNormal.rawValue,imgHighlighName: Iconfont.homeSelect.rawValue, viewControllerName: "BasicViewControler"))
         
-        itemArray.append(BaseTabbarItemModel.init(name: "多媒体", imgNormalName: Iconfont.folderNormal.rawValue,imgHighlighName: Iconfont.folderSelect.rawValue, viewControllerName: "BasicViewControler"))
+        itemArray.append(BaseTabbarItemModel.init(name: "多媒体", imgNormalName: Iconfont.folderNormal.rawValue,imgHighlighName: Iconfont.folderSelect.rawValue, viewControllerName: "MediaViewController"))
   
         let tabbarController = BaseTabbarController.init(itemArray:itemArray)
         
