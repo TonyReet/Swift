@@ -45,47 +45,6 @@ class BasicViewControler: BaseViewController {
         basicTableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        
-        addRightBarButtonItem()
-        
-        registerNotification()
-        
-        changeRightBarButtonItem(nil)
-    }
-    
-    func addRightBarButtonItem(){
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Close Dark Mode", style: .done, target: self, action: #selector(changeDarkMode(_:)))
-
-        navigationItem.rightBarButtonItem?.tintColor = UIColor.label
-    }
-    
-    @objc func changeDarkMode(_ buttonItem: UIBarButtonItem){
-        if buttonItem.title == "Close Dark Mode" {
-            
-            buttonItem.title = "Open Dark Mode"
-            
-            configDarkMode(UIUserInterfaceStyle.light)
-        }else{
-            buttonItem.title = "Close Dark Mode"
-            
-            configDarkMode(UIUserInterfaceStyle.dark)
-        }
-    }
-    
-    func registerNotification(){
-        // app启动或者app从后台进入前台都会调用这个方法
-        NotificationCenter.default.addObserver(self, selector: #selector(changeRightBarButtonItem), name: Notification.Name.NSExtensionHostDidBecomeActive, object: nil)
-    }
-    
-    @objc func changeRightBarButtonItem(_ notification:Notification?){
-        let isDark = self.traitCollection.userInterfaceStyle == .dark
-        navigationItem.rightBarButtonItem?.title = isDark == true ? "Close Dark Mode":"Open Dark Mode"
-        guard  let rightBarButtonItem = navigationItem.rightBarButtonItem else {
-            return
-        }
-        
-        changeDarkMode(rightBarButtonItem)
     }
 }
 
@@ -117,18 +76,24 @@ extension  BasicViewControler: UITableViewDataSource {
 // MARK: UITableViewDelegate
 extension  BasicViewControler: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        if indexPath.row >= basicDataSource.count {return}
+        
+        let basicHomeModel = basicDataSource[indexPath.row]
+        guard let vcName = basicHomeModel.vcName else {
+            return
+        }
+        
+        guard let viewController = SystemTool.classFromString(vcName)
+            as? UIViewController.Type else {
+            return
+        }
+        
+        let instanceVC = viewController.init()
+        
+        navigationController?.pushViewController(instanceVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
-    }
-}
-
-// MARK: DarkMode
-extension BasicViewControler {
-    func configDarkMode(_ style:UIUserInterfaceStyle){
-        let keyWindow = UIApplication.shared.windows.first
-        keyWindow?.rootViewController?.overrideUserInterfaceStyle = style
     }
 }

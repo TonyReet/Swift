@@ -17,17 +17,17 @@ public class Request: NSObject {
     
     var manager = SessionManager()
     
-    public var showMessageClosure: ShowMessageClosure?
+    var showMessageClosure: ShowMessageClosure?
     
-    public var showLoadingInViewClosure: ShowLoadingInViewClosure?
+    var showLoadingInViewClosure: ShowLoadingInViewClosure?
     
-    public var dismissMessageClosure: DismissMessageClosure?
+    var dismissMessageClosure: DismissMessageClosure?
     
-    public var dismissLoadingInViewClosure: DismissLoadingInViewClosure?
+    var dismissLoadingInViewClosure: DismissLoadingInViewClosure?
     
-    public var configHeaderColosure: ConfigHeaderColosure?
-    
-    public var analyzeDataColosure: AnalyzeDataColosure?
+    var configHeaderColosure: ConfigHeaderColosure?
+
+    var analyzeDataColosure: AnalyzeDataColosure?
     
     override init() {
         let configuration = URLSessionConfiguration.default

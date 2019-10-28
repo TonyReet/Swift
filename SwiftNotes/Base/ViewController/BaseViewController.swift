@@ -9,12 +9,20 @@ import Foundation
 import UIKit
 
 class BaseViewController: UIViewController ,UIGestureRecognizerDelegate{
+    let backgroundColor = UIColor { (trainCollection) -> UIColor in
+        if trainCollection.userInterfaceStyle == .dark {
+            return .black
+        } else {
+            return .white
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         edgesForExtendedLayout = UIRectEdge()
-    
-//        view.backgroundColor = viewBackgroundColor
+        hidesBottomBarWhenPushed = true
+        view.backgroundColor = backgroundColor
         
         initLeftBarItems(frame: CGRect(x: 0, y: 0, width: 60, height: 30), title:"返回", titleColor: navigationBarLeftBackColor, titleFontSize: 16)
     }
@@ -45,11 +53,10 @@ extension BaseViewController {
         let barButtonItem = UIBarButtonItem(customView: backBtn)
         
         backBtn.titleEdgeInsets = UIEdgeInsets.zero
-        backBtn.setTitleColor(titleColor, for: .normal)
+        backBtn.setTitleColor(.label, for: .normal)
         backBtn.setTitle(title, for: UIControl.State())
         backBtn.titleLabel?.font = UIFont.systemFont(ofSize: titleFontSize)
         backBtn.setImage(image, for: UIControl.State())
-        backBtn.setTitleColor(titleColor.withAlphaComponent(0.5), for: .highlighted)
         backBtn.addTarget(self, action: #selector(backAction), for: UIControl.Event.touchUpInside)
 
         let  negativeSpacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
