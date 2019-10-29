@@ -69,32 +69,32 @@ extension UIImage {
     }
     
     public convenience init?(text: String, fontSize: CGFloat = UIFont.systemFontSize, imageSize: CGSize = CGSize.zero, imageColor: UIColor? = nil) {
-        guard let iconfont = UIFont.iconfont(ofSize: fontSize) else {
+        
+        let mainScale:CGFloat = UIScreen.main.scale
+
+        guard let iconfont = UIFont.iconfont(ofSize: min(imageSize.width, imageSize.height)) else {
             self.init()
             return nil
         }
         
-        var imageRect = CGRect(origin: CGPoint.zero, size: imageSize)
-        var mainScale:CGFloat = 2
-        if __CGSizeEqualToSize(imageSize, CGSize.zero) {
-            imageRect = CGRect(origin: CGPoint.zero, size: text.size(withAttributes: [NSAttributedString.Key.font: iconfont]))
-            
-            mainScale = UIScreen.main.scale
-        }
+        let imageRect = CGRect(origin: CGPoint.zero, size: imageSize)
         
         UIGraphicsBeginImageContextWithOptions(imageRect.size, false, mainScale)
         defer {
-            UIGraphicsEndImageContext()
-        }
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = NSTextAlignment.center
-        
-        if let imageColor = imageColor {
-            text.draw(in: imageRect, withAttributes: [NSAttributedString.Key.font : iconfont, NSAttributedString.Key.paragraphStyle: paragraphStyle, NSAttributedString.Key.foregroundColor: imageColor])
-        }else{
-            text.draw(in: imageRect)
+              UIGraphicsEndImageContext()
         }
         
+        let label = UILabel.init(frame:imageRect)
+        label.font = iconfont
+        label.text = text;
+        if imageColor != nil{
+            label.textColor = imageColor;
+        }
+        
+        if let currentContext = UIGraphicsGetCurrentContext(){
+            label.layer.render(in:currentContext)
+        }
+
         guard let cgImage = UIGraphicsGetImageFromCurrentImageContext()?.cgImage else {
             self.init()
             return nil

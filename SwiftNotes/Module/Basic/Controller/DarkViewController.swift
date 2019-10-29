@@ -166,8 +166,6 @@ class DarkViewController: BaseViewController {
         initUI()
         
         initData()
-        
-        registerNotification()
     }
     
     func initUI(){
@@ -191,38 +189,25 @@ class DarkViewController: BaseViewController {
         
         if isDark == true {
             darkSwitch.isOn = true
-            changeDarkMode()
+            changeLabelDarkMode()
         }
-    }
-
-    
-    func registerNotification(){
-        // app启动或者app从后台进入前台都会调用这个方法
-        NotificationCenter.default.addObserver(self, selector: #selector(becomeActive), name: Notification.Name.NSExtensionHostDidBecomeActive, object: nil)
     }
     
     @objc func changeSwitch(){
-        changeDarkMode()
+        changeLabelDarkMode()
         
         configDarkMode(darkSwitch.isOn ? .dark : .light)
     }
-    
-    @objc func becomeActive(){
-        let isDark = self.traitCollection.userInterfaceStyle == .dark
-        darkSwitch.isOn = isDark;
-        
-        changeDarkMode()
-        
-        configDarkMode(isDark ? .dark : .light)
-    }
-    
-    func changeDarkMode(){
+
+    func changeLabelDarkMode(){
         darkLabel.text = darkSwitch.isOn ? "Dark" : "Light"
     }
     
     func configDarkMode(_ style:UIUserInterfaceStyle){
-        let keyWindow = UIApplication.shared.windows.first
-        keyWindow?.rootViewController?.overrideUserInterfaceStyle = style
+//        //全局
+//        let keyWindow = UIApplication.shared.windows.first
+//        keyWindow?.rootViewController?.overrideUserInterfaceStyle = style
+        self.overrideUserInterfaceStyle = style
     }
 }
 

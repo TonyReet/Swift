@@ -89,6 +89,8 @@ extension  BasicViewControler: UITableViewDelegate {
         }
         
         let instanceVC = viewController.init()
+        instanceVC.hidesBottomBarWhenPushed = true
+        instanceVC.title = basicHomeModel.title
         
         navigationController?.pushViewController(instanceVC, animated: true)
     }

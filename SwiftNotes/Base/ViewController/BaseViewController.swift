@@ -21,10 +21,13 @@ class BaseViewController: UIViewController ,UIGestureRecognizerDelegate{
         super.viewDidLoad()
         
         edgesForExtendedLayout = UIRectEdge()
-        hidesBottomBarWhenPushed = true
         view.backgroundColor = backgroundColor
         
-        initLeftBarItems(frame: CGRect(x: 0, y: 0, width: 60, height: 30), title:"返回", titleColor: navigationBarLeftBackColor, titleFontSize: 16)
+        let leftBarFrame = CGRect(x: 0, y: 0, width: 60, height: 30)
+        let minBarWidthHeight = 15
+        let leftBarImage = UIImage.image(named: "0xf3b3", imageSize: CGSize(width:minBarWidthHeight, height: minBarWidthHeight),imageColor:mainThemeColor)
+        
+        initLeftBarItems(frame: leftBarFrame, image: leftBarImage)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -48,18 +51,26 @@ class BaseViewController: UIViewController ,UIGestureRecognizerDelegate{
 //MARK:- other function
 extension BaseViewController {
     //backButton
-    func initLeftBarItems(frame:CGRect,title:String? = nil,titleColor:UIColor,titleFontSize:CGFloat,image:UIImage? = nil) {
+    func initLeftBarItems(frame:CGRect,title:String? = nil,titleColor:UIColor? = .label,titleFontSize:CGFloat = 14,image:UIImage? = nil) {
         let backBtn = UIButton(frame:frame)
         let barButtonItem = UIBarButtonItem(customView: backBtn)
         
-        backBtn.titleEdgeInsets = UIEdgeInsets.zero
-        backBtn.setTitleColor(.label, for: .normal)
-        backBtn.setTitle(title, for: UIControl.State())
-        backBtn.titleLabel?.font = UIFont.systemFont(ofSize: titleFontSize)
-        backBtn.setImage(image, for: UIControl.State())
+        if title?.isEmpty == false {
+            backBtn.titleEdgeInsets = UIEdgeInsets.zero
+            backBtn.setTitleColor(.label, for: .normal)
+            backBtn.setTitle(title, for: UIControl.State())
+            backBtn.titleLabel?.font = UIFont.systemFont(ofSize: titleFontSize)
+        }
+
+        if image != nil {
+            backBtn.setImage(image, for: .normal)
+            backBtn.contentHorizontalAlignment = .center
+            backBtn.contentVerticalAlignment = .center
+        }
+        
         backBtn.addTarget(self, action: #selector(backAction), for: UIControl.Event.touchUpInside)
 
-        let  negativeSpacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        let negativeSpacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         
         negativeSpacer.width = -10
        
