@@ -24,7 +24,7 @@ class BaseViewController: UIViewController ,UIGestureRecognizerDelegate{
         view.backgroundColor = backgroundColor
         
         let leftBarFrame = CGRect(x: 0, y: 0, width: 60, height: 30)
-        let minBarWidthHeight = 15
+        let minBarWidthHeight = 10
         let leftBarImage = UIImage.image(named: "0xf3b3", imageSize: CGSize(width:minBarWidthHeight, height: minBarWidthHeight),imageColor:mainThemeColor)
         
         initLeftBarItems(frame: leftBarFrame, image: leftBarImage)
@@ -64,20 +64,16 @@ extension BaseViewController {
 
         if image != nil {
             backBtn.setImage(image, for: .normal)
-            backBtn.contentHorizontalAlignment = .center
+            backBtn.contentHorizontalAlignment = .left
             backBtn.contentVerticalAlignment = .center
         }
         
         backBtn.addTarget(self, action: #selector(backAction), for: UIControl.Event.touchUpInside)
 
-        let negativeSpacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        
-        negativeSpacer.width = -10
-       
         if navigationController?.viewControllers.first == self {
             navigationItem.leftBarButtonItem = nil
         } else {
-            navigationItem.leftBarButtonItems = [negativeSpacer,barButtonItem]
+            navigationItem.leftBarButtonItem = barButtonItem
         }
     }
     

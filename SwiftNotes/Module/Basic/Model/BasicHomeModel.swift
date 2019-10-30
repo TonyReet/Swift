@@ -9,9 +9,8 @@
 
 import UIKit
 
-class BasicHomeModel: Codable {
-
-    var title: String?
+struct BasicHomeModel: Codable {
+        var title: String?
     var vcName: String?
     var imgStr: String?
 }

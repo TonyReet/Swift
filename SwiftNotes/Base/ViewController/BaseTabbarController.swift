@@ -49,13 +49,13 @@ class BaseTabbarController: UITabBarController {
         viewController.title = title
         
         if let normalImg = normalImg {
-            let normalImage = UIImage.image(named: normalImg, imageSize: CGSize.init(width: 14, height: 14), imageColor: tabBarNormalColor)
+            let normalImage = UIImage.image(named: normalImg, imageSize: CGSize.init(width: 10, height: 10), imageColor: tabBarNormalColor)
             
             viewController.tabBarItem.image = normalImage?.withRenderingMode(.alwaysOriginal)
         }
         
         if let selectedImg = selectedImg {
-            let selectedImage = UIImage.image(named: selectedImg, imageSize: CGSize.init(width: 14, height: 14), imageColor: tabBarSelectColor)
+            let selectedImage = UIImage.image(named: selectedImg, imageSize: CGSize.init(width: 10, height: 10), imageColor: tabBarSelectColor)
             
             viewController.tabBarItem.selectedImage = selectedImage?.withRenderingMode(.alwaysOriginal)
         }

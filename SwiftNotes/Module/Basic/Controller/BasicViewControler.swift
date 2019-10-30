@@ -67,7 +67,7 @@ extension  BasicViewControler: UITableViewDataSource {
         guard let imgStr = basicHomeModel.imgStr else {
             return cell
         }
-        cell.imageView?.image = UIImage.image(named: imgStr, imageSize: CGSize.init(width: 14, height: 14),imageColor: UIColor.randomColor())
+        cell.imageView?.image = UIImage.image(named: imgStr, imageSize: CGSize.init(width: 10, height: 10),imageColor: UIColor.randomColor())
         
         return cell
     }

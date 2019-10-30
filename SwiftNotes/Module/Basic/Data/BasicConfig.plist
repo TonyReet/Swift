@@ -16,6 +16,16 @@
 		<key>vcName</key>
 		<string></string>
 		<key>title</key>
+		<string>Iconfont</string>
+		<key>title_en</key>
+		<string></string>
+		<key>imgStr</key>
+		<string>0xe6a2</string>
+	</dict>
+	<dict>
+		<key>vcName</key>
+		<string></string>
+		<key>title</key>
 		<string>RxSwift</string>
 		<key>title_en</key>
 		<string>RxSwift</string>

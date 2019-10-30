@@ -38,6 +38,7 @@
 		6A90B828233AFF51002B56C5 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A90B823233AFF51002B56C5 /* RequestError.swift */; };
 		6A90B82A233B0048002B56C5 /* RequestJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A90B829233B0048002B56C5 /* RequestJson.swift */; };
 		6A9F833B2362F9FB003AEC0A /* MediaConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A9F833A2362F9FB003AEC0A /* MediaConfig.plist */; };
+		6ACF281323691A7900B99DD3 /* DarkModeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF281223691A7900B99DD3 /* DarkModeModel.swift */; };
 		6AD1E18E2364188B00683659 /* DarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD1E18D2364188B00683659 /* DarkViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,7 @@
 		6A90B823233AFF51002B56C5 /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		6A90B829233B0048002B56C5 /* RequestJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestJson.swift; sourceTree = "<group>"; };
 		6A9F833A2362F9FB003AEC0A /* MediaConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MediaConfig.plist; sourceTree = "<group>"; };
+		6ACF281223691A7900B99DD3 /* DarkModeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeModel.swift; sourceTree = "<group>"; };
 		6AD1E18D2364188B00683659 /* DarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkViewController.swift; sourceTree = "<group>"; };
 		BF3D82159F438FACF4906206 /* Pods-SwiftNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftNotes.debug.xcconfig"; path = "Target Support Files/Pods-SwiftNotes/Pods-SwiftNotes.debug.xcconfig"; sourceTree = "<group>"; };
 		DB7DBCEC5FA96B830E659FE0 /* Pods_SwiftNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -348,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				6A7CE8F82341F7CA00E09F29 /* BasicHomeModel.swift */,
+				6ACF281223691A7900B99DD3 /* DarkModeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 				6A90B825233AFF51002B56C5 /* Request+Extension.swift in Sources */,
 				6A7E7EAF2338C31F002DEB4A /* ConstColor.swift in Sources */,
 				6A7E7EAD2338C31F002DEB4A /* UIColor+Hex.swift in Sources */,
+				6ACF281323691A7900B99DD3 /* DarkModeModel.swift in Sources */,
 				6A7E7EB92338C31F002DEB4A /* BaseViewController.swift in Sources */,
 				6A90B826233AFF51002B56C5 /* Request.swift in Sources */,
 				6A90B827233AFF51002B56C5 /* RequestRouter.swift in Sources */,
