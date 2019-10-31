@@ -63,7 +63,7 @@ extension  BasicViewControler: UITableViewDataSource {
         
         let basicHomeModel = basicDataSource[indexPath.row]
         
-        cell.textLabel?.text = kLocalizedString(title: basicHomeModel.title)
+        cell.textLabel?.text = basicHomeModel.title
 
         guard let imgStr = basicHomeModel.imgStr else {
             return cell

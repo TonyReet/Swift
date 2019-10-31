@@ -16,10 +16,10 @@ extension AppDelegate {
         
         
         
-        let basicString = kLocalizedString(title: "Basic")
+        let basicString = kLocalizedString("Basic")
         itemArray.append(BaseTabbarItemModel.init(name: basicString, imgNormalName: Iconfont.homeNormal.rawValue,imgHighlighName: Iconfont.homeSelect.rawValue, viewControllerName: "BasicViewControler"))
         
-        let mediaString = kLocalizedString(title: "Media")
+        let mediaString = kLocalizedString("Media")
         itemArray.append(BaseTabbarItemModel.init(name: mediaString, imgNormalName: Iconfont.folderNormal.rawValue,imgHighlighName: Iconfont.folderSelect.rawValue, viewControllerName: "MediaViewController"))
   
         let tabbarController = BaseTabbarController.init(itemArray:itemArray)

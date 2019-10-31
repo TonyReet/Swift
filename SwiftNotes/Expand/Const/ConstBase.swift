@@ -194,3 +194,8 @@ func kHexColorA(_ HexString: String,_ a: CGFloat) ->UIColor {
 func kHexColor(_ HexString: String) ->UIColor {
     return UIColor.init(hexString: HexString)
 }
+
+
+func kLocalizedString(_ key:String) -> String {
+    return NSLocalizedString(key, comment: key)
+}
