@@ -196,6 +196,10 @@ func kHexColor(_ HexString: String) ->UIColor {
 }
 
 
-func kLocalizedString(_ key:String) -> String {
+func kLocalizedString(_ key:String?) -> String {
+    guard let key = key else {
+        return ""
+    }
+    
     return NSLocalizedString(key, comment: key)
 }

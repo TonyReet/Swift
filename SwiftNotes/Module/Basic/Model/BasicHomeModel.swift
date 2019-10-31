@@ -10,7 +10,7 @@
 import UIKit
 
 struct BasicHomeModel: Codable {
-        var title: String?
+    var title: String?
     var vcName: String?
     var imgStr: String?
 }
