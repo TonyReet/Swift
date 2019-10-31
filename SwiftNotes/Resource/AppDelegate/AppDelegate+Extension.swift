@@ -14,9 +14,13 @@ extension AppDelegate {
         // 配置数据
         var itemArray = Array<BaseTabbarItemModel>()
         
-        itemArray.append(BaseTabbarItemModel.init(name: "基础", imgNormalName: Iconfont.homeNormal.rawValue,imgHighlighName: Iconfont.homeSelect.rawValue, viewControllerName: "BasicViewControler"))
         
-        itemArray.append(BaseTabbarItemModel.init(name: "多媒体", imgNormalName: Iconfont.folderNormal.rawValue,imgHighlighName: Iconfont.folderSelect.rawValue, viewControllerName: "MediaViewController"))
+        
+        let basicString = kLocalizedString(title: "Basic")
+        itemArray.append(BaseTabbarItemModel.init(name: basicString, imgNormalName: Iconfont.homeNormal.rawValue,imgHighlighName: Iconfont.homeSelect.rawValue, viewControllerName: "BasicViewControler"))
+        
+        let mediaString = kLocalizedString(title: "Media")
+        itemArray.append(BaseTabbarItemModel.init(name: mediaString, imgNormalName: Iconfont.folderNormal.rawValue,imgHighlighName: Iconfont.folderSelect.rawValue, viewControllerName: "MediaViewController"))
   
         let tabbarController = BaseTabbarController.init(itemArray:itemArray)
         

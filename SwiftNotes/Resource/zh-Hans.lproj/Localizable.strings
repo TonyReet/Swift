@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  SwiftNotes
+
+  Created by TonyReet on 2019/10/29.
+  Copyright © 2019 TonyReet. All rights reserved.
+*/
+
+// tabbar
+"Basic" = "基础";
+"Media" = "多媒体";
+
+"DarkMode" = "暗黑模式";
+"RxSwift" = "RxSwift";
