@@ -9,156 +9,97 @@
 import UIKit
 
 class DarkViewController: BaseViewController {
-
-//    private lazy var tableSections: [TableSection] = [
-//           TableSection(name: "Adaptable Colors", rows: adaptableColors),
-//           TableSection(name: "Adaptable Grays", rows: adaptableGrays),
-//           TableSection(name: "Label Colors", rows: labelColors),
-//           TableSection(name: "Text Colors", rows: textColors),
-//           TableSection(name: "Link Color", rows: linkColor),
-//           TableSection(name: "Separators", rows: separators),
-//           TableSection(name: "Fill Colors", rows: fillColors),
-//           TableSection(name: "Background Colors", rows: backgroundColors),
-//           TableSection(name: "Grouped Background Colors", rows: groupedBackgroundColors),
-//           TableSection(name: "Non-Adaptable Colors", rows: nonadaptableColors)
-//       ]
-//
-//       private lazy var adaptableColors: [UITableViewCell] = {
-//           var cells = [UITableViewCell]()
-//
-//           cells.append(buildCell(name: ".systemRed", backgroundColor: .systemRed))
-//           cells.append(buildCell(name: ".systemGreen", backgroundColor: .systemGreen))
-//           cells.append(buildCell(name: ".systemBlue", backgroundColor: .systemBlue))
-//           cells.append(buildCell(name: ".systemIndigo", backgroundColor: .systemIndigo))
-//           cells.append(buildCell(name: ".systemOrange", backgroundColor: .systemOrange))
-//           cells.append(buildCell(name: ".systemPink", backgroundColor: .systemPink))
-//           cells.append(buildCell(name: ".systemPurple", backgroundColor: .systemPurple))
-//           cells.append(buildCell(name: ".systemTeal", backgroundColor: .systemTeal))
-//           cells.append(buildCell(name: ".systemYellow", backgroundColor: .systemYellow))
-//
-//           return cells
-//       }()
-//
-//       private lazy var adaptableGrays: [UITableViewCell] = {
-//           var cells = [UITableViewCell]()
-//
-//           cells.append(buildCell(name: ".systemGray", backgroundColor: .systemGray))
-//           cells.append(buildCell(name: ".systemGray2", backgroundColor: .systemGray2))
-//           cells.append(buildCell(name: ".systemGray3", backgroundColor: .systemGray3))
-//           cells.append(buildCell(name: ".systemGray4", backgroundColor: .systemGray4))
-//           cells.append(buildCell(name: ".systemGray5", backgroundColor: .systemGray5))
-//           cells.append(buildCell(name: ".systemGray6", backgroundColor: .systemGray6))
-//
-//           return cells
-//       }()
-//
-//       private lazy var labelColors: [UITableViewCell] = {
-//           var cells = [UITableViewCell]()
-//
-//           cells.append(buildCell(name: ".label", textColor: .label))
-//           cells.append(buildCell(name: ".secondaryLabel", textColor: .secondaryLabel))
-//           cells.append(buildCell(name: ".tertiaryLabel", textColor: .tertiaryLabel))
-//           cells.append(buildCell(name: ".quaternaryLabel", textColor: .quaternaryLabel))
-//
-//           return cells
-//       }()
-//
-//       private lazy var linkColor: [UITableViewCell] = {
-//           var cells = [UITableViewCell]()
-//
-//           cells.append(buildCell(name: ".link", textColor: .link))
-//
-//           return cells
-//       }()
-//
-//       private lazy var textColors: [UITableViewCell] = {
-//           var cells = [UITableViewCell]()
-//
-//           cells.append(buildCell(name: ".placeholderText", textColor: .placeholderText))
-//
-//           return cells
-//       }()
-//
-//       private lazy var separators: [UITableViewCell] = {
-//           var cells = [UITableViewCell]()
-//
-//           cells.append(buildCell(name: ".separator", backgroundColor: .separator))
-//           cells.append(buildCell(name: ".opaqueSeparator", backgroundColor: .opaqueSeparator))
-//
-//           return cells
-//       }()
-//
-//       private lazy var fillColors: [UITableViewCell] = {
-//           var cells = [UITableViewCell]()
-//
-//           cells.append(buildCell(name: ".systemFill", backgroundColor: .systemFill))
-//           cells.append(buildCell(name: ".secondarySystemFill", backgroundColor: .secondarySystemFill))
-//           cells.append(buildCell(name: ".tertiarySystemFill", backgroundColor: .tertiarySystemFill))
-//           cells.append(buildCell(name: ".quaternarySystemFill", backgroundColor: .quaternarySystemFill))
-//
-//           return cells
-//       }()
-//
-//       private lazy var backgroundColors: [UITableViewCell] = {
-//           var cells = [UITableViewCell]()
-//
-//           cells.append(buildCell(name: ".systemBackground", backgroundColor: .systemBackground))
-//           cells.append(buildCell(name: ".secondarySystemBackground", backgroundColor: .secondarySystemBackground))
-//           cells.append(buildCell(name: ".tertiarySystemBackground", backgroundColor: .tertiarySystemBackground))
-//
-//           return cells
-//       }()
-//
-//       private lazy var groupedBackgroundColors: [UITableViewCell] = {
-//           var cells = [UITableViewCell]()
-//
-//           cells.append(buildCell(name: ".systemGroupedBackground", backgroundColor: .systemGroupedBackground))
-//           cells.append(buildCell(name: ".secondarySystemGroupedBackground", backgroundColor: .secondarySystemGroupedBackground))
-//           cells.append(buildCell(name: ".tertiarySystemGroupedBackground", backgroundColor: .tertiarySystemGroupedBackground))
-//
-//           return cells
-//       }()
-//
-//       private lazy var nonadaptableColors: [UITableViewCell] = {
-//           var cells = [UITableViewCell]()
-//
-//           cells.append(buildCell(name: ".lightText", backgroundColor: .black, textColor: .lightText))
-//           cells.append(buildCell(name: ".darkText", backgroundColor: .white, textColor: .darkText))
-//
-//           return cells
-//       }()
-//
-//
     let darkSwitch = UISwitch()
+    let darkLabel = UILabel()
+    
+    lazy var dataSource: [UITableViewCell] = {
+        var dataSource: [UITableViewCell] = []
 
-    let darkLabel =  UILabel()
+        //get path
+        guard let configPath = Bundle.main.path(forResource: "DarkConfig", ofType: "plist") else {
+            return dataSource
+        }
 
-//    lazy var dataSource: [BasicHomeModel] = {
-//        var dataSource: [BasicHomeModel] = []
-//
-//        //get path
-//        guard let configPath = Bundle.main.path(forResource: "BasicConfig", ofType: "plist") else {
-//            return dataSource
-//        }
-//
-//        //get data
-//        guard let configArray = NSArray(contentsOfFile: configPath) as? Array<Any> else {
-//            return dataSource
-//        }
-//
-//        guard let finalDataSource:[BasicHomeModel] =  configArray.toModel(modelType:BasicHomeModel.self) else {
-//            return dataSource
-//        }
-//
-//        return finalDataSource
-//    }()
-//
-//    private lazy var tableView: UITableView = {
-//        let table = UITableView()
-//        table.dataSource = self
-//        table.delegate = self
-//        return table
-//    }()
+        //get data
+        guard let configArray = NSArray(contentsOfFile: configPath) as? Array<Any> else {
+            return dataSource
+        }
+
+        guard let modelDataSource:[DarkModeModel] =  configArray.toModel(modelType:DarkModeModel.self) else {
+            return dataSource
+        }
+        
+        func getColor(_ colorName:String) -> UIColor?{
+            let colorString = "\(colorName)Color"
+
+            let colorSEL = NSSelectorFromString(colorString)
+
+            guard let color = UIColor.perform(colorSEL)?.takeUnretainedValue() as? UIColor else{
+              return nil
+            }
+            
+            return color
+        }
+        
+        for model in modelDataSource {
+            
+            guard let name = model.name else {
+                continue
+            }
+
+            var textColor:UIColor?
+            if let textColorString = model.textColor, textColorString.isEmpty == false {
+                textColor = getColor(textColorString)
+            }
+            
+            var backgroundColor:UIColor?
+            if let backgroundColorString = model.backgourdColor, backgroundColorString.isEmpty == false{
+                backgroundColor = getColor(backgroundColorString)
+            }
+            
+            dataSource.append(buildCell(name: name, backgroundColor: backgroundColor,textColor: textColor))
+        }
+        
+        return dataSource
+    }()
+
+    private lazy var tableView: UITableView = {
+        let table = UITableView()
+        table.dataSource = self
+        table.delegate = self
+        return table
+    }()
+    
+    private lazy var topLeftImageView: UIImageView = {
+        let topLeftImageView = UIImageView.init(image: UIImage(named: "darkImg"))
+        topLeftImageView.contentMode = .scaleAspectFill
+        return topLeftImageView
+    }()
+    
+    private lazy var topMiddleImageView: UIImageView = {
+        let topMiddleImageView = UIImageView.init(image: UIImage(named: "darkImg"))
+        
+        topMiddleImageView.overrideUserInterfaceStyle = .light
+        topMiddleImageView.contentMode = .scaleAspectFill
+        return topMiddleImageView
+    }()
+    
+    private lazy var topRightView: UIView = {
+        let topRightView = UIView()
+        topRightView.backgroundColor = UIColor(named: "darkColor")
+        
+        let label = UILabel()
+        label.textAlignment = .center
+        
+        topRightView.addSubview(label)
+        label.snp.makeConstraints { (make) in
+            make.edges.equalTo(topRightView)
+        }
+        
+        label.text = "暗黑模式背景"
+        
+        return topRightView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -166,19 +107,43 @@ class DarkViewController: BaseViewController {
         initUI()
         
         initData()
+        
+        initRightBarItem()
     }
     
     func initUI(){
-        view.addSubview(darkSwitch)
-        darkSwitch.snp.makeConstraints { (make) in
-            make.center.equalTo(view)
+        let multipleRatio = 6.0
+        
+        let topView = UIView()
+        view.addSubview(topView)
+        topView.snp.makeConstraints { (make) in
+            make.left.top.right.equalTo(view)
+            make.height.equalTo(topView.snp_width).multipliedBy(1/(multipleRatio))
         }
-        darkSwitch.addTarget(self, action: #selector(changeSwitch), for: .touchUpInside)
-
-        view.addSubview(darkLabel)
-        darkLabel.snp.makeConstraints { (make) in
-            make.centerY.equalTo(darkSwitch)
-            make.right.equalTo(darkSwitch.snp_left).offset(-10)
+        
+        topView.addSubview(topLeftImageView)
+        topLeftImageView.snp.makeConstraints { (make) in
+            make.left.top.bottom.equalTo(topView)
+        }
+        
+        topView.addSubview(topMiddleImageView)
+        topMiddleImageView.snp.makeConstraints { (make) in
+            make.top.bottom.equalTo(topLeftImageView)
+            make.left.equalTo(topLeftImageView.snp_right)
+            make.width.equalTo(topLeftImageView)
+        }
+        
+        topView.addSubview(topRightView)
+        topRightView.snp.makeConstraints { (make) in
+            make.right.top.bottom.equalTo(topView)
+            make.left.equalTo(topMiddleImageView.snp_right)
+            make.width.equalTo(topMiddleImageView.snp_width).multipliedBy(multipleRatio/2)
+        }
+        
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalTo(view)
+            make.top.equalTo(topView.snp_bottom)
         }
     }
     
@@ -190,6 +155,30 @@ class DarkViewController: BaseViewController {
         if isDark == true {
             darkSwitch.isOn = true
             changeLabelDarkMode()
+        }
+        
+        tableView.reloadData()
+    }
+}
+
+//MARK:- mark Mode
+extension DarkViewController {
+    func initRightBarItem() {
+        let rightBarView = UIView()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarView)
+        rightBarView.isUserInteractionEnabled = true
+        
+        rightBarView.addSubview(darkSwitch)
+        darkSwitch.snp.makeConstraints { (make) in
+            make.centerY.right.top.bottom.equalTo(rightBarView)
+        }
+        darkSwitch.addTarget(self, action: #selector(changeSwitch), for: .touchUpInside)
+
+        rightBarView.addSubview(darkLabel)
+        darkLabel.snp.makeConstraints { (make) in
+            make.centerY.equalTo(darkSwitch)
+            make.right.equalTo(darkSwitch.snp_left).offset(-10)
+            make.left.equalTo(rightBarView)
         }
     }
     
@@ -211,41 +200,28 @@ class DarkViewController: BaseViewController {
     }
 }
 
-//extension DarkViewController:UITableViewDelegate, UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        tableSections[section].name
-//    }
-//
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        tableSections.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        tableSections[section].rows.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        tableSections[indexPath.section].rows[indexPath.row]
-//    }
-//}
-//
-//fileprivate struct TableSection {
-//    let name: String
-//    let rows: [UITableViewCell]
-//}
-//
-//fileprivate func buildCell(name: String, backgroundColor: UIColor? = nil, textColor: UIColor? = nil) -> UITableViewCell {
-//    let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-//
-//    if let backgroundColor = backgroundColor {
-//        cell.backgroundColor = backgroundColor
-//    }
-//
-//    cell.textLabel?.text = name
-//
-//    if let textColor = textColor {
-//        cell.textLabel?.textColor = textColor
-//    }
-//
-//    return cell
-//}
+extension DarkViewController:UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        dataSource.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        dataSource[indexPath.row]
+    }
+}
+
+fileprivate func buildCell(name: String, backgroundColor: UIColor? = nil, textColor: UIColor? = nil) -> UITableViewCell {
+    let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+
+    if let backgroundColor = backgroundColor {
+        cell.backgroundColor = backgroundColor
+    }
+
+    cell.textLabel?.text = name
+
+    if let textColor = textColor {
+        cell.textLabel?.textColor = textColor
+    }
+
+    return cell
+}
