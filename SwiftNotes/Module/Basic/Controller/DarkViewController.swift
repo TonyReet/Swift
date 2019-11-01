@@ -12,8 +12,8 @@ class DarkViewController: BaseViewController {
     let darkSwitch = UISwitch()
     let darkLabel = UILabel()
     
-    lazy var dataSource: [UITableViewCell] = {
-        var dataSource: [UITableViewCell] = []
+    lazy var dataSource: [DarkModeModel] = {
+        var dataSource: [DarkModeModel] = []
 
         //get path
         guard let configPath = Bundle.main.path(forResource: "DarkConfig", ofType: "plist") else {
@@ -29,45 +29,17 @@ class DarkViewController: BaseViewController {
             return dataSource
         }
         
-        func getColor(_ colorName:String) -> UIColor?{
-            let colorString = "\(colorName)Color"
+        dataSource = modelDataSource
 
-            let colorSEL = NSSelectorFromString(colorString)
-
-            guard let color = UIColor.perform(colorSEL)?.takeUnretainedValue() as? UIColor else{
-              return nil
-            }
-            
-            return color
-        }
-        
-        for model in modelDataSource {
-            
-            guard let name = model.name else {
-                continue
-            }
-
-            var textColor:UIColor?
-            if let textColorString = model.textColor, textColorString.isEmpty == false {
-                textColor = getColor(textColorString)
-            }
-            
-            var backgroundColor:UIColor?
-            if let backgroundColorString = model.backgourdColor, backgroundColorString.isEmpty == false{
-                backgroundColor = getColor(backgroundColorString)
-            }
-            
-            dataSource.append(buildCell(name: name, backgroundColor: backgroundColor,textColor: textColor))
-        }
-        
         return dataSource
     }()
 
     private lazy var tableView: UITableView = {
-        let table = UITableView()
-        table.dataSource = self
-        table.delegate = self
-        return table
+        let tableView = UITableView()
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        
+        return tableView
     }()
     
     private lazy var topLeftImageView: UIImageView = {
@@ -193,35 +165,60 @@ extension DarkViewController {
     }
     
     func configDarkMode(_ style:UIUserInterfaceStyle){
-//        //全局
-//        let keyWindow = UIApplication.shared.windows.first
-//        keyWindow?.rootViewController?.overrideUserInterfaceStyle = style
         self.overrideUserInterfaceStyle = style
+    }
+    
+    func getColor(_ colorName:String) -> UIColor?{
+        let colorString = "\(colorName)Color"
+
+        let colorSEL = NSSelectorFromString(colorString)
+
+        guard let color = UIColor.perform(colorSEL)?.takeUnretainedValue() as? UIColor else{
+          return nil
+        }
+
+        return color
     }
 }
 
-extension DarkViewController:UITableViewDelegate, UITableViewDataSource {
+extension DarkViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         dataSource.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        dataSource[indexPath.row]
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "UITableViewCell")
+        cell.selectionStyle = .none;
+        
+        if indexPath.row >= dataSource.count {return cell}
+        
+        let darkModeModel = dataSource[indexPath.row]
+
+        guard let name = darkModeModel.name else {
+            return cell
+        }
+
+        var textColor:UIColor?
+        if let textColorString = darkModeModel.textColor, textColorString.isEmpty == false {
+            textColor = getColor(textColorString)
+        }
+
+        var backgroundColor:UIColor?
+        if let backgroundColorString = darkModeModel.backgourdColor, backgroundColorString.isEmpty == false{
+            backgroundColor = getColor(backgroundColorString)
+        }
+
+        
+        if let backgroundColor = backgroundColor {
+            cell.backgroundColor = backgroundColor
+        }
+
+        cell.textLabel?.text = name
+
+        if let textColor = textColor {
+            cell.textLabel?.textColor = textColor
+        }
+        
+        return cell
     }
-}
-
-fileprivate func buildCell(name: String, backgroundColor: UIColor? = nil, textColor: UIColor? = nil) -> UITableViewCell {
-    let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-
-    if let backgroundColor = backgroundColor {
-        cell.backgroundColor = backgroundColor
-    }
-
-    cell.textLabel?.text = name
-
-    if let textColor = textColor {
-        cell.textLabel?.textColor = textColor
-    }
-
-    return cell
 }

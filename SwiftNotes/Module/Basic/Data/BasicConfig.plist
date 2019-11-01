@@ -12,9 +12,9 @@
 	</dict>
 	<dict>
 		<key>vcName</key>
-		<string></string>
+		<string>SFSymbolsViewController</string>
 		<key>title</key>
-		<string>Iconfont</string>
+		<string>SF Symbols</string>
 		<key>title_en</key>
 		<string></string>
 		<key>imgStr</key>
