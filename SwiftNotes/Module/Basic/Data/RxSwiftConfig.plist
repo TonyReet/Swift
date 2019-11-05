@@ -4,21 +4,11 @@
 <array>
 	<dict>
 		<key>vcName</key>
-		<string>DarkViewController</string>
+		<string>ObservableViewController</string>
 		<key>title</key>
-		<string>DarkMode</string>
+		<string>Observable</string>
 		<key>imgStr</key>
 		<string>0xe6a3</string>
-	</dict>
-	<dict>
-		<key>vcName</key>
-		<string></string>
-		<key>title</key>
-		<string>Iconfont</string>
-		<key>title_en</key>
-		<string></string>
-		<key>imgStr</key>
-		<string>0xe6a2</string>
 	</dict>
 	<dict>
 		<key>vcName</key>

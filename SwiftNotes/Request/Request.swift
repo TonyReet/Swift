@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import RxSwift
 
 public class Request: NSObject {
     static let shared = Request()

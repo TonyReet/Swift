@@ -11,6 +11,9 @@ import Foundation
 
 /// 导入第三方库
 @_exported import SnapKit
+@_exported import RxSwift
+@_exported import RxCocoa
+@_exported import RxDataSources
 
 /*
  *  screens
