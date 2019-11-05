@@ -51,6 +51,10 @@ extension UILabel {
 
 extension UIImage {
     class func image(named:String,imageSize: CGSize? = CGSize.zero,imageColor: UIColor? = UIColor.black)->UIImage?{
+        guard let imageSize = imageSize else {
+            return nil
+        }
+        
         var finalNamed = named
         
         if let tmpNamed = named.iconFontString() {
@@ -61,7 +65,15 @@ extension UIImage {
             return image
         }
         
-        if let image = UIImage.init(text:finalNamed,imageSize:imageSize!, imageColor:imageColor) {
+        if let image = UIImage(systemName: finalNamed) {
+            guard let imageColor = imageColor else {
+                return image
+            }
+            
+            return image.withTintColor(imageColor, renderingMode: .alwaysOriginal)
+        }
+        
+        if let image = UIImage.init(text:finalNamed,imageSize:imageSize, imageColor:imageColor) {
             return image
         }
         

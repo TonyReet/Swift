@@ -43,6 +43,9 @@
 		6A93285D236AB18A00FEA52B /* RxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A93285C236AB18A00FEA52B /* RxSwiftViewController.swift */; };
 		6A9F833B2362F9FB003AEC0A /* MediaConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A9F833A2362F9FB003AEC0A /* MediaConfig.plist */; };
 		6ACF281323691A7900B99DD3 /* DarkModeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF281223691A7900B99DD3 /* DarkModeModel.swift */; };
+		6ACF281523696B1D00B99DD3 /* SFSymbolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF281423696B1D00B99DD3 /* SFSymbolsViewController.swift */; };
+		6ACF28172369725F00B99DD3 /* SFSymbolsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF28162369725E00B99DD3 /* SFSymbolsCell.swift */; };
+		6ACF281B236979D000B99DD3 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF281A236979D000B99DD3 /* SFSymbol.swift */; };
 		6AD1E18E2364188B00683659 /* DarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD1E18D2364188B00683659 /* DarkViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +111,9 @@
 		6A93285C236AB18A00FEA52B /* RxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftViewController.swift; sourceTree = "<group>"; };
 		6A9F833A2362F9FB003AEC0A /* MediaConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MediaConfig.plist; sourceTree = "<group>"; };
 		6ACF281223691A7900B99DD3 /* DarkModeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeModel.swift; sourceTree = "<group>"; };
+		6ACF281423696B1D00B99DD3 /* SFSymbolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolsViewController.swift; sourceTree = "<group>"; };
+		6ACF28162369725E00B99DD3 /* SFSymbolsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolsCell.swift; sourceTree = "<group>"; };
+		6ACF281A236979D000B99DD3 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		6AD1E18D2364188B00683659 /* DarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkViewController.swift; sourceTree = "<group>"; };
 		BC157172308D73F34DB691D9 /* Pods_SwiftNotesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftNotesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF3D82159F438FACF4906206 /* Pods-SwiftNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftNotes.debug.xcconfig"; path = "Target Support Files/Pods-SwiftNotes/Pods-SwiftNotes.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 				6A66DBB12366D8FF00799DC3 /* BasicConfig.plist */,
 				6A66DBB52366D93C00799DC3 /* DarkConfig.plist */,
 				6A8F50EA237161F000B4AA09 /* RxSwiftConfig.plist */,
+				6ACF281A236979D000B99DD3 /* SFSymbol.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -362,6 +369,7 @@
 				6A7E7E8B2338C31F002DEB4A /* BasicViewControler.swift */,
 				6AD1E18D2364188B00683659 /* DarkViewController.swift */,
 				6A93285C236AB18A00FEA52B /* RxSwiftViewController.swift */,
+				6ACF281423696B1D00B99DD3 /* SFSymbolsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -378,6 +386,7 @@
 		6A7E7E8D2338C31F002DEB4A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6ACF28162369725E00B99DD3 /* SFSymbolsCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -663,11 +672,14 @@
 				6A7E7EB82338C31F002DEB4A /* BaseTabbarController.swift in Sources */,
 				6A90B81C2339FBF7002B56C5 /* IconFontTool.swift in Sources */,
 				6A90B825233AFF51002B56C5 /* Request+Extension.swift in Sources */,
+				6ACF28172369725F00B99DD3 /* SFSymbolsCell.swift in Sources */,
 				6A7E7EAF2338C31F002DEB4A /* ConstColor.swift in Sources */,
 				6A7E7EAD2338C31F002DEB4A /* UIColor+Hex.swift in Sources */,
 				6ACF281323691A7900B99DD3 /* DarkModeModel.swift in Sources */,
 				6A93285D236AB18A00FEA52B /* RxSwiftViewController.swift in Sources */,
+				6ACF281B236979D000B99DD3 /* SFSymbol.swift in Sources */,
 				6A7E7EB92338C31F002DEB4A /* BaseViewController.swift in Sources */,
+				6ACF281523696B1D00B99DD3 /* SFSymbolsViewController.swift in Sources */,
 				6A90B826233AFF51002B56C5 /* Request.swift in Sources */,
 				6A90B827233AFF51002B56C5 /* RequestRouter.swift in Sources */,
 				6A34449823618E1D001180E2 /* MediaViewController.swift in Sources */,
