@@ -67,7 +67,7 @@ class RxSwiftViewController: BaseViewController {
         rxSwiftTableView.rx
             .modelSelected(BasicHomeModel.self)
             .subscribe(
-                onNext:{model in
+                onNext:{[weak self]model in
 
                     guard let vcName = model.vcName else {
                         return
@@ -82,7 +82,7 @@ class RxSwiftViewController: BaseViewController {
                     instanceVC.hidesBottomBarWhenPushed = true
                     instanceVC.title = model.title
                     
-                    self.navigationController?.pushViewController(instanceVC, animated: true)
+                    self?.navigationController?.pushViewController(instanceVC, animated: true)
                 }
             )
             .disposed(by: disposeBag)
