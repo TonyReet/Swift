@@ -1,5 +1,8 @@
 # Uncomment the next line to define a global platform for your project
 
+#source `源地址`
+source 'https://github.com/CocoaPods/Specs.git'
+
 platform :ios, '13.0'
 use_frameworks!
 
@@ -24,4 +27,10 @@ target 'SwiftNotes' do
   
   #router
   pod 'URLNavigator'
+end
+
+
+target 'SwiftNotesTests' do
+    pod 'RxBlocking', '~> 5.0'
+    pod 'RxTest', '~> 5.0'
 end
