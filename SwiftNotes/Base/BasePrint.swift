@@ -8,7 +8,7 @@
 
 import UIKit
 
-public func print(debug: Any = "",
+public func print(debug: Any...,
                   function: String = #function,
                   file: String = #file,
                   line: Int = #line) {

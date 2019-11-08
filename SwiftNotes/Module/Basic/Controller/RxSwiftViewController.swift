@@ -49,6 +49,49 @@ class RxSwiftViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        public func items<Sequence: Swift.Sequence, Cell: UITableViewCell, Source: ObservableType>
+//            (cellIdentifier: String, cellType: Cell.Type = Cell.self)
+//            -> (_ source: Source)
+//            -> (_ configureCell: @escaping (Int, Sequence.Element, Cell) -> Void)
+//            -> Disposable
+//            where Source.Element == Sequence {
+//            return { source in
+//                return { configureCell in
+//                    let dataSource = RxTableViewReactiveArrayDataSourceSequenceWrapper<Sequence> { tv, i, item in
+//                        let indexPath = IndexPath(item: i, section: 0)
+//                        let cell = tv.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! Cell
+//                        configureCell(i, item, cell)
+//                        return cell
+//                    }
+//                    return self.items(dataSource: dataSource)(source)
+//                }
+//            }
+//        }
+//        
+//        public func items<Sequence: Swift.Sequence, Cell: UITableViewCell, Source: ObservableType>
+//            (cellIdentifier: String, cellType: Cell.Type = Cell.self)
+//            -> (_ source: Source)
+//            -> (_ configureCell: @escaping (Int, Sequence.Element, Cell) -> Void)
+//            -> Disposable
+//            where Source.Element == Sequence {
+//            return { source in
+//                return { configureCell in
+//                    let dataSource = RxTableViewReactiveArrayDataSourceSequenceWrapper<Sequence> { tv, i, item in
+//                        let indexPath = IndexPath(item: i, section: 0)
+//                        let cell = tv.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! Cell
+//                        configureCell(i, item, cell)
+//                        return cell
+//                    }
+//                    return self.items(dataSource: dataSource)(source)
+//                }
+//            }
+//        }
+//        
+//        public func bind<R1, R2>(to binder: (Self) -> (R1) -> R2, curriedArgument: R1) -> R2 {
+//             return binder(self)(curriedArgument)
+//        }
+//        
+
         //使用数据初始化cell
         dataSource
             .bind(to:rxSwiftTableView.rx.items(cellIdentifier: NSStringFromClass(UITableViewCell.self), cellType: UITableViewCell.self)){

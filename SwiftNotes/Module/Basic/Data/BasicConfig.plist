@@ -28,5 +28,13 @@
 		<key>imgStr</key>
 		<string>0xe6ab</string>
 	</dict>
+	<dict>
+		<key>vcName</key>
+		<string>FunctionalViewController</string>
+		<key>title</key>
+		<string>Functional Programming</string>
+		<key>imgStr</key>
+		<string>0xe6ab</string>
+	</dict>
 </array>
 </plist>

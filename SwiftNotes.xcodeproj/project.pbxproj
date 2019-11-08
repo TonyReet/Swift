@@ -42,6 +42,7 @@
 		6A90B828233AFF51002B56C5 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A90B823233AFF51002B56C5 /* RequestError.swift */; };
 		6A90B82A233B0048002B56C5 /* RequestJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A90B829233B0048002B56C5 /* RequestJson.swift */; };
 		6A93285D236AB18A00FEA52B /* RxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A93285C236AB18A00FEA52B /* RxSwiftViewController.swift */; };
+		6A963A2C2373EDA900595341 /* FunctionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A963A2B2373EDA900595341 /* FunctionalViewController.swift */; };
 		6A9F833B2362F9FB003AEC0A /* MediaConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A9F833A2362F9FB003AEC0A /* MediaConfig.plist */; };
 		6ACF281323691A7900B99DD3 /* DarkModeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF281223691A7900B99DD3 /* DarkModeModel.swift */; };
 		6ACF281523696B1D00B99DD3 /* SFSymbolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF281423696B1D00B99DD3 /* SFSymbolsViewController.swift */; };
@@ -111,6 +112,7 @@
 		6A90B823233AFF51002B56C5 /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		6A90B829233B0048002B56C5 /* RequestJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestJson.swift; sourceTree = "<group>"; };
 		6A93285C236AB18A00FEA52B /* RxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftViewController.swift; sourceTree = "<group>"; };
+		6A963A2B2373EDA900595341 /* FunctionalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionalViewController.swift; sourceTree = "<group>"; };
 		6A9F833A2362F9FB003AEC0A /* MediaConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MediaConfig.plist; sourceTree = "<group>"; };
 		6ACF281223691A7900B99DD3 /* DarkModeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeModel.swift; sourceTree = "<group>"; };
 		6ACF281423696B1D00B99DD3 /* SFSymbolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolsViewController.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 				6A93285C236AB18A00FEA52B /* RxSwiftViewController.swift */,
 				6ACF281423696B1D00B99DD3 /* SFSymbolsViewController.swift */,
 				6A8F50EC23716C9000B4AA09 /* ObservableViewController.swift */,
+				6A963A2B2373EDA900595341 /* FunctionalViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -682,6 +685,7 @@
 				6ACF281323691A7900B99DD3 /* DarkModeModel.swift in Sources */,
 				6A93285D236AB18A00FEA52B /* RxSwiftViewController.swift in Sources */,
 				6ACF281B236979D000B99DD3 /* SFSymbol.swift in Sources */,
+				6A963A2C2373EDA900595341 /* FunctionalViewController.swift in Sources */,
 				6A7E7EB92338C31F002DEB4A /* BaseViewController.swift in Sources */,
 				6ACF281523696B1D00B99DD3 /* SFSymbolsViewController.swift in Sources */,
 				6A90B826233AFF51002B56C5 /* Request.swift in Sources */,

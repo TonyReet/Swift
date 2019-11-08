@@ -10,13 +10,5 @@
 		<key>imgStr</key>
 		<string>0xe6a3</string>
 	</dict>
-	<dict>
-		<key>vcName</key>
-		<string>RxSwiftViewController</string>
-		<key>title</key>
-		<string>RxSwift</string>
-		<key>imgStr</key>
-		<string>0xe6ab</string>
-	</dict>
 </array>
 </plist>
