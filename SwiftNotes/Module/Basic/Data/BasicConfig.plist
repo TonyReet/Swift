@@ -36,5 +36,13 @@
 		<key>imgStr</key>
 		<string>0xe6ab</string>
 	</dict>
+	<dict>
+		<key>vcName</key>
+		<string>DynamicViewController</string>
+		<key>title</key>
+		<string>Dynamic</string>
+		<key>imgStr</key>
+		<string>0xe6ab</string>
+	</dict>
 </array>
 </plist>
