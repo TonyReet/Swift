@@ -23,6 +23,9 @@ class FunctionalViewController: BaseViewController {
         /// sequence
         functionalSequence()
 
+        /// tuple
+        functionalTuple()
+
 }
 
 /// Currying
@@ -97,6 +100,22 @@ struct ReverseSequence<T>: Sequence {
     typealias Iterator = ReverseIterator<T>
     func makeIterator() -> ReverseIterator<T> {
         return ReverseIterator(array: self.array)
+    }
+}
+
+// tuple
+extension FunctionalViewController {
+    func functionalTuple(){
+        var a = 2
+        var b = 3
+        
+        swapMe2(a: &a, b: &b)
+        
+        print(debug: "swapData:\((a,b))")
+    }
+    
+    func swapMe2<T>( a: inout T, b: inout T) {
+        (a,b) = (b,a)
     }
 }
 
