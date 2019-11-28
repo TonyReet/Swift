@@ -26,6 +26,9 @@ class FunctionalViewController: BaseViewController {
         /// tuple
         functionalTuple()
 
+        /// escaping
+        functionalEscaping()
+
 }
 
 /// Currying
@@ -119,3 +122,53 @@ extension FunctionalViewController {
     }
 }
 
+
+// escaping
+extension FunctionalViewController {
+    func functionalEscaping(){
+        doWork {
+            print("doWork_out")
+        }
+        
+        doWorkAsync {
+            DispatchQueue.global().async {
+                print("doWorkAsync_out")
+            }
+        }
+        
+        method1()// 对应OC的block，捕获了并创建了临时数据
+        method2()// 对应OC的block，指向数据，没有创建临时数据
+    }
+    
+    func doWork(block: ()->()) {
+        print("doWork-begin")
+        
+        block()
+        
+        print("doWork-end")
+    }
+
+    func doWorkAsync(block: @escaping ()->()) {
+        print("doWorkAsync-begin")
+        
+        DispatchQueue.main.async {
+            block()
+        }
+        
+        print("doWorkAsync-end")
+    }
+
+    func method1() {
+        doWork {
+            print(debug: foo)
+        }
+        foo = "bar"
+    }
+
+    func method2() {
+        doWorkAsync {
+            print(debug: self.foo)
+        }
+        foo = "bar"
+    }
+}
