@@ -29,6 +29,8 @@ class FunctionalViewController: BaseViewController {
         /// escaping
         functionalEscaping()
 
+        /// operator
+        functionalOperator()
 }
 
 /// Currying
@@ -171,4 +173,17 @@ extension FunctionalViewController {
         }
         foo = "bar"
     }
+}
+
+// Operator
+extension FunctionalViewController {
+    func functionalOperator (){
+        let v1 = Vector2D(x: 2.0, y: 3.0)
+        let v2 = Vector2D(x: 1.0, y: 4.0)
+        let v3 = v1 + v2
+        let v4 = v1 +* v2
+        
+        print(debug: "functionalOperator,v3:\(v3),v4:\(v4)")
+    }
+    
 }
