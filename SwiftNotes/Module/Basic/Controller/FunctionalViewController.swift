@@ -31,6 +31,10 @@ class FunctionalViewController: BaseViewController {
 
         /// operator
         functionalOperator()
+
+        /// associatedtype
+        functionalAssociatedtype()
+
 }
 
 /// Currying
@@ -186,4 +190,42 @@ extension FunctionalViewController {
         print(debug: "functionalOperator,v3:\(v3),v4:\(v4)")
     }
     
+}
+
+struct Vector2D {
+    var x = 0.0
+    var y = 0.0
+}
+
+// Swift 的操作符是不能定义在局部域中的
+func +(left: Vector2D, right: Vector2D) -> Vector2D {
+    return Vector2D(x: left.x + right.x, y: left.y + right.y)
+}
+
+precedencegroup DotProductPrecedence {
+    associativity: none//如果多个同类的操作符顺序出现的计算顺序
+    higherThan: MultiplicationPrecedence
+}
+
+infix operator +*: DotProductPrecedence
+func +* (left: Vector2D, right: Vector2D) -> Double {
+    return left.x * right.x + left.y * right.y
+}
+
+/// associatedtype
+extension FunctionalViewController {
+    func functionalAssociatedtype(){
+        let tigerIsDangerous = isDangerous(animal: Tiger())
+        let sheepIsDangerous = isDangerous(animal: Sheep())
+        
+        print(debug: "functionalAssociatedtype:tigerIsDangerous:\(tigerIsDangerous),sheepIsDangerous:\(sheepIsDangerous)")
+    }
+    
+    func isDangerous<T: Animal>(animal: T) -> Bool {
+        if animal is Tiger {
+            return true
+        } else {
+            return false
+        }
+    }
 }
