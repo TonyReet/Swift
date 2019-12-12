@@ -11,31 +11,29 @@ import UIKit
 class BasicViewControler: BaseViewController {
     lazy var basicTableView: UITableView   = {
         let tableView = UITableView()
-        tableView.delegate = self;
-        tableView.dataSource = self;
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
         
         return tableView
     }()
     
-    lazy var basicDataSource: [BasicHomeModel] = {
+    lazy var basicDataSource:  RxSwift.Observable<[BasicHomeModel]> = {
         var dataSource: [BasicHomeModel] = []
         
         //get path
         guard let configPath = Bundle.main.path(forResource: "BasicConfig", ofType: "plist") else {
-            return dataSource
+            return Observable.just(dataSource)
         }
         
         //get data
         guard let configArray = NSArray(contentsOfFile: configPath) as? Array<Any> else {
-            return dataSource
+            return Observable.just(dataSource)
         }
         
         guard let finalDataSource:[BasicHomeModel] =  configArray.toModel(modelType:BasicHomeModel.self) else {
-            return dataSource
+            return Observable.just(dataSource)
         }
 
-        return finalDataSource
+        return Observable.just(finalDataSource)
     }()
     
     override func viewDidLoad() {
@@ -45,54 +43,33 @@ class BasicViewControler: BaseViewController {
         basicTableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-    }
-}
-
-// MARK: UITableViewDataSource
-extension  BasicViewControler: UITableViewDataSource {
+        
+        basicDataSource.bind(to: basicTableView.rx.items(cellIdentifier: NSStringFromClass(UITableViewCell.self), cellType: UITableViewCell.self)) { (row,basicHomeModel,cell) in
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return basicDataSource.count
-    }
+            cell.selectionStyle = .none;
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
-        cell.selectionStyle = .none;
-        
-        if indexPath.row >= basicDataSource.count {return cell}
-        
-        let basicHomeModel = basicDataSource[indexPath.row]
-        
-        cell.textLabel?.text = kLocalizedString(basicHomeModel.title)
-
-        guard let imgStr = basicHomeModel.imgStr else {
-            return cell
-        }
-        cell.imageView?.image = UIImage.image(named: imgStr, imageSize: CGSize.init(width: 10, height: 10),imageColor: UIColor.randomColor())
-        
-        return cell
-    }
-}
-
-// MARK: UITableViewDelegate
-extension  BasicViewControler: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row >= basicDataSource.count {return}
-        
-        let basicHomeModel = basicDataSource[indexPath.row]
-        guard let vcName = basicHomeModel.vcName else {
-            return
-        }
-        
-        guard let viewController = SystemTool.classFromString(vcName)
-            as? UIViewController.Type else {
-            return
-        }
-        
-        let instanceVC = viewController.init()
-        instanceVC.hidesBottomBarWhenPushed = true
-        instanceVC.title = basicHomeModel.title
-        
-        navigationController?.pushViewController(instanceVC, animated: true)
+            cell.textLabel?.text = kLocalizedString(basicHomeModel.title)
+    
+            if let imgStr = basicHomeModel.imgStr {
+                cell.imageView?.image = UIImage.image(named: imgStr, imageSize: CGSize.init(width: 10, height: 10),imageColor: UIColor.randomColor())
+            }
+        }.disposed(by: disposeBag)
+    
+        basicTableView.rx.modelSelected(BasicHomeModel.self).subscribe(onNext: { (basicHomeModel) in
+            guard let vcName = basicHomeModel.vcName else {
+                return
+            }
+    
+            guard let viewController = SystemTool.classFromString(vcName)
+                as? UIViewController.Type else {
+                return
+            }
+    
+            let instanceVC = viewController.init()
+            instanceVC.hidesBottomBarWhenPushed = true
+            instanceVC.title = basicHomeModel.title
+    
+            self.navigationController?.pushViewController(instanceVC, animated: true)
+        }).disposed(by: disposeBag)
     }
 }
