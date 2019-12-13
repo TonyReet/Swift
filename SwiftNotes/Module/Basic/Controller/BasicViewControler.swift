@@ -20,7 +20,7 @@ class BasicViewControler: BaseViewController {
         var dataSource: [BasicHomeModel] = []
         
         //get path
-        guard let configPath = Bundle.main.path(forResource: "BasicConfig", ofType: "plist") else {
+        guard let configPath = R.file.basicConfigPlist.path() else {
             return Observable.just(dataSource)
         }
         

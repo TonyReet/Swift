@@ -22,7 +22,7 @@ class MediaViewController: BaseViewController {
         var dataSource: [BasicHomeModel] = []
         
         //get path
-        guard let configPath = Bundle.main.path(forResource: "MediaConfig", ofType: "plist") else {
+        guard let configPath = R.file.mediaConfigPlist.path() else {
             return dataSource
         }
         

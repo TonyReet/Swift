@@ -27,7 +27,7 @@ class RxSwiftViewController: BaseViewController {
         var dataSource: [BasicHomeModel] = []
         
         //get path
-        guard let configPath = Bundle.main.path(forResource: "RxSwiftConfig", ofType: "plist") else {
+        guard let configPath = R.file.rxSwiftConfigPlist.path() else {
             return Observable.of(dataSource)
         }
         

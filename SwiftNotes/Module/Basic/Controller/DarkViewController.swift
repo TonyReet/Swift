@@ -16,8 +16,8 @@ class DarkViewController: BaseViewController {
         var dataSource: [DarkModeModel] = []
 
         //get path
-        guard let configPath = Bundle.main.path(forResource: "DarkConfig", ofType: "plist") else {
-            return dataSource
+        guard let configPath = R.file.darkConfigPlist.path() else {
+            return Observable.just(dataSource)
         }
 
         //get data

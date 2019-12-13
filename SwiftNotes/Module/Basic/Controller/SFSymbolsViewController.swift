@@ -22,8 +22,7 @@ class SFSymbolsViewController: BaseViewController {
         flowLayout.minimumInteritemSpacing = 10
 
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
-        collectionView.dataSource = self
-        collectionView.register(SFSymbolsCell.self, forCellWithReuseIdentifier: "SFSymbolsCell")
+        collectionView.register(SFSymbolsCell.self, forCellWithReuseIdentifier: NSStringFromClass(SFSymbolsCell.self))
         collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
         collectionView.backgroundColor = UIColor{ (trainCollection) -> UIColor in

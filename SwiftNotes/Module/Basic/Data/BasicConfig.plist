@@ -34,7 +34,7 @@
 		<key>title</key>
 		<string>Functional Programming</string>
 		<key>imgStr</key>
-		<string>0xe6ab</string>
+		<string>0xe6aa</string>
 	</dict>
 	<dict>
 		<key>vcName</key>
@@ -42,7 +42,15 @@
 		<key>title</key>
 		<string>Dynamic</string>
 		<key>imgStr</key>
-		<string>0xe6ab</string>
+		<string>0xe6a9</string>
+	</dict>
+	<dict>
+		<key>vcName</key>
+		<string>AlgorithmViewController</string>
+		<key>title</key>
+		<string>Algorithm</string>
+		<key>imgStr</key>
+		<string>0xe6a8</string>
 	</dict>
 </array>
 </plist>
