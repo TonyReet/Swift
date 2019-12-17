@@ -55,7 +55,7 @@ class BasicViewControler: BaseViewController {
             }
         }.disposed(by: disposeBag)
     
-        basicTableView.rx.modelSelected(BasicHomeModel.self).subscribe(onNext: { (basicHomeModel) in
+        basicTableView.rx.modelSelected(BasicHomeModel.self).subscribe(onNext: { [weak self] (basicHomeModel) in
             guard let vcName = basicHomeModel.vcName else {
                 return
             }
@@ -69,7 +69,7 @@ class BasicViewControler: BaseViewController {
             instanceVC.hidesBottomBarWhenPushed = true
             instanceVC.title = basicHomeModel.title
     
-            self.navigationController?.pushViewController(instanceVC, animated: true)
+            self?.navigationController?.pushViewController(instanceVC, animated: true)
         }).disposed(by: disposeBag)
     }
 }

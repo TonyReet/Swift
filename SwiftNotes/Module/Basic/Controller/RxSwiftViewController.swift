@@ -43,9 +43,6 @@ class RxSwiftViewController: BaseViewController {
         return Observable.of(finalDataSource)
     }()
     
-    // 负责对象销毁
-    let disposeBag = DisposeBag()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 
 class BaseViewController: UIViewController ,UIGestureRecognizerDelegate{
+    // 负责对象销毁
+    let disposeBag = DisposeBag()
+    
     let backgroundColor = UIColor { (trainCollection) -> UIColor in
         if trainCollection.userInterfaceStyle == .dark {
             return .black
