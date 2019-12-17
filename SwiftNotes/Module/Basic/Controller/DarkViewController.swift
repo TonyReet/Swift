@@ -12,7 +12,7 @@ class DarkViewController: BaseViewController {
     let darkSwitch = UISwitch()
     let darkLabel = UILabel()
     
-    lazy var dataSource: [DarkModeModel] = {
+    lazy var dataSource: Observable<[DarkModeModel]> = {
         var dataSource: [DarkModeModel] = []
 
         //get path
@@ -22,21 +22,18 @@ class DarkViewController: BaseViewController {
 
         //get data
         guard let configArray = NSArray(contentsOfFile: configPath) as? Array<Any> else {
-            return dataSource
+            return Observable.just(dataSource)
         }
 
         guard let modelDataSource:[DarkModeModel] =  configArray.toModel(modelType:DarkModeModel.self) else {
-            return dataSource
+            return Observable.just(dataSource)
         }
-        
-        dataSource = modelDataSource
-
-        return dataSource
+    
+        return Observable.just(modelDataSource)
     }()
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         
         return tableView
@@ -68,7 +65,7 @@ class DarkViewController: BaseViewController {
             make.edges.equalTo(topRightView)
         }
         
-        label.text = "暗黑模式背景"
+        label.text = kLocalizedString("DarkModeBackground")
         
         return topRightView
     }()
@@ -129,6 +126,37 @@ class DarkViewController: BaseViewController {
             changeLabelDarkMode()
         }
         
+        dataSource
+            .bind(to: tableView.rx.items(cellIdentifier: NSStringFromClass(UITableViewCell.self), cellType: UITableViewCell.self)) { [weak self] (row, darkModeModel, cell) in
+
+                cell.selectionStyle = .none
+                
+                guard let name = darkModeModel.name else {
+                    return
+                }
+
+                var textColor:UIColor?
+                if let textColorString = darkModeModel.textColor, textColorString.isEmpty == false {
+                    textColor = self?.getColor(textColorString)
+                }
+
+                var backgroundColor:UIColor?
+                if let backgroundColorString = darkModeModel.backgourdColor, backgroundColorString.isEmpty == false{
+                    backgroundColor = self?.getColor(backgroundColorString)
+                }
+
+                
+                if let backgroundColor = backgroundColor {
+                    cell.backgroundColor = backgroundColor
+                }
+
+                cell.textLabel?.text = name
+
+                if let textColor = textColor {
+                    cell.textLabel?.textColor = textColor
+                }
+            }.disposed(by: disposeBag)
+        
         tableView.reloadData()
     }
 }
@@ -144,7 +172,12 @@ extension DarkViewController {
         darkSwitch.snp.makeConstraints { (make) in
             make.centerY.right.top.bottom.equalTo(rightBarView)
         }
-        darkSwitch.addTarget(self, action: #selector(changeSwitch), for: .touchUpInside)
+        
+        darkSwitch.rx.isOn.subscribe(onNext: { [weak self](isOn) in
+            self?.changeLabelDarkMode()
+
+            self?.configDarkMode(isOn ? .dark : .light)
+        }).disposed(by: disposeBag)
 
         rightBarView.addSubview(darkLabel)
         darkLabel.snp.makeConstraints { (make) in
@@ -154,12 +187,6 @@ extension DarkViewController {
         }
     }
     
-    @objc func changeSwitch(){
-        changeLabelDarkMode()
-        
-        configDarkMode(darkSwitch.isOn ? .dark : .light)
-    }
-
     func changeLabelDarkMode(){
         darkLabel.text = darkSwitch.isOn ? "Dark" : "Light"
     }
@@ -178,47 +205,5 @@ extension DarkViewController {
         }
 
         return color
-    }
-}
-
-extension DarkViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        dataSource.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "UITableViewCell")
-        cell.selectionStyle = .none;
-        
-        if indexPath.row >= dataSource.count {return cell}
-        
-        let darkModeModel = dataSource[indexPath.row]
-
-        guard let name = darkModeModel.name else {
-            return cell
-        }
-
-        var textColor:UIColor?
-        if let textColorString = darkModeModel.textColor, textColorString.isEmpty == false {
-            textColor = getColor(textColorString)
-        }
-
-        var backgroundColor:UIColor?
-        if let backgroundColorString = darkModeModel.backgourdColor, backgroundColorString.isEmpty == false{
-            backgroundColor = getColor(backgroundColorString)
-        }
-
-        
-        if let backgroundColor = backgroundColor {
-            cell.backgroundColor = backgroundColor
-        }
-
-        cell.textLabel?.text = name
-
-        if let textColor = textColor {
-            cell.textLabel?.textColor = textColor
-        }
-        
-        return cell
     }
 }
