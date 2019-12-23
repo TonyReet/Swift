@@ -9,10 +9,10 @@
 import UIKit
 
 class SFSymbolsViewController: BaseViewController {
-    lazy var dataSource: [String] = {
+    lazy var dataSource: Observable<[String]>  = {
         var dataSource: [String] = SFSymbolAllEnums
         
-        return dataSource
+        return Observable.just(dataSource)
     }()
     
     private lazy var collectionView: UICollectionView = {
@@ -40,6 +40,8 @@ class SFSymbolsViewController: BaseViewController {
         super.viewDidLoad()
 
         initUI()
+        
+        initData()
     }
     
 
@@ -49,30 +51,17 @@ class SFSymbolsViewController: BaseViewController {
             make.edges.equalTo(view)
         }
     }
-}
-
-extension SFSymbolsViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataSource.count
-    }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell:SFSymbolsCell = collectionView.dequeueReusableCell(withReuseIdentifier: "SFSymbolsCell", for: indexPath) as! SFSymbolsCell
-
-        if indexPath.row >= dataSource.count {return cell}
-    
-        let systemName = dataSource[indexPath.row] as String
-
-        let image = UIImage(systemName: systemName)?.withTintColor(.systemGray, renderingMode: .alwaysOriginal)
-        
-        guard let configImage = image else {
-            return cell
-        }
-        
-        cell.configImage(configImage)
-
-        return cell
+    func initData(){
+        dataSource.bind(to: collectionView.rx.items(cellIdentifier: NSStringFromClass(SFSymbolsCell.self), cellType: SFSymbolsCell.self)) {(row,systemName,cell) in
+                  
+            let image = UIImage(systemName: systemName)?.withTintColor(.systemGray, renderingMode: .alwaysOriginal)
+            
+            guard let configImage = image else {
+                return
+            }
+            
+            cell.configImage(configImage)
+        }.disposed(by: disposeBag)
     }
 }
-

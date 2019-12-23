@@ -14,9 +14,6 @@ enum ObservableError: Error {
 }
 
 class ObservableViewController: BaseViewController {
-
-    let disposeBag = DisposeBag()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -106,7 +103,7 @@ class ObservableViewController: BaseViewController {
         //第一次订阅
         _ = ob11.subscribe{ event in
             print("ob11-1:\(isOdd)",event)
-                }
+            }
             .disposed(by: disposeBag)
         
         //第二次订阅
