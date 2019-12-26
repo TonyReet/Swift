@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4BC8888A89D13A8BB47D2DD1 /* Pods_SwiftNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7DBCEC5FA96B830E659FE0 /* Pods_SwiftNotes.framework */; };
 		60BB9D79C66D84434802E57C /* Pods_SwiftNotesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC157172308D73F34DB691D9 /* Pods_SwiftNotesTests.framework */; };
+		6A0F382B23A23504001BE71E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0F382A23A23503001BE71E /* R.generated.swift */; };
 		6A34449823618E1D001180E2 /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34449723618E1D001180E2 /* MediaViewController.swift */; };
 		6A66DBB32366D8FF00799DC3 /* BasicConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A66DBB12366D8FF00799DC3 /* BasicConfig.plist */; };
 		6A66DBB62366D93C00799DC3 /* DarkConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A66DBB52366D93C00799DC3 /* DarkConfig.plist */; };
@@ -71,7 +72,9 @@
 
 /* Begin PBXFileReference section */
 		43910921AD22F00646887E77 /* Pods-SwiftNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftNotesTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftNotesTests/Pods-SwiftNotesTests.release.xcconfig"; sourceTree = "<group>"; };
+		6A0F382A23A23503001BE71E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		6A34449723618E1D001180E2 /* MediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
+		6A47077423A8DB0200CD824A /* 04_ReplaceBlankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 04_ReplaceBlankViewController.swift; sourceTree = "<group>"; };
 		6A66DBB12366D8FF00799DC3 /* BasicConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BasicConfig.plist; sourceTree = "<group>"; };
 		6A66DBB52366D93C00799DC3 /* DarkConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DarkConfig.plist; sourceTree = "<group>"; };
 		6A66DBBA23680F1900799DC3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -322,6 +325,7 @@
 		6A7E7E7F2338C31E002DEB4A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				6A0F382A23A23503001BE71E /* R.generated.swift */,
 				6A66DBBE23680F4200799DC3 /* Localizable.strings */,
 				6A90B81A2339F561002B56C5 /* iconfont.ttf */,
 				6A7E7E802338C31E002DEB4A /* Assets.xcassets */,
@@ -630,6 +634,26 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftNotesTests/Pods-SwiftNotesTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		6A0F382923A233AF001BE71E /* RSwift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = RSwift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
 		7DF2D7A965AAEAE72D27A05F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

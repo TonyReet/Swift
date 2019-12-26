@@ -18,6 +18,8 @@ target 'SwiftNotes' do
   pod 'Cache','~> 5.2.0'    # cache
   pod 'PKHUD','~> 5.3.0'    # hud
 
+  pod 'R.swift'    # 自动生成资源代码
+
   # Rx
   pod 'RxSwift','~> 5.0.0'
   pod 'RxDataSources','~> 4.0.1'
