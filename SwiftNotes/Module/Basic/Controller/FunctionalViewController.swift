@@ -35,6 +35,9 @@ class FunctionalViewController: BaseViewController {
         /// associatedtype
         functionalAssociatedtype()
 
+        /// variableParameter
+        functionalVariableParameter()
+
 }
 
 /// Currying
@@ -229,3 +232,50 @@ extension FunctionalViewController {
         }
     }
 }
+
+protocol Food { }
+
+protocol Animal {
+    associatedtype F: Food
+    func eat(_ food: F)
+}
+
+struct Meat: Food { }
+struct Grass: Food { }
+
+struct Tiger: Animal {
+    func eat(_ food: Meat) {
+        print(debug: "eat \(food)")
+    }
+}
+
+struct Sheep: Animal {
+    func eat(_ food: Grass) {
+        print(debug: "eat \(food)")
+    }
+}
+
+
+/// variable parameter
+extension FunctionalViewController {
+    func functionalVariableParameter(){
+              
+        print(debug: sum(input: 1,2,3,4,5))
+        
+        myFunc(numbers: 1, 2, 3, string: "hello")
+    }
+        
+    func myFunc(numbers: Int..., string: String) {
+        numbers.forEach {
+            print("测试数据:\($0)")
+            for i in 0..<$0 {
+                print("\(i + 1): \(string)")
+            }
+        }
+    }
+    
+    func sum(input: Int...) -> Int {
+        return input.reduce(0, +)
+    }
+}
+

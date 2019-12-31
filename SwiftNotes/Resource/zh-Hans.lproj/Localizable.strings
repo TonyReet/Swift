@@ -15,3 +15,5 @@
 "RxSwift" = "RxSwift";
 "Dynamic" = "动态属性";
 
+// 字符串
+"DarkModeBackground" = "暗黑模式背景";
