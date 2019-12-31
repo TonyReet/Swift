@@ -38,6 +38,9 @@ class FunctionalViewController: BaseViewController {
         /// variableParameter
         functionalVariableParameter()
 
+        /// map
+        functionalMap()
+
 }
 
 /// Currying
@@ -276,6 +279,25 @@ extension FunctionalViewController {
     
     func sum(input: Int...) -> Int {
         return input.reduce(0, +)
+    }
+}
+
+/// map
+extension FunctionalViewController {
+    func functionalMap(){
+              
+        let arr = [1,2,3]
+        let doubled = arr.map{
+            $0 * 2
+        }
+
+
+        let num: Int? = 3
+        let result = num.map {
+            $0 * 2
+        }
+        
+        print(debug: doubled,result)
     }
 }
 
