@@ -8,31 +8,31 @@
 
 import UIKit
 
-class _4_ModifySpaceViewController: BaseViewController {
+class _4_ReplaceBlankViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let spaceString1 = "test space string"
-        let modifyString1 = modifySpace(spaceString1)
+        let replaceString1 = replaceBlank(spaceString1)
         
         let spaceString2 = "test  space string"
-        let modifyString2 = modifySpace(spaceString2)
+        let replaceString2 = replaceBlank(spaceString2)
         
         let spaceString3:String? = nil
-        let modifyString3 = modifySpace(spaceString3)
+        let replaceString3 = replaceBlank(spaceString3)
         
         let spaceString4 = "      test space string"
-        let modifyString4 = modifySpace(spaceString4)
+        let replaceString4 = replaceBlank(spaceString4)
         
         let spaceString5 = "test space string        "
-        let modifyString5 = modifySpace(spaceString5)
+        let replaceString5 = replaceBlank(spaceString5)
         
         
-        print(debug: "modifySpace,modifyString1:\(modifyString1),modifyString2:\(modifyString2),modifyString3:\(modifyString3),modifyString4:\(modifyString4),modifyString5:\(modifyString5)")
+        print(debug: "replaceString1:\(replaceString1),replaceString2:\(replaceString2),replaceString3:\(replaceString3),replaceString4:\(replaceString4),replaceString5:\(replaceString5)")
     }
     
-    func modifySpace(_ spaceString:String?)->String{
+    func replaceBlank(_ spaceString:String?)->String{
         
         //判断异常情况
         //判断空格情况，计算空格长度
@@ -54,29 +54,30 @@ class _4_ModifySpaceViewController: BaseViewController {
         }
         
         let count = chars.count + blankCount * 2
-        var indexOfOriginal = chs.count - 1
-        var j = count - 1
+        var indexOfOriginal = chars.count - 1
+        var indexOfNew = count - 1
         
         //先给 array 扩容。
         for _ in 0..<blankCount*2 {
-            chs.append(" ")
+            chars.append(" ")
         }
         
-        while i >= 0 && j >= 0 {
-            if chs[i] == " " {
-                chs[j] =  "0"
-                j -= 1
-                chs[j] =  "2"
-                j -= 1
-                chs[j] = "%"
-                j -= 1
-                i -= 1
+        while indexOfOriginal >= 0 && indexOfNew > indexOfOriginal {
+            
+            if chars[indexOfOriginal] == " " {
+                chars[indexOfNew] =  "0"
+                indexOfNew -= 1
+                chars[indexOfNew] =  "2"
+                indexOfNew -= 1
+                chars[indexOfNew] = "%"
+                indexOfNew -= 1
             } else {
-                chs[j] = chs[i]
-                j -= 1
-                i -= 1
+                chars[indexOfNew] = chars[indexOfOriginal]
+                indexOfNew -= 1
             }
+            
+            indexOfOriginal -= 1
         }
-        return String(chs)
+        return String(chars)
     }
 }
