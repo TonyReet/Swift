@@ -14,6 +14,10 @@
 		6A66DBB32366D8FF00799DC3 /* BasicConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A66DBB12366D8FF00799DC3 /* BasicConfig.plist */; };
 		6A66DBB62366D93C00799DC3 /* DarkConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A66DBB52366D93C00799DC3 /* DarkConfig.plist */; };
 		6A66DBBC23680F4200799DC3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A66DBBE23680F4200799DC3 /* Localizable.strings */; };
+		6A72528123A372290067B13C /* AlgorithmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A72528023A372290067B13C /* AlgorithmViewController.swift */; };
+		6A72528523A37B460067B13C /* AlgorithmConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A72528423A37B460067B13C /* AlgorithmConfig.plist */; };
+		6A72528723A37C500067B13C /* AlgorithmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A72528623A37C500067B13C /* AlgorithmModel.swift */; };
+		6A72528A23A386920067B13C /* 03_FindTargetInArrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A72528923A386920067B13C /* 03_FindTargetInArrayViewController.swift */; };
 		6A7CE8F92341F7CA00E09F29 /* BasicHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7CE8F82341F7CA00E09F29 /* BasicHomeModel.swift */; };
 		6A7E7E3D2338C175002DEB4A /* SwiftNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A7E7E3B2338C175002DEB4A /* SwiftNotes.xcdatamodeld */; };
 		6A7E7E4D2338C176002DEB4A /* SwiftNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7E7E4C2338C176002DEB4A /* SwiftNotesTests.swift */; };
@@ -81,6 +85,10 @@
 		6A66DBBB23680F2900799DC3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		6A66DBBD23680F4200799DC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6A66DBBF23680F4600799DC3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		6A72528023A372290067B13C /* AlgorithmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmViewController.swift; sourceTree = "<group>"; };
+		6A72528423A37B460067B13C /* AlgorithmConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AlgorithmConfig.plist; sourceTree = "<group>"; };
+		6A72528623A37C500067B13C /* AlgorithmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmModel.swift; sourceTree = "<group>"; };
+		6A72528923A386920067B13C /* 03_FindTargetInArrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 03_FindTargetInArrayViewController.swift; sourceTree = "<group>"; };
 		6A7CE8F82341F7CA00E09F29 /* BasicHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicHomeModel.swift; sourceTree = "<group>"; };
 		6A7E7E312338C175002DEB4A /* SwiftNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A7E7E3C2338C175002DEB4A /* SwiftNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftNotes.xcdatamodel; sourceTree = "<group>"; };
@@ -184,9 +192,19 @@
 				6A66DBB12366D8FF00799DC3 /* BasicConfig.plist */,
 				6A66DBB52366D93C00799DC3 /* DarkConfig.plist */,
 				6A8F50EA237161F000B4AA09 /* RxSwiftConfig.plist */,
+				6A72528423A37B460067B13C /* AlgorithmConfig.plist */,
 				6ACF281A236979D000B99DD3 /* SFSymbol.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		6A72528823A386050067B13C /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				6A72528023A372290067B13C /* AlgorithmViewController.swift */,
+				6A72528923A386920067B13C /* 03_FindTargetInArrayViewController.swift */,
+			);
+			path = Algorithm;
 			sourceTree = "<group>";
 		};
 		6A7E7E282338C175002DEB4A = {
@@ -376,6 +394,7 @@
 		6A7E7E8A2338C31F002DEB4A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6A72528823A386050067B13C /* Algorithm */,
 				6A7E7E8B2338C31F002DEB4A /* BasicViewControler.swift */,
 				6AD1E18D2364188B00683659 /* DarkViewController.swift */,
 				6A93285C236AB18A00FEA52B /* RxSwiftViewController.swift */,
@@ -392,6 +411,7 @@
 			children = (
 				6A7CE8F82341F7CA00E09F29 /* BasicHomeModel.swift */,
 				6ACF281223691A7900B99DD3 /* DarkModeModel.swift */,
+				6A72528623A37C500067B13C /* AlgorithmModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -467,6 +487,7 @@
 			buildConfigurationList = 6A7E7E5C2338C176002DEB4A /* Build configuration list for PBXNativeTarget "SwiftNotes" */;
 			buildPhases = (
 				9314BD2391BDA592D7DD25EF /* [CP] Check Pods Manifest.lock */,
+				6A0F382923A233AF001BE71E /* RSwift */,
 				6A7E7E2D2338C175002DEB4A /* Sources */,
 				6A7E7E2E2338C175002DEB4A /* Frameworks */,
 				6A7E7E2F2338C175002DEB4A /* Resources */,
@@ -573,6 +594,7 @@
 				6A8F50EB237161F000B4AA09 /* RxSwiftConfig.plist in Resources */,
 				6A9F833B2362F9FB003AEC0A /* MediaConfig.plist in Resources */,
 				6A66DBBC23680F4200799DC3 /* Localizable.strings in Resources */,
+				6A72528523A37B460067B13C /* AlgorithmConfig.plist in Resources */,
 				6A7E7EBB2338C31F002DEB4A /* Assets.xcassets in Resources */,
 				6A66DBB62366D93C00799DC3 /* DarkConfig.plist in Resources */,
 				6A7E7EBC2338C31F002DEB4A /* LaunchScreen.storyboard in Resources */,
@@ -703,6 +725,7 @@
 			files = (
 				6A7E7EAE2338C31F002DEB4A /* ConstBase.swift in Sources */,
 				6A8F50ED23716C9000B4AA09 /* ObservableViewController.swift in Sources */,
+				6A72528A23A386920067B13C /* 03_FindTargetInArrayViewController.swift in Sources */,
 				6A7E7EB82338C31F002DEB4A /* BaseTabbarController.swift in Sources */,
 				6A90B81C2339FBF7002B56C5 /* IconFontTool.swift in Sources */,
 				6A90B825233AFF51002B56C5 /* Request+Extension.swift in Sources */,
@@ -714,6 +737,7 @@
 				6ACF281B236979D000B99DD3 /* SFSymbol.swift in Sources */,
 				6A963A2C2373EDA900595341 /* FunctionalViewController.swift in Sources */,
 				6A7E7EB92338C31F002DEB4A /* BaseViewController.swift in Sources */,
+				6A72528123A372290067B13C /* AlgorithmViewController.swift in Sources */,
 				6ACF281523696B1D00B99DD3 /* SFSymbolsViewController.swift in Sources */,
 				6A963A2E23755EE500595341 /* DynamicViewController.swift in Sources */,
 				6A90B826233AFF51002B56C5 /* Request.swift in Sources */,
@@ -728,10 +752,12 @@
 				6A7E7E3D2338C175002DEB4A /* SwiftNotes.xcdatamodeld in Sources */,
 				6A7CE8F92341F7CA00E09F29 /* BasicHomeModel.swift in Sources */,
 				6A90B828233AFF51002B56C5 /* RequestError.swift in Sources */,
+				6A0F382B23A23504001BE71E /* R.generated.swift in Sources */,
 				6A7E7EC02338C31F002DEB4A /* BasicViewControler.swift in Sources */,
 				6A7E7EBD2338C31F002DEB4A /* AppDelegate.swift in Sources */,
 				6A7E7EBE2338C31F002DEB4A /* AppDelegate+Extension.swift in Sources */,
 				6A7E7EB62338C31F002DEB4A /* BaseTabbarItemModel.swift in Sources */,
+				6A72528723A37C500067B13C /* AlgorithmModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

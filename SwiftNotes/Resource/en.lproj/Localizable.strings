@@ -10,9 +10,12 @@
 "Basic" = "Basic";
 "Media" = "Media";
 
-
+// basicConfig
 "DarkMode" = "Dark Mode";
 "SF Symbols" = "SF Symbols";
 "RxSwift" = "RxSwift";
 "Dynamic" = "Dynamic";
+"Algorithm" = "Algorithm";
 
+// string
+"DarkModeBackground" = "DarkModeBackground";
