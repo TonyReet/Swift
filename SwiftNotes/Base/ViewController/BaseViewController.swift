@@ -12,12 +12,20 @@ class BaseViewController: UIViewController ,UIGestureRecognizerDelegate{
     // 负责对象销毁
     let disposeBag = DisposeBag()
     
-    let backgroundColor = UIColor { (trainCollection) -> UIColor in
-        if trainCollection.userInterfaceStyle == .dark {
-            return .black
-        } else {
-            return .white
+    var backgroundColor: UIColor {
+        var backgroundColor:UIColor = .white
+        
+        if #available(iOS 13.0, *) {
+            backgroundColor = UIColor { (trainCollection) -> UIColor in
+                if trainCollection.userInterfaceStyle == .dark {
+                    return .black
+                } else {
+                    return .white
+                }
+            }
         }
+        
+        return backgroundColor
     }
 
     override func viewDidLoad() {
@@ -29,6 +37,8 @@ class BaseViewController: UIViewController ,UIGestureRecognizerDelegate{
         let leftBarFrame = CGRect(x: 0, y: 0, width: 60, height: 30)
         let minBarWidthHeight = 10
         let leftBarImage = UIImage.image(named: "0xf3b3", imageSize: CGSize(width:minBarWidthHeight, height: minBarWidthHeight),imageColor:mainThemeColor)
+        
+        title = kLocalizedString(title)
         
         initLeftBarItems(frame: leftBarFrame, image: leftBarImage)
     }
@@ -54,13 +64,18 @@ class BaseViewController: UIViewController ,UIGestureRecognizerDelegate{
 //MARK:- other function
 extension BaseViewController {
     //backButton
-    func initLeftBarItems(frame:CGRect,title:String? = nil,titleColor:UIColor? = .label,titleFontSize:CGFloat = 14,image:UIImage? = nil) {
+    func initLeftBarItems(frame:CGRect,title:String? = nil,titleColor:UIColor? = .black,titleFontSize:CGFloat = 14,image:UIImage? = nil) {
         let backBtn = UIButton(frame:frame)
         let barButtonItem = UIBarButtonItem(customView: backBtn)
         
         if title?.isEmpty == false {
+            var backTitleColor = titleColor
+            if #available(iOS 13.0, *) {
+                backTitleColor = .label
+            }
+            
             backBtn.titleEdgeInsets = UIEdgeInsets.zero
-            backBtn.setTitleColor(.label, for: .normal)
+            backBtn.setTitleColor(backTitleColor, for: .normal)
             backBtn.setTitle(title, for: UIControl.State())
             backBtn.titleLabel?.font = UIFont.systemFont(ofSize: titleFontSize)
         }

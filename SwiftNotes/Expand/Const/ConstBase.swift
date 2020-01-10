@@ -40,9 +40,9 @@ func kUserDefaultsWrite(_ obj: Any, _ KeyStr: String) {
 
 
 //判断是否为iPhone
-let kDeviceIsiPhone = (UI_USER_INTERFACE_IDIOM() == .phone)
+let kDeviceIsiPhone = (UIDevice.current.userInterfaceIdiom == .phone)
 //判断是否为iPad
-let kDeviceIsiPad = (UI_USER_INTERFACE_IDIOM() == .pad)
+let kDeviceIsiPad = (UIDevice.current.userInterfaceIdiom == .pad)
 
 func kScreenWidthRatio(_ width: CGFloat) -> CGFloat {
     return width*kScreenWidth / 375.0

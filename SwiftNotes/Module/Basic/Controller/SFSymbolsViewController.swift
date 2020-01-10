@@ -25,11 +25,13 @@ class SFSymbolsViewController: BaseViewController {
         collectionView.register(SFSymbolsCell.self, forCellWithReuseIdentifier: NSStringFromClass(SFSymbolsCell.self))
         collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
-        collectionView.backgroundColor = UIColor{ (trainCollection) -> UIColor in
-            if trainCollection.userInterfaceStyle == .dark {
-                return .black
-            } else {
-                return .white
+        if #available(iOS 13.0, *) {
+            collectionView.backgroundColor = UIColor{ (trainCollection) -> UIColor in
+                if trainCollection.userInterfaceStyle == .dark {
+                    return .black
+                } else {
+                    return .white
+                }
             }
         }
         
@@ -55,8 +57,11 @@ class SFSymbolsViewController: BaseViewController {
     func initData(){
         dataSource.bind(to: collectionView.rx.items(cellIdentifier: NSStringFromClass(SFSymbolsCell.self), cellType: SFSymbolsCell.self)) {(row,systemName,cell) in
                   
-            let image = UIImage(systemName: systemName)?.withTintColor(.systemGray, renderingMode: .alwaysOriginal)
-            
+            var image: UIImage?
+            if #available(iOS 13.0, *) {
+                image = UIImage(systemName: systemName)?.withTintColor(.systemGray, renderingMode: .alwaysOriginal)
+            }
+
             guard let configImage = image else {
                 return
             }

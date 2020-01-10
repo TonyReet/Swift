@@ -65,12 +65,14 @@ extension UIImage {
             return image
         }
         
-        if let image = UIImage(systemName: finalNamed) {
-            guard let imageColor = imageColor else {
-                return image
+        if #available(iOS 13.0, *) {
+            if let image = UIImage(systemName: finalNamed) {
+                guard let imageColor = imageColor else {
+                    return image
+                }
+                
+                return image.withTintColor(imageColor, renderingMode: .alwaysOriginal)
             }
-            
-            return image.withTintColor(imageColor, renderingMode: .alwaysOriginal)
         }
         
         if let image = UIImage.init(text:finalNamed,imageSize:imageSize, imageColor:imageColor) {

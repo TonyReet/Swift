@@ -48,7 +48,9 @@ class DarkViewController: BaseViewController {
     private lazy var topMiddleImageView: UIImageView = {
         let topMiddleImageView = UIImageView.init(image: UIImage(named: "darkImg"))
         
-        topMiddleImageView.overrideUserInterfaceStyle = .light
+        if #available(iOS 13.0, *) {
+            topMiddleImageView.overrideUserInterfaceStyle = .light
+        }
         topMiddleImageView.contentMode = .scaleAspectFill
         return topMiddleImageView
     }()
@@ -119,7 +121,10 @@ class DarkViewController: BaseViewController {
     func initData(){
         darkLabel.text = "Light"
         
-        let isDark = self.traitCollection.userInterfaceStyle == .dark
+        var isDark = false
+        if #available(iOS 12.0, *) {
+            isDark = self.traitCollection.userInterfaceStyle == .dark
+        }
         
         if isDark == true {
             darkSwitch.isOn = true
@@ -176,7 +181,9 @@ extension DarkViewController {
         darkSwitch.rx.isOn.subscribe(onNext: { [weak self](isOn) in
             self?.changeLabelDarkMode()
 
-            self?.configDarkMode(isOn ? .dark : .light)
+            if #available(iOS 12.0, *) {
+                self?.configDarkMode(isOn ? .dark : .light)
+            }
         }).disposed(by: disposeBag)
 
         rightBarView.addSubview(darkLabel)
@@ -191,8 +198,11 @@ extension DarkViewController {
         darkLabel.text = darkSwitch.isOn ? "Dark" : "Light"
     }
     
+    @available(iOS 12.0, *)
     func configDarkMode(_ style:UIUserInterfaceStyle){
-        self.overrideUserInterfaceStyle = style
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = style
+        }
     }
     
     func getColor(_ colorName:String) -> UIColor?{

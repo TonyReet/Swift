@@ -113,7 +113,8 @@ class ObservableViewController: BaseViewController {
             .disposed(by: disposeBag)
         
         //12. interval()
-        let ob12 = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
+//        let ob12 = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
+        let ob12 = Observable<Int>.interval(DispatchTimeInterval.seconds(1), scheduler: MainScheduler.instance)
                  
         _ = ob12.subscribe { (event) in
             print(debug: "ob12:\(event)")
@@ -121,7 +122,7 @@ class ObservableViewController: BaseViewController {
             .disposed(by: disposeBag)
         
         //13. timer()  创建一个经过设定的一段时间后，产生唯一的元素
-        let ob13 = Observable<Int>.timer(5, scheduler: MainScheduler.instance)
+        let ob13 = Observable<Int>.timer(DispatchTimeInterval.seconds(5), scheduler: MainScheduler.instance)
         _ = ob13.subscribe { (event) in
             print(debug: "ob13:\(event)")
                 }
@@ -130,7 +131,7 @@ class ObservableViewController: BaseViewController {
 //        第二种 就是经过设定一段时间，每隔一段时间产生一个元素
 //        第一个参数就是等待5秒，第二个参数为每个1秒产生一个元素
         
-        let ob14 = Observable<Int>.timer(5, period: 1, scheduler: MainScheduler.instance)
+        let ob14 = Observable<Int>.timer(DispatchTimeInterval.seconds(5), period: DispatchTimeInterval.seconds(1), scheduler: MainScheduler.instance)
         _ = ob14.subscribe { (event) in
             print(debug: "ob14:\(event)")
                 }
