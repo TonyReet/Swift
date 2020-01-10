@@ -23,6 +23,8 @@ class BaseNavigationController: UINavigationController {
         
         //隐藏底部的线
         getBottomLineView(navigationBar)?.isHidden = true
+        
+        enableHandlePop()
     }
 }
 
@@ -40,5 +42,21 @@ extension BaseNavigationController {
             }
         }
         return nil
+    }
+}
+
+extension BaseNavigationController: UINavigationControllerDelegate {
+      
+    func enableHandlePop() {
+        /// 解决自定义返回按钮导致侧滑返回被禁止问题
+        if self.responds(to: #selector(getter: UINavigationController.interactivePopGestureRecognizer)) == true {
+            interactivePopGestureRecognizer?.delegate = (self as! UIGestureRecognizerDelegate)
+        }
+    }
+    
+    func navigationController(_ navigationController: UINavigationController,
+                              didShow viewController: UIViewController,
+                              animated: Bool) {
+        interactivePopGestureRecognizer?.isEnabled = true
     }
 }
