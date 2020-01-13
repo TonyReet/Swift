@@ -44,6 +44,9 @@ class FunctionalViewController: BaseViewController {
         /// protocol Extension
         functionalProtocolExtension()
 
+        ///indirect
+        functionalIndirect()
+    }
 }
 
 /// Currying
@@ -353,3 +356,110 @@ struct B2: A2 {
     }
 }
 
+
+/// indirect
+extension FunctionalViewController {
+    func functionalIndirect(){
+        let linkedList = LinkedList.node(1, .node(2, .node(3, .node(4, .empty))))
+        print(debug: linkedList)
+    }
+}
+
+indirect enum LinkedList<T> {
+    case empty
+    case node(T, LinkedList<T>)
+}
+
+
+typealias GCDTask = (_ cancel : Bool) -> Void
+
+/// gcd
+extension FunctionalViewController {
+    func functionalGCD(){
+        let workingQueue = DispatchQueue(label: "functionalGCD")
+
+        workingQueue.async {
+            _ = self.delay(2) { print(debug:"2 秒后输出") }
+
+            let task = self.delay(5) { print(debug:"拨打 110") }
+
+            // 仔细想一想..
+            // 还是取消为妙..
+            self.cancel(task)
+        }
+    }
+
+    func delay(_ time: TimeInterval, task: @escaping ()->()) ->  GCDTask? {
+
+        /// 延迟执行
+        func dispatch_later(block: @escaping ()->()) {
+            let t = DispatchTime.now() + time
+            DispatchQueue.main.asyncAfter(deadline: t, execute: block)
+        }
+
+        var closure: (()->Void)? = task
+        var result: GCDTask?
+
+        
+        let delayedClosure: GCDTask = {
+            cancel in
+            
+            /// 时间到执行
+            if let internalClosure = closure {
+                if (cancel == false) {
+                    DispatchQueue.main.async(execute: internalClosure)
+                }
+            }
+            closure = nil
+            result = nil
+        }
+
+        result = delayedClosure
+
+        dispatch_later {
+            
+            /// 时间到，执行block
+            if let delayedClosure = result {
+                delayedClosure(false)
+            }
+        }
+
+        return result;
+    }
+
+    func cancel(_ task: GCDTask?) {
+        task?(true)
+    }
+}
+
+/// extension
+private var extensionKey: Void?
+extension FunctionalViewController {
+    var titleExtension: String? {
+        get {
+            return objc_getAssociatedObject(self, &extensionKey) as? String
+        }
+
+        set {
+            objc_setAssociatedObject(self,
+                &extensionKey, newValue,
+                .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    func functionalExtension(){
+        let a = FunctionalViewController()
+        printTitle(a)
+        a.titleExtension = "Swifter.tips"
+        printTitle(a)
+    }
+    
+    // 测试
+    func printTitle(_ input: FunctionalViewController) {
+        if let titleExtension = input.titleExtension {
+            print(debug:"Title: \(titleExtension)")
+        } else {
+            print(debug:"没有设置")
+        }
+    }
+}
