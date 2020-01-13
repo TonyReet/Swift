@@ -41,6 +41,9 @@ class FunctionalViewController: BaseViewController {
         /// map
         functionalMap()
 
+        /// protocol Extension
+        functionalProtocolExtension()
+
 }
 
 /// Currying
@@ -297,7 +300,56 @@ extension FunctionalViewController {
             $0 * 2
         }
         
-        print(debug: doubled,result)
+        print(debug: doubled,result ?? 0)
+    }
+}
+
+/// Protocol Extension
+extension FunctionalViewController {
+    func functionalProtocolExtension(){
+        let b1 = B1()
+        let a1: A1 = B1()
+
+        let b2 = B2()
+        let a2 = b2 as A2
+
+        print(debug: b1.method1(),a1.method1())//hello,hello
+        print(debug: b2.method1(),b2.method2())//hello,hello
+        print(debug: a2.method1(),a2.method2())//hello,hi
+    }
+}
+
+protocol A1 {
+    func method1() -> String
+}
+
+struct B1: A1 {
+    func method1() -> String {
+        return "hello"
+    }
+}
+
+protocol A2 {
+    func method1() -> String
+}
+
+extension A2 {
+    func method1() -> String {
+        return "hi"
+    }
+
+    func method2() -> String {
+        return "hi"
+    }
+}
+
+struct B2: A2 {
+    func method1() -> String {
+        return "hello"
+    }
+
+    func method2() -> String {
+        return "hello"
     }
 }
 
