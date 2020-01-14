@@ -37,6 +37,7 @@
 		6A7E7EBD2338C31F002DEB4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7E7E842338C31F002DEB4A /* AppDelegate.swift */; };
 		6A7E7EBE2338C31F002DEB4A /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7E7E852338C31F002DEB4A /* AppDelegate+Extension.swift */; };
 		6A7E7EC02338C31F002DEB4A /* BasicViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7E7E8B2338C31F002DEB4A /* BasicViewControler.swift */; };
+		6A84350023C85B140065E8EE /* AlgorithmDataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8434FF23C85B140065E8EE /* AlgorithmDataStructure.swift */; };
 		6A8F50EB237161F000B4AA09 /* RxSwiftConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A8F50EA237161F000B4AA09 /* RxSwiftConfig.plist */; };
 		6A8F50ED23716C9000B4AA09 /* ObservableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8F50EC23716C9000B4AA09 /* ObservableViewController.swift */; };
 		6A90B81C2339FBF7002B56C5 /* IconFontTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A90B81B2339FBF7002B56C5 /* IconFontTool.swift */; };

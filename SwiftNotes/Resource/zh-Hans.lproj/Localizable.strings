@@ -16,6 +16,9 @@
 "RxSwift" = "RxSwift";
 "Dynamic" = "动态属性";
 "Algorithm" = "算法";
+"iOS13 New feature" = "iOS13 新特性";
+"Common" = "常规";
+"ReusePool" = "复用池";
 
 // 字符串
 "DarkModeBackground" = "暗黑模式背景";

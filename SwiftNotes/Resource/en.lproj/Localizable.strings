@@ -16,6 +16,9 @@
 "RxSwift" = "RxSwift";
 "Dynamic" = "Dynamic";
 "Algorithm" = "Algorithm";
+"iOS13 New feature" = "iOS13 New feature";
+"Common" = "Common";
+"ReusePool" = "ReusePool";
 
 // string
 "DarkModeBackground" = "DarkModeBackground";

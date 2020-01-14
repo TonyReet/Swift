@@ -4,15 +4,63 @@
 <array>
 	<dict>
 		<key>name</key>
-		<string>FindTargetInDuplicationArray</string>
+		<string>03_FindTargetInDuplicationArray</string>
 		<key>vcName</key>
 		<string>_3_FindTargetInArrayViewController</string>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>ReplaceBlank</string>
+		<string>04_ReplaceBlank</string>
 		<key>vcName</key>
 		<string>_4_ReplaceBlankViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>05_PrintListReversinglyIteratively</string>
+		<key>vcName</key>
+		<string>_5_PrintListReversinglyIterativelyViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>06_ConstructBinaryTree</string>
+		<key>vcName</key>
+		<string>_6_ConstructBinaryTreeViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>07_QueueWithTwoStacks</string>
+		<key>vcName</key>
+		<string>_7_QueueWithTwoStacksViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>08_MinNumberInRotatedArray</string>
+		<key>vcName</key>
+		<string>_8_MinNumberInRotatedArrayViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>09_Fibonacci</string>
+		<key>vcName</key>
+		<string>_9_FibonacciViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>10_NumberOf1InBinary</string>
+		<key>vcName</key>
+		<string>_10_NumberOf1InBinaryViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>11_Power</string>
+		<key>vcName</key>
+		<string>_11_PowerViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>12_Print1ToMaxOfNDigits</string>
+		<key>vcName</key>
+		<string>_12_Print1ToMaxOfNDigitsViewController</string>
 	</dict>
 </array>
 </plist>

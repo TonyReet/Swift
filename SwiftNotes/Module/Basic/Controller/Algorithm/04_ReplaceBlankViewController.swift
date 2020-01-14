@@ -2,11 +2,18 @@
 //  04_ModifySpaceViewController.swift
 //  SwiftNotes
 //
-//  Created by TonyReet on 2019/12/17.
+//  Created by TonyReet on 2019/1/14.
 //  Copyright © 2019 TonyReet. All rights reserved.
 //
 
 import UIKit
+/*
+==================================================================
+ 《剑指Offer:名企面试官精讲典型编程题》代码
+==================================================================
+面试题4：
+请实现一个函数，把字符串中的每个空格替换成"%20"。例如输入“We are happy.”，则输出“We%20are%20happy.”。
+*/
 
 class _4_ReplaceBlankViewController: BaseViewController {
 
