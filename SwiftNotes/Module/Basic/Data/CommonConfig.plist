@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>vcName</key>
+		<string>FunctionalViewController</string>
+		<key>title</key>
+		<string>Functional Programming</string>
+		<key>imgStr</key>
+		<string>0xe6aa</string>
+	</dict>
+	<dict>
+		<key>vcName</key>
+		<string>DynamicViewController</string>
+		<key>title</key>
+		<string>Dynamic</string>
+		<key>imgStr</key>
+		<string>0xe6a9</string>
+	</dict>
+	<dict>
+		<key>vcName</key>
+		<string>ReusePoolViewController</string>
+		<key>title</key>
+		<string>ReusePool</string>
+		<key>imgStr</key>
+		<string>0xe69b</string>
+	</dict>
+</array>
+</plist>
