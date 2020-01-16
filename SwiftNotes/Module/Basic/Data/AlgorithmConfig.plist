@@ -62,5 +62,29 @@
 		<key>vcName</key>
 		<string>_12_Print1ToMaxOfNDigitsViewController</string>
 	</dict>
+	<dict>
+		<key>name</key>
+		<string>13_DeleteNodeInList</string>
+		<key>vcName</key>
+		<string>_13_DeleteNodeInListViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>14_ReorderArray</string>
+		<key>vcName</key>
+		<string>_14_ReorderArrayViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>15_KthNodeFromEnd</string>
+		<key>vcName</key>
+		<string>_15_KthNodeFromEndViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>_16_ReverseList</string>
+		<key>vcName</key>
+		<string>_16_ReverseListViewController</string>
+	</dict>
 </array>
 </plist>
