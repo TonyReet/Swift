@@ -32,18 +32,22 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.file` struct is generated, and contains static references to 5 files.
+  /// This `R.file` struct is generated, and contains static references to 7 files.
   struct file {
     /// Resource file `AlgorithmConfig.plist`.
     static let algorithmConfigPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "AlgorithmConfig", pathExtension: "plist")
     /// Resource file `BasicConfig.plist`.
     static let basicConfigPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "BasicConfig", pathExtension: "plist")
+    /// Resource file `CommonConfig.plist`.
+    static let commonConfigPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "CommonConfig", pathExtension: "plist")
     /// Resource file `DarkConfig.plist`.
     static let darkConfigPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "DarkConfig", pathExtension: "plist")
     /// Resource file `MediaConfig.plist`.
     static let mediaConfigPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "MediaConfig", pathExtension: "plist")
     /// Resource file `RxSwiftConfig.plist`.
     static let rxSwiftConfigPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "RxSwiftConfig", pathExtension: "plist")
+    /// Resource file `iOS13Config.plist`.
+    static let iOS13ConfigPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "iOS13Config", pathExtension: "plist")
     
     /// `bundle.url(forResource: "AlgorithmConfig", withExtension: "plist")`
     static func algorithmConfigPlist(_: Void = ()) -> Foundation.URL? {
@@ -54,6 +58,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "BasicConfig", withExtension: "plist")`
     static func basicConfigPlist(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.basicConfigPlist
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "CommonConfig", withExtension: "plist")`
+    static func commonConfigPlist(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.commonConfigPlist
       return fileResource.bundle.url(forResource: fileResource)
     }
     
@@ -72,6 +82,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "RxSwiftConfig", withExtension: "plist")`
     static func rxSwiftConfigPlist(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.rxSwiftConfigPlist
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "iOS13Config", withExtension: "plist")`
+    static func iOS13ConfigPlist(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.iOS13ConfigPlist
       return fileResource.bundle.url(forResource: fileResource)
     }
     
@@ -128,7 +144,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    /// This `R.string.localizable` struct is generated, and contains static references to 8 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 11 localization keys.
     struct localizable {
       /// en translation: Algorithm
       /// 
@@ -138,6 +154,10 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: en, zh-Hans
       static let basic = Rswift.StringResource(key: "Basic", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans"], comment: nil)
+      /// en translation: Common
+      /// 
+      /// Locales: en, zh-Hans
+      static let common = Rswift.StringResource(key: "Common", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans"], comment: nil)
       /// en translation: Dark Mode
       /// 
       /// Locales: en, zh-Hans
@@ -154,6 +174,10 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: en, zh-Hans
       static let media = Rswift.StringResource(key: "Media", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans"], comment: nil)
+      /// en translation: ReusePool
+      /// 
+      /// Locales: en, zh-Hans
+      static let reusePool = Rswift.StringResource(key: "ReusePool", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans"], comment: nil)
       /// en translation: RxSwift
       /// 
       /// Locales: en, zh-Hans
@@ -162,6 +186,10 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: en, zh-Hans
       static let sfSymbols = Rswift.StringResource(key: "SF Symbols", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans"], comment: nil)
+      /// en translation: iOS13 New feature
+      /// 
+      /// Locales: en, zh-Hans
+      static let iOS13NewFeature = Rswift.StringResource(key: "iOS13 New feature", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans"], comment: nil)
       
       /// en translation: Algorithm
       /// 
@@ -175,6 +203,13 @@ struct R: Rswift.Validatable {
       /// Locales: en, zh-Hans
       static func basic(_: Void = ()) -> String {
         return NSLocalizedString("Basic", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Common
+      /// 
+      /// Locales: en, zh-Hans
+      static func common(_: Void = ()) -> String {
+        return NSLocalizedString("Common", bundle: R.hostingBundle, comment: "")
       }
       
       /// en translation: Dark Mode
@@ -205,6 +240,13 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Media", bundle: R.hostingBundle, comment: "")
       }
       
+      /// en translation: ReusePool
+      /// 
+      /// Locales: en, zh-Hans
+      static func reusePool(_: Void = ()) -> String {
+        return NSLocalizedString("ReusePool", bundle: R.hostingBundle, comment: "")
+      }
+      
       /// en translation: RxSwift
       /// 
       /// Locales: en, zh-Hans
@@ -217,6 +259,13 @@ struct R: Rswift.Validatable {
       /// Locales: en, zh-Hans
       static func sfSymbols(_: Void = ()) -> String {
         return NSLocalizedString("SF Symbols", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: iOS13 New feature
+      /// 
+      /// Locales: en, zh-Hans
+      static func iOS13NewFeature(_: Void = ()) -> String {
+        return NSLocalizedString("iOS13 New feature", bundle: R.hostingBundle, comment: "")
       }
       
       fileprivate init() {}
