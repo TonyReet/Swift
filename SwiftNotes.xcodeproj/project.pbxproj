@@ -40,6 +40,7 @@
 		6A84350023C85B140065E8EE /* AlgorithmDataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8434FF23C85B140065E8EE /* AlgorithmDataStructure.swift */; };
 		6A84350223C85D610065E8EE /* 05_PrintListReversinglyIterativelyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A84350123C85D610065E8EE /* 05_PrintListReversinglyIterativelyViewController.swift */; };
 		6A84350523C86A710065E8EE /* 06_ConstructBinaryTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A84350423C86A710065E8EE /* 06_ConstructBinaryTreeViewController.swift */; };
+		6A84350723C877090065E8EE /* 07_QueueWithTwoStacksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A84350623C877090065E8EE /* 07_QueueWithTwoStacksViewController.swift */; };
 		6A8E084023C814AF000C82EB /* iOS13Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A8E083F23C814AF000C82EB /* iOS13Config.plist */; };
 		6A8E084223C814E5000C82EB /* iOS13ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8E084123C814E5000C82EB /* iOS13ViewController.swift */; };
 		6A8E084423C81774000C82EB /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8E084323C81774000C82EB /* CommonViewController.swift */; };
@@ -127,6 +128,7 @@
 		6A8434FF23C85B140065E8EE /* AlgorithmDataStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmDataStructure.swift; sourceTree = "<group>"; };
 		6A84350123C85D610065E8EE /* 05_PrintListReversinglyIterativelyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 05_PrintListReversinglyIterativelyViewController.swift; sourceTree = "<group>"; };
 		6A84350423C86A710065E8EE /* 06_ConstructBinaryTreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 06_ConstructBinaryTreeViewController.swift; sourceTree = "<group>"; };
+		6A84350623C877090065E8EE /* 07_QueueWithTwoStacksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 07_QueueWithTwoStacksViewController.swift; sourceTree = "<group>"; };
 		6A8E083F23C814AF000C82EB /* iOS13Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iOS13Config.plist; sourceTree = "<group>"; };
 		6A8E084123C814E5000C82EB /* iOS13ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS13ViewController.swift; sourceTree = "<group>"; };
 		6A8E084323C81774000C82EB /* CommonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				6A47077423A8DB0200CD824A /* 04_ReplaceBlankViewController.swift */,
 				6A84350123C85D610065E8EE /* 05_PrintListReversinglyIterativelyViewController.swift */,
 				6A84350423C86A710065E8EE /* 06_ConstructBinaryTreeViewController.swift */,
+				6A84350623C877090065E8EE /* 07_QueueWithTwoStacksViewController.swift */,
 			);
 			path = Algorithm;
 			sourceTree = "<group>";
@@ -803,6 +806,7 @@
 				6A8E084223C814E5000C82EB /* iOS13ViewController.swift in Sources */,
 				6A90B828233AFF51002B56C5 /* RequestError.swift in Sources */,
 				6A0F382B23A23504001BE71E /* R.generated.swift in Sources */,
+				6A84350723C877090065E8EE /* 07_QueueWithTwoStacksViewController.swift in Sources */,
 				6A7E7EC02338C31F002DEB4A /* BasicViewControler.swift in Sources */,
 				6A7E7EBD2338C31F002DEB4A /* AppDelegate.swift in Sources */,
 				6A7E7EBE2338C31F002DEB4A /* AppDelegate+Extension.swift in Sources */,

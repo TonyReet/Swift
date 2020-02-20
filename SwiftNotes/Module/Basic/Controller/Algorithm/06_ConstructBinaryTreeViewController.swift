@@ -22,13 +22,16 @@ class _6_ConstructBinaryTreeViewController: BaseViewController {
 
         let preOrder = [1,2,4,7,3,5,6,8]
         let inOrder = [4,7,2,1,5,3,8,6]
-        let binaryTreeNode =  constructBinaryTree(preOrder: preOrder, inOrder: inOrder)
+        let binaryTreeNode = constructBinaryTree(preOrder: preOrder, inOrder: inOrder)
         
         AlgorithmDataStructure.preOrder(binaryTreeNode)
     }
     
-
     func constructBinaryTree(preOrder:[Int],inOrder:[Int]) -> BinaryTreeNode? {
+        _6_ConstructBinaryTreeViewController.constructBinaryTree(preOrder: preOrder, inOrder: inOrder)
+    }
+    
+    class func constructBinaryTree(preOrder:[Int],inOrder:[Int]) -> BinaryTreeNode? {
         guard preOrder.count != 0, preOrder.count == inOrder.count else {
           return nil
         }

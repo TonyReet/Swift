@@ -89,6 +89,12 @@ public class BinaryTreeNode: Equatable {
         self.right = nil
     }
     
+    init(val:Int, left: BinaryTreeNode, right: BinaryTreeNode) {
+        self.val = val
+        self.left = left
+        self.right = right
+    }
+    
     public static func ==(lhs:BinaryTreeNode,rhs:BinaryTreeNode) -> Bool {
         guard lhs.val == rhs.val && lhs.left == rhs.left && lhs.right == rhs.right else {
             return false
