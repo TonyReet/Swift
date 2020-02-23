@@ -64,6 +64,7 @@
 		6A9F833B2362F9FB003AEC0A /* MediaConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A9F833A2362F9FB003AEC0A /* MediaConfig.plist */; };
 		6AA769F323CC0C0D00E39642 /* 08_MinNumberInRotatedArrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA769F223CC0C0D00E39642 /* 08_MinNumberInRotatedArrayViewController.swift */; };
 		6AA769F523CC1BA000E39642 /* 09_FibonacciViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA769F423CC1BA000E39642 /* 09_FibonacciViewController.swift */; };
+		6AA769F723CC40C800E39642 /* 10_NumberOf1InBinaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA769F623CC40C800E39642 /* 10_NumberOf1InBinaryViewController.swift */; };
 		6ACF281323691A7900B99DD3 /* DarkModeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF281223691A7900B99DD3 /* DarkModeModel.swift */; };
 		6ACF281523696B1D00B99DD3 /* SFSymbolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF281423696B1D00B99DD3 /* SFSymbolsViewController.swift */; };
 		6ACF28172369725F00B99DD3 /* SFSymbolsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF28162369725E00B99DD3 /* SFSymbolsCell.swift */; };
@@ -154,6 +155,7 @@
 		6A9F833A2362F9FB003AEC0A /* MediaConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MediaConfig.plist; sourceTree = "<group>"; };
 		6AA769F223CC0C0D00E39642 /* 08_MinNumberInRotatedArrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 08_MinNumberInRotatedArrayViewController.swift; sourceTree = "<group>"; };
 		6AA769F423CC1BA000E39642 /* 09_FibonacciViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 09_FibonacciViewController.swift; sourceTree = "<group>"; };
+		6AA769F623CC40C800E39642 /* 10_NumberOf1InBinaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10_NumberOf1InBinaryViewController.swift; sourceTree = "<group>"; };
 		6ACF281223691A7900B99DD3 /* DarkModeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeModel.swift; sourceTree = "<group>"; };
 		6ACF281423696B1D00B99DD3 /* SFSymbolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolsViewController.swift; sourceTree = "<group>"; };
 		6ACF28162369725E00B99DD3 /* SFSymbolsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolsCell.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				6A84350623C877090065E8EE /* 07_QueueWithTwoStacksViewController.swift */,
 				6AA769F223CC0C0D00E39642 /* 08_MinNumberInRotatedArrayViewController.swift */,
 				6AA769F423CC1BA000E39642 /* 09_FibonacciViewController.swift */,
+				6AA769F623CC40C800E39642 /* 10_NumberOf1InBinaryViewController.swift */,
 			);
 			path = Algorithm;
 			sourceTree = "<group>";
@@ -790,6 +793,7 @@
 				6A93285D236AB18A00FEA52B /* RxSwiftViewController.swift in Sources */,
 				6ACF281B236979D000B99DD3 /* SFSymbol.swift in Sources */,
 				6A963A2C2373EDA900595341 /* FunctionalViewController.swift in Sources */,
+				6AA769F523CC1BA000E39642 /* 09_FibonacciViewController.swift in Sources */,
 				6A7E7EB92338C31F002DEB4A /* BaseViewController.swift in Sources */,
 				6A72528123A372290067B13C /* AlgorithmViewController.swift in Sources */,
 				6ACF281523696B1D00B99DD3 /* SFSymbolsViewController.swift in Sources */,
@@ -818,6 +822,7 @@
 				6A7E7EBD2338C31F002DEB4A /* AppDelegate.swift in Sources */,
 				6A7E7EBE2338C31F002DEB4A /* AppDelegate+Extension.swift in Sources */,
 				6A7E7EB62338C31F002DEB4A /* BaseTabbarItemModel.swift in Sources */,
+				6AA769F723CC40C800E39642 /* 10_NumberOf1InBinaryViewController.swift in Sources */,
 				6A72528723A37C500067B13C /* AlgorithmModel.swift in Sources */,
 				6A84350523C86A710065E8EE /* 06_ConstructBinaryTreeViewController.swift in Sources */,
 			);
