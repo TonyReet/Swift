@@ -67,6 +67,7 @@
 		6AA769F723CC40C800E39642 /* 10_NumberOf1InBinaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA769F623CC40C800E39642 /* 10_NumberOf1InBinaryViewController.swift */; };
 		6AA769F923CC50F200E39642 /* 11_PowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA769F823CC50F200E39642 /* 11_PowerViewController.swift */; };
 		6AA769FB23CC59DA00E39642 /* 12_Print1ToMaxOfNDigitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA769FA23CC59DA00E39642 /* 12_Print1ToMaxOfNDigitsViewController.swift */; };
+		6AA76A3E23D0504300E39642 /* 13_DeleteNodeInListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA76A3D23D0504300E39642 /* 13_DeleteNodeInListViewController.swift */; };
 		6ACF281323691A7900B99DD3 /* DarkModeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF281223691A7900B99DD3 /* DarkModeModel.swift */; };
 		6ACF281523696B1D00B99DD3 /* SFSymbolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF281423696B1D00B99DD3 /* SFSymbolsViewController.swift */; };
 		6ACF28172369725F00B99DD3 /* SFSymbolsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF28162369725E00B99DD3 /* SFSymbolsCell.swift */; };
@@ -161,6 +162,7 @@
 		6AA769F623CC40C800E39642 /* 10_NumberOf1InBinaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 10_NumberOf1InBinaryViewController.swift; sourceTree = "<group>"; };
 		6AA769F823CC50F200E39642 /* 11_PowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 11_PowerViewController.swift; sourceTree = "<group>"; };
 		6AA769FA23CC59DA00E39642 /* 12_Print1ToMaxOfNDigitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 12_Print1ToMaxOfNDigitsViewController.swift; sourceTree = "<group>"; };
+		6AA76A3D23D0504300E39642 /* 13_DeleteNodeInListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 13_DeleteNodeInListViewController.swift; sourceTree = "<group>"; };
 		6ACF281223691A7900B99DD3 /* DarkModeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeModel.swift; sourceTree = "<group>"; };
 		6ACF281423696B1D00B99DD3 /* SFSymbolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolsViewController.swift; sourceTree = "<group>"; };
 		6ACF28162369725E00B99DD3 /* SFSymbolsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolsCell.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				6AA769F623CC40C800E39642 /* 10_NumberOf1InBinaryViewController.swift */,
 				6AA769F823CC50F200E39642 /* 11_PowerViewController.swift */,
 				6AA769FA23CC59DA00E39642 /* 12_Print1ToMaxOfNDigitsViewController.swift */,
+				6AA76A3D23D0504300E39642 /* 13_DeleteNodeInListViewController.swift */,
 			);
 			path = Algorithm;
 			sourceTree = "<group>";
@@ -803,6 +806,7 @@
 				6ACF281B236979D000B99DD3 /* SFSymbol.swift in Sources */,
 				6A963A2C2373EDA900595341 /* FunctionalViewController.swift in Sources */,
 				6AA769F523CC1BA000E39642 /* 09_FibonacciViewController.swift in Sources */,
+				6AA76A3E23D0504300E39642 /* 13_DeleteNodeInListViewController.swift in Sources */,
 				6A7E7EB92338C31F002DEB4A /* BaseViewController.swift in Sources */,
 				6A72528123A372290067B13C /* AlgorithmViewController.swift in Sources */,
 				6AA769F923CC50F200E39642 /* 11_PowerViewController.swift in Sources */,
