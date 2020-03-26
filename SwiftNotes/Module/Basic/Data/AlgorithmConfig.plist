@@ -82,7 +82,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>_16_ReverseList</string>
+		<string>16_ReverseList</string>
 		<key>vcName</key>
 		<string>_16_ReverseListViewController</string>
 	</dict>

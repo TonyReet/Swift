@@ -28,7 +28,7 @@ class _6_ConstructBinaryTreeViewController: BaseViewController {
     }
     
     func constructBinaryTree(preOrder:[Int],inOrder:[Int]) -> BinaryTreeNode? {
-        _6_ConstructBinaryTreeViewController.constructBinaryTree(preOrder: preOrder, inOrder: inOrder)
+        return _6_ConstructBinaryTreeViewController.constructBinaryTree(preOrder: preOrder, inOrder: inOrder)
     }
     
     class func constructBinaryTree(preOrder:[Int],inOrder:[Int]) -> BinaryTreeNode? {
