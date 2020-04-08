@@ -50,61 +50,60 @@ extension UILabel {
 }
 
 extension UIImage {
-    class func image(named:String,imageSize: CGSize? = CGSize.zero,imageColor: UIColor? = UIColor.black)->UIImage?{
-        guard let imageSize = imageSize else {
-            return nil
-        }
-        
+    class func image(named:String,fontSize: CGFloat = UIFont.systemFontSize,imageColor: UIColor? = UIColor.black)->UIImage?{
         var finalNamed = named
-        
+
         if let tmpNamed = named.iconFontString() {
             finalNamed = tmpNamed
         }
-        
+
         if let image = UIImage(named: finalNamed) {
             return image
         }
-        
+
         if #available(iOS 13.0, *) {
             if let image = UIImage(systemName: finalNamed) {
                 guard let imageColor = imageColor else {
                     return image
                 }
-                
+
                 return image.withTintColor(imageColor, renderingMode: .alwaysOriginal)
             }
         }
-        
-        if let image = UIImage.init(text:finalNamed,imageSize:imageSize, imageColor:imageColor) {
+
+        if let image = UIImage.init(text:finalNamed,fontSize: fontSize, imageColor:imageColor) {
             return image
         }
-        
+
         return nil
     }
-    
-    public convenience init?(text: String, fontSize: CGFloat = UIFont.systemFontSize, imageSize: CGSize = CGSize.zero, imageColor: UIColor? = nil) {
-        
-        let mainScale:CGFloat = UIScreen.main.scale
 
-        guard let iconfont = UIFont.iconfont(ofSize: min(imageSize.width, imageSize.height)) else {
+    public convenience init?(text: String, fontSize: CGFloat = UIFont.systemFontSize, imageColor: UIColor? = nil) {
+        let mainScale:CGFloat = UIScreen.main.scale
+        let fontScaleSize = fontSize * mainScale
+        
+        guard let iconfont = UIFont.iconfont(ofSize: fontScaleSize) else {
             self.init()
             return nil
         }
-        
+
+        let imageSize = CGSize(width: fontScaleSize, height: fontScaleSize)
         let imageRect = CGRect(origin: CGPoint.zero, size: imageSize)
-        
+
         UIGraphicsBeginImageContextWithOptions(imageRect.size, false, mainScale)
         defer {
               UIGraphicsEndImageContext()
         }
-        
+
         let label = UILabel.init(frame:imageRect)
         label.font = iconfont
         label.text = text;
+        label.textAlignment = .center
+        
         if imageColor != nil{
             label.textColor = imageColor;
         }
-        
+
         if let currentContext = UIGraphicsGetCurrentContext(){
             label.layer.render(in:currentContext)
         }
@@ -113,7 +112,7 @@ extension UIImage {
             self.init()
             return nil
         }
-        self.init(cgImage: cgImage)
+        self.init(cgImage: cgImage, scale: mainScale, orientation: .up)
     }
 }
 

@@ -36,7 +36,7 @@ class BaseViewController: UIViewController ,UIGestureRecognizerDelegate{
         
         let leftBarFrame = CGRect(x: 0, y: 0, width: 60, height: 30)
         let minBarWidthHeight = 10
-        let leftBarImage = UIImage.image(named: "0xf3b3", imageSize: CGSize(width:minBarWidthHeight, height: minBarWidthHeight),imageColor:mainThemeColor)
+        let leftBarImage = UIImage.image(named: "0xf3b3", fontSize: 10, imageColor:mainThemeColor)
         
         title = kLocalizedString(title)
         

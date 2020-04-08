@@ -51,7 +51,7 @@ class BasicViewControler: BaseViewController {
             cell.textLabel?.text = kLocalizedString(basicHomeModel.title)
     
             if let imgStr = basicHomeModel.imgStr {
-                cell.imageView?.image = UIImage.image(named: imgStr, imageSize: CGSize.init(width: 10, height: 10),imageColor: UIColor.randomColor())
+                cell.imageView?.image = UIImage.image(named: imgStr, fontSize: 10,imageColor: UIColor.randomColor())
             }
         }.disposed(by: disposeBag)
     
