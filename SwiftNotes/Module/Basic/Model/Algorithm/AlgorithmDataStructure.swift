@@ -60,8 +60,13 @@ public class TreeNode: Equatable {
     var value:Int
     weak var parent:TreeNode?
     var childRen = [TreeNode]()
-    init(value:Int) {
+    init(value:Int,childRen child:[TreeNode]? = nil) {
         self.value = value
+        guard let child = child else {
+            return
+        }
+        
+        self.childRen = child
     }
     
     func addChildren(_ node:TreeNode) {

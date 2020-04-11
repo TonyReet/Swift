@@ -26,5 +26,13 @@
 		<key>imgStr</key>
 		<string>0xe69b</string>
 	</dict>
+	<dict>
+		<key>vcName</key>
+		<string>KeepThreadViewController</string>
+		<key>title</key>
+		<string>KeepThread</string>
+		<key>imgStr</key>
+		<string>0xe69c</string>
+	</dict>
 </array>
 </plist>

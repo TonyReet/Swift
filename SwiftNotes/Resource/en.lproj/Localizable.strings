@@ -19,6 +19,7 @@
 "iOS13 New feature" = "iOS13 New feature";
 "Common" = "Common";
 "ReusePool" = "ReusePool";
+"KeepThread" = "KeepThread";
 
 // string
 "DarkModeBackground" = "DarkModeBackground";

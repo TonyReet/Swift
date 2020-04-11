@@ -19,6 +19,7 @@
 "iOS13 New feature" = "iOS13 新特性";
 "Common" = "常规";
 "ReusePool" = "复用池";
+"KeepThread" = "常驻线程";
 
 // 字符串
 "DarkModeBackground" = "暗黑模式背景";
