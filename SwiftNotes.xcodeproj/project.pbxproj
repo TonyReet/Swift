@@ -72,6 +72,7 @@
 		6AA76A4223D081F700E39642 /* 15_KthNodeFromEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA76A4123D081F700E39642 /* 15_KthNodeFromEndViewController.swift */; };
 		6AA76A4423D086FE00E39642 /* 16_ReverseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA76A4323D086FE00E39642 /* 16_ReverseListViewController.swift */; };
 		6AA76A4623D1579B00E39642 /* 17_MergeSortedListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA76A4523D1579B00E39642 /* 17_MergeSortedListsViewController.swift */; };
+		6ABC8ADD24416FA900FB8C2A /* KeepThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8ADC24416FA900FB8C2A /* KeepThreadViewController.swift */; };
 		6ACF281323691A7900B99DD3 /* DarkModeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF281223691A7900B99DD3 /* DarkModeModel.swift */; };
 		6ACF281523696B1D00B99DD3 /* SFSymbolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF281423696B1D00B99DD3 /* SFSymbolsViewController.swift */; };
 		6ACF28172369725F00B99DD3 /* SFSymbolsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF28162369725E00B99DD3 /* SFSymbolsCell.swift */; };
@@ -171,6 +172,7 @@
 		6AA76A4123D081F700E39642 /* 15_KthNodeFromEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 15_KthNodeFromEndViewController.swift; sourceTree = "<group>"; };
 		6AA76A4323D086FE00E39642 /* 16_ReverseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 16_ReverseListViewController.swift; sourceTree = "<group>"; };
 		6AA76A4523D1579B00E39642 /* 17_MergeSortedListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 17_MergeSortedListsViewController.swift; sourceTree = "<group>"; };
+		6ABC8ADC24416FA900FB8C2A /* KeepThreadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepThreadViewController.swift; sourceTree = "<group>"; };
 		6ACF281223691A7900B99DD3 /* DarkModeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeModel.swift; sourceTree = "<group>"; };
 		6ACF281423696B1D00B99DD3 /* SFSymbolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolsViewController.swift; sourceTree = "<group>"; };
 		6ACF28162369725E00B99DD3 /* SFSymbolsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolsCell.swift; sourceTree = "<group>"; };

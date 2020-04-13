@@ -144,7 +144,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    /// This `R.string.localizable` struct is generated, and contains static references to 11 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 12 localization keys.
     struct localizable {
       /// en translation: Algorithm
       /// 
@@ -170,6 +170,10 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: en, zh-Hans
       static let dynamic = Rswift.StringResource(key: "Dynamic", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans"], comment: nil)
+      /// en translation: KeepThread
+      /// 
+      /// Locales: en, zh-Hans
+      static let keepThread = Rswift.StringResource(key: "KeepThread", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans"], comment: nil)
       /// en translation: Media
       /// 
       /// Locales: en, zh-Hans
@@ -231,6 +235,13 @@ struct R: Rswift.Validatable {
       /// Locales: en, zh-Hans
       static func dynamic(_: Void = ()) -> String {
         return NSLocalizedString("Dynamic", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: KeepThread
+      /// 
+      /// Locales: en, zh-Hans
+      static func keepThread(_: Void = ()) -> String {
+        return NSLocalizedString("KeepThread", bundle: R.hostingBundle, comment: "")
       }
       
       /// en translation: Media

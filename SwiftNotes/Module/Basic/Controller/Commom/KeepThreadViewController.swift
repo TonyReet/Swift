@@ -13,8 +13,14 @@ import UIKit
 
 class KeepThreadViewController: BaseViewController {
 
-    var thread:Thread?
+    var thread: Thread?
     var runLoopWorkingIndex = 0
+    
+    var runLoop: RunLoop?
+    var timer: CFRunLoopTimer?
+    var source: CFRunLoopSource?
+    var observer: CFRunLoopObserver?
+    var port: Port?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +28,12 @@ class KeepThreadViewController: BaseViewController {
         addRunloopButton()
         addTestButton()
         addStopButton()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        stopRunLoop()
     }
     
     func addRunloopButton(){
@@ -97,13 +109,36 @@ class KeepThreadViewController: BaseViewController {
         }
         
         stopButton.rx.tap.subscribe(onNext: { [weak self] in
-            print(debug: "stop")
-            
-            CFRunLoopStop(CFRunLoopGetCurrent())
-        
-            self?.thread?.cancel()
-            self?.thread = nil
+            self?.stopRunLoop()
         }).disposed(by: disposeBag)
+    }
+    
+    func stopRunLoop(){
+        print(debug: "stop")
+                
+        if let runLoopTimer = timer {
+            CFRunLoopRemoveTimer(CFRunLoopGetCurrent(), runLoopTimer, .defaultMode)
+            timer = nil
+        }
+        
+        if let runLoopSource = source {
+            CFRunLoopRemoveSource(CFRunLoopGetCurrent(), runLoopSource, .defaultMode)
+            self.source = nil
+        }
+        
+        if let runLoopObserver = observer {
+            CFRunLoopRemoveObserver(CFRunLoopGetCurrent(), runLoopObserver, .defaultMode)
+            observer = nil
+        }
+        
+        if let runLoopPort = port {
+            self.runLoop?.remove(runLoopPort, forMode: .default)
+            port = nil
+        }
+        
+        if let runLoop = self.runLoop {
+            CFRunLoopStop(runLoop.getCFRunLoop())
+        }
     }
     
     @objc func testBackAction(){
@@ -132,44 +167,49 @@ class KeepThreadViewController: BaseViewController {
     
     @objc func createRunloopBySource(){
         autoreleasepool {
-            let runloop = CFRunLoopGetCurrent()
+            runLoop = RunLoop.current
             var sourceContext = CFRunLoopSourceContext()
             
-            let source = CFRunLoopSourceCreate(kCFAllocatorDefault, 0, &sourceContext)
-        
-            CFRunLoopAddSource(runloop, source, CFRunLoopMode.defaultMode)
-            
+            source = CFRunLoopSourceCreate(kCFAllocatorDefault, 0, &sourceContext)
+
+            CFRunLoopAddSource(runLoop?.getCFRunLoop(), source, .defaultMode)
+
             CFRunLoopRun()
         }
     }
     
     @objc func createRunloopByObserver(){
         autoreleasepool {
-            let runloop = CFRunLoopGetCurrent()
-            let observer = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault, CFRunLoopActivity.allActivities.rawValue, true, 0) { (observer, activity) in
-                print(debug: "observer")
-            }
-            CFRunLoopAddObserver(runloop, observer, CFRunLoopMode.defaultMode)
+            runLoop = RunLoop.current
             
+            observer = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault, CFRunLoopActivity.allActivities.rawValue, true, 0) { (observer, activity) in
+                print(debug: "observer,activity:\(activity)")
+            }
+            CFRunLoopAddObserver(runLoop?.getCFRunLoop(), observer, .defaultMode)
+
             CFRunLoopRun();
         }
     }
     
     @objc func createRunloopByTimer(){
         autoreleasepool {
-            let runloop = CFRunLoopGetCurrent()
-            let timer = CFRunLoopTimerCreateWithHandler(kCFAllocatorDefault, CFAbsoluteTimeGetCurrent(), kCFAbsoluteTimeIntervalSince1904, 0, 0) { (timer) in
+            runLoop = RunLoop.current
+            
+            timer = CFRunLoopTimerCreateWithHandler(kCFAllocatorDefault, CFAbsoluteTimeGetCurrent(), kCFAbsoluteTimeIntervalSince1904, 0, 0) { (timer) in
                 print(debug: "timer dida dida")
             }
-            CFRunLoopAddTimer(runloop, timer, CFRunLoopMode.defaultMode)
-            
+            CFRunLoopAddTimer(runLoop?.getCFRunLoop(), timer, .defaultMode)
+
             CFRunLoopRun()
         }
     }
     
     @objc func createRunloopByPort(){
         autoreleasepool {
-            RunLoop.current.add(Port(), forMode: .default)
+            port = Port()
+            
+            runLoop = RunLoop.current
+            RunLoop.current.add(port!, forMode: .default)
             RunLoop.current.run()
         }
     }
