@@ -72,6 +72,7 @@
 		6AA76A4223D081F700E39642 /* 15_KthNodeFromEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA76A4123D081F700E39642 /* 15_KthNodeFromEndViewController.swift */; };
 		6AA76A4423D086FE00E39642 /* 16_ReverseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA76A4323D086FE00E39642 /* 16_ReverseListViewController.swift */; };
 		6AA76A4623D1579B00E39642 /* 17_MergeSortedListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA76A4523D1579B00E39642 /* 17_MergeSortedListsViewController.swift */; };
+		6ABC8A4A24416AE900FB8C2A /* 18_SubstructureInTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A2624416AE700FB8C2A /* 18_SubstructureInTreeViewController.swift */; };
 		6ABC8ADD24416FA900FB8C2A /* KeepThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8ADC24416FA900FB8C2A /* KeepThreadViewController.swift */; };
 		6ACF281323691A7900B99DD3 /* DarkModeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF281223691A7900B99DD3 /* DarkModeModel.swift */; };
 		6ACF281523696B1D00B99DD3 /* SFSymbolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF281423696B1D00B99DD3 /* SFSymbolsViewController.swift */; };
@@ -172,6 +173,7 @@
 		6AA76A4123D081F700E39642 /* 15_KthNodeFromEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 15_KthNodeFromEndViewController.swift; sourceTree = "<group>"; };
 		6AA76A4323D086FE00E39642 /* 16_ReverseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 16_ReverseListViewController.swift; sourceTree = "<group>"; };
 		6AA76A4523D1579B00E39642 /* 17_MergeSortedListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 17_MergeSortedListsViewController.swift; sourceTree = "<group>"; };
+		6ABC8A2624416AE700FB8C2A /* 18_SubstructureInTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 18_SubstructureInTreeViewController.swift; sourceTree = "<group>"; };
 		6ABC8ADC24416FA900FB8C2A /* KeepThreadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepThreadViewController.swift; sourceTree = "<group>"; };
 		6ACF281223691A7900B99DD3 /* DarkModeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeModel.swift; sourceTree = "<group>"; };
 		6ACF281423696B1D00B99DD3 /* SFSymbolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolsViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				6AA76A4123D081F700E39642 /* 15_KthNodeFromEndViewController.swift */,
 				6AA76A4323D086FE00E39642 /* 16_ReverseListViewController.swift */,
 				6AA76A4523D1579B00E39642 /* 17_MergeSortedListsViewController.swift */,
+				6ABC8A2624416AE700FB8C2A /* 18_SubstructureInTreeViewController.swift */,
 			);
 			path = Algorithm;
 			sourceTree = "<group>";
@@ -874,6 +877,7 @@
 				6A90B828233AFF51002B56C5 /* RequestError.swift in Sources */,
 				6A0F382B23A23504001BE71E /* R.generated.swift in Sources */,
 				6A84350723C877090065E8EE /* 07_QueueWithTwoStacksViewController.swift in Sources */,
+				6ABC8A4A24416AE900FB8C2A /* 18_SubstructureInTreeViewController.swift in Sources */,
 				6A7E7EC02338C31F002DEB4A /* BasicViewControler.swift in Sources */,
 				6AA76A4623D1579B00E39642 /* 17_MergeSortedListsViewController.swift in Sources */,
 				6A7E7EBD2338C31F002DEB4A /* AppDelegate.swift in Sources */,

@@ -92,5 +92,11 @@
 		<key>vcName</key>
 		<string>_17_MergeSortedListsViewController</string>
 	</dict>
+	<dict>
+		<key>name</key>
+		<string>18_SubstructureInTree</string>
+		<key>vcName</key>
+		<string>_18_SubstructureInTreeViewController</string>
+	</dict>
 </array>
 </plist>
