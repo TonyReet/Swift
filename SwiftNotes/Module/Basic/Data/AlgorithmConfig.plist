@@ -98,5 +98,11 @@
 		<key>vcName</key>
 		<string>_18_SubstructureInTreeViewController</string>
 	</dict>
+	<dict>
+		<key>name</key>
+		<string>19_MirrorOfBinaryTree</string>
+		<key>vcName</key>
+		<string>_19_MirrorOfBinaryTreeViewController</string>
+	</dict>
 </array>
 </plist>
