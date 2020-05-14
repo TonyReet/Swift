@@ -110,5 +110,11 @@
 		<key>vcName</key>
 		<string>_20_PrintMatrixViewController</string>
 	</dict>
+	<dict>
+		<key>name</key>
+		<string>21_MinInStack</string>
+		<key>vcName</key>
+		<string>_21_MinInStackViewController</string>
+	</dict>
 </array>
 </plist>
