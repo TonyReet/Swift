@@ -116,5 +116,11 @@
 		<key>vcName</key>
 		<string>_21_MinInStackViewController</string>
 	</dict>
+	<dict>
+		<key>name</key>
+		<string>22_StackPushPopOrder</string>
+		<key>vcName</key>
+		<string>_22_StackPushPopOrderViewController</string>
+	</dict>
 </array>
 </plist>
