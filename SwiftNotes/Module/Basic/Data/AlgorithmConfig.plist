@@ -122,5 +122,11 @@
 		<key>vcName</key>
 		<string>_22_StackPushPopOrderViewController</string>
 	</dict>
+	<dict>
+		<key>name</key>
+		<string>23_PrintFromTopToBottomBST</string>
+		<key>vcName</key>
+		<string>_23_PrintFromTopToBottomBSTViewController</string>
+	</dict>
 </array>
 </plist>
