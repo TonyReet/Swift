@@ -78,6 +78,7 @@
 		6ABC8A5524416AE900FB8C2A /* 24_SquenceOfBSTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3124416AE800FB8C2A /* 24_SquenceOfBSTViewController.swift */; };
 		6ABC8A5624416AE900FB8C2A /* 21_MinInStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3224416AE800FB8C2A /* 21_MinInStackViewController.swift */; };
 		6ABC8A5C24416AE900FB8C2A /* 20_PrintMatrixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3824416AE800FB8C2A /* 20_PrintMatrixViewController.swift */; };
+		6ABC8A5E24416AE900FB8C2A /* 27_ConvertBinarySearchTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3A24416AE800FB8C2A /* 27_ConvertBinarySearchTreeViewController.swift */; };
 		6ABC8A6124416AE900FB8C2A /* 19_MirrorOfBinaryTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3D24416AE800FB8C2A /* 19_MirrorOfBinaryTreeViewController.swift */; };
 		6ABC8A6224416AE900FB8C2A /* 22_StackPushPopOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3E24416AE900FB8C2A /* 22_StackPushPopOrderViewController.swift */; };
 		6ABC8A6924416AE900FB8C2A /* 23_PrintFromTopToBottomBSTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A4524416AE900FB8C2A /* 23_PrintFromTopToBottomBSTViewController.swift */; };
@@ -187,6 +188,7 @@
 		6ABC8A3124416AE800FB8C2A /* 24_SquenceOfBSTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 24_SquenceOfBSTViewController.swift; sourceTree = "<group>"; };
 		6ABC8A3224416AE800FB8C2A /* 21_MinInStackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 21_MinInStackViewController.swift; sourceTree = "<group>"; };
 		6ABC8A3824416AE800FB8C2A /* 20_PrintMatrixViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 20_PrintMatrixViewController.swift; sourceTree = "<group>"; };
+		6ABC8A3A24416AE800FB8C2A /* 27_ConvertBinarySearchTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 27_ConvertBinarySearchTreeViewController.swift; sourceTree = "<group>"; };
 		6ABC8A3D24416AE800FB8C2A /* 19_MirrorOfBinaryTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 19_MirrorOfBinaryTreeViewController.swift; sourceTree = "<group>"; };
 		6ABC8A3E24416AE900FB8C2A /* 22_StackPushPopOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 22_StackPushPopOrderViewController.swift; sourceTree = "<group>"; };
 		6ABC8A4524416AE900FB8C2A /* 23_PrintFromTopToBottomBSTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 23_PrintFromTopToBottomBSTViewController.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				6ABC8A3124416AE800FB8C2A /* 24_SquenceOfBSTViewController.swift */,
 				6ABC8A2924416AE700FB8C2A /* 25_PathInTreeViewController.swift */,
 				6ABC8A2B24416AE700FB8C2A /* 26_CopyComplexListViewController.swift */,
+				6ABC8A3A24416AE800FB8C2A /* 27_ConvertBinarySearchTreeViewController.swift */,
 			);
 			path = Algorithm;
 			sourceTree = "<group>";
@@ -882,6 +885,7 @@
 				6ABC8A5C24416AE900FB8C2A /* 20_PrintMatrixViewController.swift in Sources */,
 				6ABC8A6124416AE900FB8C2A /* 19_MirrorOfBinaryTreeViewController.swift in Sources */,
 				6ABC8ADD24416FA900FB8C2A /* KeepThreadViewController.swift in Sources */,
+				6ABC8A5E24416AE900FB8C2A /* 27_ConvertBinarySearchTreeViewController.swift in Sources */,
 				6A72528123A372290067B13C /* AlgorithmViewController.swift in Sources */,
 				6ABC8A5624416AE900FB8C2A /* 21_MinInStackViewController.swift in Sources */,
 				6AA769F923CC50F200E39642 /* 11_PowerViewController.swift in Sources */,
