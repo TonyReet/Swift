@@ -75,6 +75,7 @@
 		6ABC8A4A24416AE900FB8C2A /* 18_SubstructureInTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A2624416AE700FB8C2A /* 18_SubstructureInTreeViewController.swift */; };
 		6ABC8A4D24416AE900FB8C2A /* 25_PathInTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A2924416AE700FB8C2A /* 25_PathInTreeViewController.swift */; };
 		6ABC8A4F24416AE900FB8C2A /* 26_CopyComplexListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A2B24416AE700FB8C2A /* 26_CopyComplexListViewController.swift */; };
+		6ABC8A5424416AE900FB8C2A /* 28_StringPermutationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3024416AE800FB8C2A /* 28_StringPermutationViewController.swift */; };
 		6ABC8A5524416AE900FB8C2A /* 24_SquenceOfBSTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3124416AE800FB8C2A /* 24_SquenceOfBSTViewController.swift */; };
 		6ABC8A5624416AE900FB8C2A /* 21_MinInStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3224416AE800FB8C2A /* 21_MinInStackViewController.swift */; };
 		6ABC8A5C24416AE900FB8C2A /* 20_PrintMatrixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3824416AE800FB8C2A /* 20_PrintMatrixViewController.swift */; };
@@ -185,6 +186,7 @@
 		6ABC8A2624416AE700FB8C2A /* 18_SubstructureInTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 18_SubstructureInTreeViewController.swift; sourceTree = "<group>"; };
 		6ABC8A2924416AE700FB8C2A /* 25_PathInTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 25_PathInTreeViewController.swift; sourceTree = "<group>"; };
 		6ABC8A2B24416AE700FB8C2A /* 26_CopyComplexListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 26_CopyComplexListViewController.swift; sourceTree = "<group>"; };
+		6ABC8A3024416AE800FB8C2A /* 28_StringPermutationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 28_StringPermutationViewController.swift; sourceTree = "<group>"; };
 		6ABC8A3124416AE800FB8C2A /* 24_SquenceOfBSTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 24_SquenceOfBSTViewController.swift; sourceTree = "<group>"; };
 		6ABC8A3224416AE800FB8C2A /* 21_MinInStackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 21_MinInStackViewController.swift; sourceTree = "<group>"; };
 		6ABC8A3824416AE800FB8C2A /* 20_PrintMatrixViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 20_PrintMatrixViewController.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				6ABC8A2924416AE700FB8C2A /* 25_PathInTreeViewController.swift */,
 				6ABC8A2B24416AE700FB8C2A /* 26_CopyComplexListViewController.swift */,
 				6ABC8A3A24416AE800FB8C2A /* 27_ConvertBinarySearchTreeViewController.swift */,
+				6ABC8A3024416AE800FB8C2A /* 28_StringPermutationViewController.swift */,
 			);
 			path = Algorithm;
 			sourceTree = "<group>";
@@ -860,6 +863,7 @@
 			files = (
 				6A7E7EAE2338C31F002DEB4A /* ConstBase.swift in Sources */,
 				6A8F50ED23716C9000B4AA09 /* ObservableViewController.swift in Sources */,
+				6ABC8A5424416AE900FB8C2A /* 28_StringPermutationViewController.swift in Sources */,
 				6A8E084E23C852AC000C82EB /* IndexedTableView.swift in Sources */,
 				6A72528A23A386920067B13C /* 03_FindTargetInArrayViewController.swift in Sources */,
 				6A7E7EB82338C31F002DEB4A /* BaseTabbarController.swift in Sources */,

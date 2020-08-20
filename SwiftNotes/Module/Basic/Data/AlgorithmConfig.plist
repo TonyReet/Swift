@@ -128,5 +128,35 @@
 		<key>vcName</key>
 		<string>_23_PrintFromTopToBottomBSTViewController</string>
 	</dict>
+	<dict>
+		<key>name</key>
+		<string>24_SquenceOfBST</string>
+		<key>vcName</key>
+		<string>_24_SquenceOfBSTViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>25_PathInTree</string>
+		<key>vcName</key>
+		<string>_25_PathInTreeViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>26_CopyComplexLis</string>
+		<key>vcName</key>
+		<string>_26_CopyComplexListViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>27_ConvertBinarySearchTree</string>
+		<key>vcName</key>
+		<string>_27_ConvertBinarySearchTreeViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>28_StringPermutation</string>
+		<key>vcName</key>
+		<string>_28_StringPermutationViewController</string>
+	</dict>
 </array>
 </plist>
