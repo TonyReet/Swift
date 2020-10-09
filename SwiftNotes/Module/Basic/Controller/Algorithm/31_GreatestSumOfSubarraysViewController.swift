@@ -2,7 +2,7 @@
 //  31_GreatestSumOfSubarraysViewController.swift
 //  SwiftNotes
 //
-//  Created by tonyreet on 2020/2/24.
+//  Created by tonyreet on 2020/9/16.
 //  Copyright © 2020 TonyReet. All rights reserved.
 //
 

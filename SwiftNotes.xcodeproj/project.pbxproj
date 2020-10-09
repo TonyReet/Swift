@@ -79,6 +79,7 @@
 		6ABC8A5424416AE900FB8C2A /* 28_StringPermutationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3024416AE800FB8C2A /* 28_StringPermutationViewController.swift */; };
 		6ABC8A5524416AE900FB8C2A /* 24_SquenceOfBSTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3124416AE800FB8C2A /* 24_SquenceOfBSTViewController.swift */; };
 		6ABC8A5624416AE900FB8C2A /* 21_MinInStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3224416AE800FB8C2A /* 21_MinInStackViewController.swift */; };
+		6ABC8A5A24416AE900FB8C2A /* 33_SortArrayForMinNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3624416AE800FB8C2A /* 33_SortArrayForMinNumberViewController.swift */; };
 		6ABC8A5C24416AE900FB8C2A /* 20_PrintMatrixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3824416AE800FB8C2A /* 20_PrintMatrixViewController.swift */; };
 		6ABC8A5D24416AE900FB8C2A /* 32_NumberOf1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3924416AE800FB8C2A /* 32_NumberOf1ViewController.swift */; };
 		6ABC8A5E24416AE900FB8C2A /* 27_ConvertBinarySearchTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3A24416AE800FB8C2A /* 27_ConvertBinarySearchTreeViewController.swift */; };
@@ -194,6 +195,7 @@
 		6ABC8A3024416AE800FB8C2A /* 28_StringPermutationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 28_StringPermutationViewController.swift; sourceTree = "<group>"; };
 		6ABC8A3124416AE800FB8C2A /* 24_SquenceOfBSTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 24_SquenceOfBSTViewController.swift; sourceTree = "<group>"; };
 		6ABC8A3224416AE800FB8C2A /* 21_MinInStackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 21_MinInStackViewController.swift; sourceTree = "<group>"; };
+		6ABC8A3624416AE800FB8C2A /* 33_SortArrayForMinNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 33_SortArrayForMinNumberViewController.swift; sourceTree = "<group>"; };
 		6ABC8A3824416AE800FB8C2A /* 20_PrintMatrixViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 20_PrintMatrixViewController.swift; sourceTree = "<group>"; };
 		6ABC8A3924416AE800FB8C2A /* 32_NumberOf1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 32_NumberOf1ViewController.swift; sourceTree = "<group>"; };
 		6ABC8A3A24416AE800FB8C2A /* 27_ConvertBinarySearchTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 27_ConvertBinarySearchTreeViewController.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				6ABC8A4224416AE900FB8C2A /* 30_KLeastNumbersViewController.swift */,
 				6ABC8A4624416AE900FB8C2A /* 31_GreatestSumOfSubarraysViewController.swift */,
 				6ABC8A3924416AE800FB8C2A /* 32_NumberOf1ViewController.swift */,
+				6ABC8A3624416AE800FB8C2A /* 33_SortArrayForMinNumberViewController.swift */,
 			);
 			path = Algorithm;
 			sourceTree = "<group>";
