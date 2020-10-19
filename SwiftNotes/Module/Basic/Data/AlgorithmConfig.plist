@@ -158,5 +158,41 @@
 		<key>vcName</key>
 		<string>_28_StringPermutationViewController</string>
 	</dict>
+	<dict>
+		<key>name</key>
+		<string>29_MoreThanHalfNumber</string>
+		<key>vcName</key>
+		<string>_29_MoreThanHalfNumberViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>30_KLeastNumbers</string>
+		<key>vcName</key>
+		<string>_30_KLeastNumbersViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>31_GreatestSumOfSubarrays</string>
+		<key>vcName</key>
+		<string>_31_GreatestSumOfSubarraysViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>32_NumberOf1</string>
+		<key>vcName</key>
+		<string>_32_NumberOf1ViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>33_SortArrayForMinNumber</string>
+		<key>vcName</key>
+		<string>_33_SortArrayForMinNumberViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>34_UglyNumber</string>
+		<key>vcName</key>
+		<string>_34_UglyNumberViewController</string>
+	</dict>
 </array>
 </plist>

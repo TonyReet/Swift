@@ -83,6 +83,7 @@
 		6ABC8A5C24416AE900FB8C2A /* 20_PrintMatrixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3824416AE800FB8C2A /* 20_PrintMatrixViewController.swift */; };
 		6ABC8A5D24416AE900FB8C2A /* 32_NumberOf1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3924416AE800FB8C2A /* 32_NumberOf1ViewController.swift */; };
 		6ABC8A5E24416AE900FB8C2A /* 27_ConvertBinarySearchTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3A24416AE800FB8C2A /* 27_ConvertBinarySearchTreeViewController.swift */; };
+		6ABC8A6024416AE900FB8C2A /* 34_UglyNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3C24416AE800FB8C2A /* 34_UglyNumberViewController.swift */; };
 		6ABC8A6124416AE900FB8C2A /* 19_MirrorOfBinaryTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3D24416AE800FB8C2A /* 19_MirrorOfBinaryTreeViewController.swift */; };
 		6ABC8A6224416AE900FB8C2A /* 22_StackPushPopOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3E24416AE900FB8C2A /* 22_StackPushPopOrderViewController.swift */; };
 		6ABC8A6624416AE900FB8C2A /* 30_KLeastNumbersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A4224416AE900FB8C2A /* 30_KLeastNumbersViewController.swift */; };
@@ -199,6 +200,7 @@
 		6ABC8A3824416AE800FB8C2A /* 20_PrintMatrixViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 20_PrintMatrixViewController.swift; sourceTree = "<group>"; };
 		6ABC8A3924416AE800FB8C2A /* 32_NumberOf1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 32_NumberOf1ViewController.swift; sourceTree = "<group>"; };
 		6ABC8A3A24416AE800FB8C2A /* 27_ConvertBinarySearchTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 27_ConvertBinarySearchTreeViewController.swift; sourceTree = "<group>"; };
+		6ABC8A3C24416AE800FB8C2A /* 34_UglyNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 34_UglyNumberViewController.swift; sourceTree = "<group>"; };
 		6ABC8A3D24416AE800FB8C2A /* 19_MirrorOfBinaryTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 19_MirrorOfBinaryTreeViewController.swift; sourceTree = "<group>"; };
 		6ABC8A3E24416AE900FB8C2A /* 22_StackPushPopOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 22_StackPushPopOrderViewController.swift; sourceTree = "<group>"; };
 		6ABC8A4224416AE900FB8C2A /* 30_KLeastNumbersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 30_KLeastNumbersViewController.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				6ABC8A4624416AE900FB8C2A /* 31_GreatestSumOfSubarraysViewController.swift */,
 				6ABC8A3924416AE800FB8C2A /* 32_NumberOf1ViewController.swift */,
 				6ABC8A3624416AE800FB8C2A /* 33_SortArrayForMinNumberViewController.swift */,
+				6ABC8A3C24416AE800FB8C2A /* 34_UglyNumberViewController.swift */,
 			);
 			path = Algorithm;
 			sourceTree = "<group>";
@@ -921,6 +924,7 @@
 				6ABC8A5224416AE900FB8C2A /* 29_MoreThanHalfNumberViewController.swift in Sources */,
 				6A34449823618E1D001180E2 /* MediaViewController.swift in Sources */,
 				6A7E7EB52338C31F002DEB4A /* BasePrint.swift in Sources */,
+				6ABC8A5A24416AE900FB8C2A /* 33_SortArrayForMinNumberViewController.swift in Sources */,
 				6A7E7EBA2338C31F002DEB4A /* BaseNavigationController.swift in Sources */,
 				6A90B82A233B0048002B56C5 /* RequestJson.swift in Sources */,
 				6AD1E18E2364188B00683659 /* DarkViewController.swift in Sources */,
@@ -931,6 +935,7 @@
 				6A8E084823C82253000C82EB /* ReusePoolViewController.swift in Sources */,
 				6A7CE8F92341F7CA00E09F29 /* BasicHomeModel.swift in Sources */,
 				6A8E084223C814E5000C82EB /* iOS13ViewController.swift in Sources */,
+				6ABC8A6024416AE900FB8C2A /* 34_UglyNumberViewController.swift in Sources */,
 				6A90B828233AFF51002B56C5 /* RequestError.swift in Sources */,
 				6ABC8A4D24416AE900FB8C2A /* 25_PathInTreeViewController.swift in Sources */,
 				6A0F382B23A23504001BE71E /* R.generated.swift in Sources */,
