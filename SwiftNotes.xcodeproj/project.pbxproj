@@ -87,6 +87,7 @@
 		6ABC8A6124416AE900FB8C2A /* 19_MirrorOfBinaryTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3D24416AE800FB8C2A /* 19_MirrorOfBinaryTreeViewController.swift */; };
 		6ABC8A6224416AE900FB8C2A /* 22_StackPushPopOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A3E24416AE900FB8C2A /* 22_StackPushPopOrderViewController.swift */; };
 		6ABC8A6624416AE900FB8C2A /* 30_KLeastNumbersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A4224416AE900FB8C2A /* 30_KLeastNumbersViewController.swift */; };
+		6ABC8A6824416AE900FB8C2A /* 35_FirstNotRepeatingCharViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A4424416AE900FB8C2A /* 35_FirstNotRepeatingCharViewController.swift */; };
 		6ABC8A6924416AE900FB8C2A /* 23_PrintFromTopToBottomBSTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A4524416AE900FB8C2A /* 23_PrintFromTopToBottomBSTViewController.swift */; };
 		6ABC8A6A24416AE900FB8C2A /* 31_GreatestSumOfSubarraysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8A4624416AE900FB8C2A /* 31_GreatestSumOfSubarraysViewController.swift */; };
 		6ABC8ADD24416FA900FB8C2A /* KeepThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC8ADC24416FA900FB8C2A /* KeepThreadViewController.swift */; };
@@ -204,6 +205,7 @@
 		6ABC8A3D24416AE800FB8C2A /* 19_MirrorOfBinaryTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 19_MirrorOfBinaryTreeViewController.swift; sourceTree = "<group>"; };
 		6ABC8A3E24416AE900FB8C2A /* 22_StackPushPopOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 22_StackPushPopOrderViewController.swift; sourceTree = "<group>"; };
 		6ABC8A4224416AE900FB8C2A /* 30_KLeastNumbersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 30_KLeastNumbersViewController.swift; sourceTree = "<group>"; };
+		6ABC8A4424416AE900FB8C2A /* 35_FirstNotRepeatingCharViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 35_FirstNotRepeatingCharViewController.swift; sourceTree = "<group>"; };
 		6ABC8A4524416AE900FB8C2A /* 23_PrintFromTopToBottomBSTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 23_PrintFromTopToBottomBSTViewController.swift; sourceTree = "<group>"; };
 		6ABC8A4624416AE900FB8C2A /* 31_GreatestSumOfSubarraysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 31_GreatestSumOfSubarraysViewController.swift; sourceTree = "<group>"; };
 		6ABC8ADC24416FA900FB8C2A /* KeepThreadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepThreadViewController.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				6ABC8A3924416AE800FB8C2A /* 32_NumberOf1ViewController.swift */,
 				6ABC8A3624416AE800FB8C2A /* 33_SortArrayForMinNumberViewController.swift */,
 				6ABC8A3C24416AE800FB8C2A /* 34_UglyNumberViewController.swift */,
+				6ABC8A4424416AE900FB8C2A /* 35_FirstNotRepeatingCharViewController.swift */,
 			);
 			path = Algorithm;
 			sourceTree = "<group>";
@@ -880,6 +883,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A7E7EAE2338C31F002DEB4A /* ConstBase.swift in Sources */,
+				6ABC8A6824416AE900FB8C2A /* 35_FirstNotRepeatingCharViewController.swift in Sources */,
 				6A8F50ED23716C9000B4AA09 /* ObservableViewController.swift in Sources */,
 				6ABC8A5424416AE900FB8C2A /* 28_StringPermutationViewController.swift in Sources */,
 				6A8E084E23C852AC000C82EB /* IndexedTableView.swift in Sources */,

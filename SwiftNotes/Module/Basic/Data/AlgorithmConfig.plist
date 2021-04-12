@@ -194,5 +194,11 @@
 		<key>vcName</key>
 		<string>_34_UglyNumberViewController</string>
 	</dict>
+	<dict>
+		<key>name</key>
+		<string>35_FirstNotRepeatingChar</string>
+		<key>vcName</key>
+		<string>_35_FirstNotRepeatingCharViewController</string>
+	</dict>
 </array>
 </plist>
